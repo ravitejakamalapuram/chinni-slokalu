@@ -1,0 +1,186 @@
+{
+ "id": "gayatri",
+ "character": "surya",
+ "bg": "radial-gradient(circle at 50% 38%, #FFF3C4 0%, #FFC48A 38%, #F28B6B 72%, #B4507A 100%)",
+ "petal_color": "#FF8FAB",
+ "title_top": "LET'S LEARN",
+ "title_main": "GAYATRI MANTRA!",
+ "title_te": "గాయత్రీ మంత్రం",
+ "hero_label": "SURYA DEVA",
+ "lines": [
+  {
+   "te": "ఓం భూర్భువః స్వః",
+   "tr": "Om Bhur Bhuvah Svah",
+   "mean_te": "భూమి, ఆకాశం, స్వర్గం, అన్నిచోట్లా ఉన్న దేవుడా!",
+   "mean_en": "O God, present in the earth, the sky and the heavens"
+  },
+  {
+   "te": "తత్సవితుర్వరేణ్యం",
+   "tr": "Tat Savitur Varenyam",
+   "mean_te": "ఎంతో గొప్పవాడైన ఆ సూర్య దేవుడి",
+   "mean_en": "Of that most adorable Sun God"
+  },
+  {
+   "te": "భర్గో దేవస్య ధీమహి",
+   "tr": "Bhargo Devasya Dhimahi",
+   "mean_te": "దివ్యమైన వెలుగును మనం ధ్యానిద్దాం",
+   "mean_en": "We meditate on that divine light"
+  },
+  {
+   "te": "ధియో యో నః ప్రచోదయాత్",
+   "tr": "Dhiyo Yo Nah Prachodayat",
+   "mean_te": "ఆ దేవుడు మా బుద్ధిని మంచి దారిలో నడిపించుగాక!",
+   "mean_en": "May He guide our minds on the right path"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3"
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3"
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3"
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3"
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "జై సూర్య దేవా!",
+   "caption_en": "JAI SURYA DEVA!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.19,
+    1.6
+   ],
+   [
+    1.7,
+    3.4
+   ],
+   [
+    3.69,
+    4.28
+   ],
+   [
+    5.38,
+    7.38
+   ],
+   [
+    7.84,
+    8.6
+   ],
+   [
+    8.7,
+    9.6
+   ],
+   [
+    9.7,
+    10.5
+   ],
+   [
+    11.05,
+    11.6
+   ],
+   [
+    11.65,
+    12.1
+   ],
+   [
+    12.15,
+    12.79
+   ],
+   [
+    12.98,
+    13.87
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    3.9,
+    4.15
+   ],
+   [
+    4.28,
+    5.15
+   ],
+   [
+    5.3,
+    6.9
+   ],
+   [
+    7.13,
+    11.7
+   ],
+   [
+    12.72,
+    13.43
+   ],
+   [
+    13.62,
+    14.6
+   ],
+   [
+    15.0,
+    17.0
+   ],
+   [
+    17.84,
+    18.4
+   ],
+   [
+    18.5,
+    18.8
+   ],
+   [
+    18.9,
+    19.4
+   ],
+   [
+    19.46,
+    21.5
+   ]
+  ]
+ }
+}

@@ -1,0 +1,175 @@
+{
+ "id": "vakratunda",
+ "title_top": "LET'S LEARN",
+ "title_main": "GANESHA SLOKA!",
+ "title_te": "గణపతి శ్లోకం",
+ "hero_label": "GANESHA",
+ "lines": [
+  {
+   "te": "వక్రతుండ మహాకాయ",
+   "tr": "Vakratunda Mahakaya",
+   "mean_te": "వంకర తొండం, పెద్ద శరీరం ఉన్న గణపయ్యా!",
+   "mean_en": "O Ganesha, with a curved trunk and a big, mighty body"
+  },
+  {
+   "te": "సూర్యకోటి సమప్రభ",
+   "tr": "Suryakoti Samaprabha",
+   "mean_te": "కోటి సూర్యుల వెలుగుతో మెరిసేవాడా!",
+   "mean_en": "You shine as bright as a crore suns"
+  },
+  {
+   "te": "నిర్విఘ్నం కురు మే దేవ",
+   "tr": "Nirvighnam Kuru Me Deva",
+   "mean_te": "దేవా, నాకు ఏ ఆటంకాలూ రాకుండా చూడు!",
+   "mean_en": "O God, please remove all obstacles for me"
+  },
+  {
+   "te": "సర్వకార్యేషు సర్వదా",
+   "tr": "Sarvakaryeshu Sarvada",
+   "mean_te": "నేను చేసే అన్ని పనులలో, ఎప్పుడూ!",
+   "mean_en": "In everything I do, always"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3"
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3"
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3"
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3"
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "జై గణేశ!",
+   "caption_en": "JAI GANESHA!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.68,
+    1.49
+   ],
+   [
+    2.17,
+    3.48
+   ],
+   [
+    4.45,
+    5.58
+   ],
+   [
+    6.44,
+    7.43
+   ],
+   [
+    8.48,
+    9.5
+   ],
+   [
+    10.31,
+    10.59
+   ],
+   [
+    11.44,
+    11.8
+   ],
+   [
+    11.85,
+    12.4
+   ],
+   [
+    13.25,
+    14.68
+   ],
+   [
+    15.43,
+    16.49
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    0.9,
+    2.9
+   ],
+   [
+    3.15,
+    5.6
+   ],
+   [
+    7.4,
+    9.7
+   ],
+   [
+    10.5,
+    12.0
+   ],
+   [
+    14.2,
+    15.8
+   ],
+   [
+    16.2,
+    16.8
+   ],
+   [
+    17.15,
+    17.6
+   ],
+   [
+    18.0,
+    19.2
+   ],
+   [
+    21.0,
+    22.9
+   ],
+   [
+    23.5,
+    25.1
+   ]
+  ]
+ }
+}

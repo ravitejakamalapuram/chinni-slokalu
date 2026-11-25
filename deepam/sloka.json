@@ -1,0 +1,178 @@
+{
+ "id": "deepam",
+ "character": "deepam",
+ "bg": "radial-gradient(circle at 50% 38%, #FFD9A0 0%, #E58A6B 30%, #7A3E8E 68%, #2E1B4F 100%)",
+ "petal_color": "#FFC93C",
+ "title_top": "LET'S LEARN",
+ "title_main": "DEEPA JYOTI SLOKA!",
+ "title_te": "దీపజ్యోతి శ్లోకం",
+ "hero_label": "DEEPAM",
+ "lines": [
+  {
+   "te": "దీపజ్యోతి పరబ్రహ్మ",
+   "tr": "Deepa Jyoti Parabrahma",
+   "mean_te": "దీపపు వెలుగే ఆ పరమాత్మ",
+   "mean_en": "The light of the lamp is the Supreme God"
+  },
+  {
+   "te": "దీపజ్యోతి జనార్దన",
+   "tr": "Deepa Jyoti Janardhana",
+   "mean_te": "దీపపు వెలుగే జనార్దనుడు, మన విష్ణుమూర్తి",
+   "mean_en": "The light of the lamp is Lord Vishnu (Janardhana)"
+  },
+  {
+   "te": "దీపో హరతు మే పాపం",
+   "tr": "Deepo Haratu Me Paapam",
+   "mean_te": "ఈ దీపం నాలోని చెడును పోగొట్టుగాక",
+   "mean_en": "May this lamp take away all that is bad in me"
+  },
+  {
+   "te": "దీపజ్యోతి నమోస్తుతే",
+   "tr": "Deepa Jyoti Namostute",
+   "mean_te": "ఓ దీపజ్యోతీ, నీకు నమస్కారం!",
+   "mean_en": "O light of the lamp, I bow to you"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3"
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3"
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3"
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3"
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "శుభం!",
+   "caption_en": "SHUBHAM!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.1,
+    1.5
+   ],
+   [
+    2.1,
+    3.1
+   ],
+   [
+    3.79,
+    5.17
+   ],
+   [
+    5.55,
+    6.55
+   ],
+   [
+    7.56,
+    8.3
+   ],
+   [
+    8.35,
+    9.27
+   ],
+   [
+    9.45,
+    9.8
+   ],
+   [
+    9.85,
+    10.54
+   ],
+   [
+    11.07,
+    12.26
+   ],
+   [
+    12.46,
+    13.37
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    0.67,
+    1.83
+   ],
+   [
+    2.19,
+    3.48
+   ],
+   [
+    6.63,
+    7.72
+   ],
+   [
+    8.57,
+    9.68
+   ],
+   [
+    13.12,
+    13.71
+   ],
+   [
+    13.71,
+    14.33
+   ],
+   [
+    14.65,
+    15.02
+   ],
+   [
+    15.39,
+    16.89
+   ],
+   [
+    20.08,
+    21.19
+   ],
+   [
+    22.05,
+    23.0
+   ]
+  ]
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "id": "saraswati",
+ "character": "saraswati",
+ "bg": "radial-gradient(circle at 50% 38%, #CFF3F8 0%, #7CCAD9 38%, #3C93AA 72%, #1D5A70 100%)",
+ "petal_color": "#FF8FAB",
+ "title_top": "LET'S LEARN",
+ "title_main": "SARASWATI SLOKA!",
+ "title_te": "సరస్వతీ శ్లోకం",
+ "hero_label": "SARASWATI",
+ "lines": [
+  {
+   "te": "సరస్వతి నమస్తుభ్యం",
+   "tr": "Saraswati Namastubhyam",
+   "mean_te": "సరస్వతీ దేవీ, నీకు నమస్కారం!",
+   "mean_en": "O Goddess Saraswati, I bow to you"
+  },
+  {
+   "te": "వరదే కామరూపిణి",
+   "tr": "Varade Kamarupini",
+   "mean_te": "వరాలు ఇచ్చే అమ్మా, కోరిన రూపం దాల్చగలదానా!",
+   "mean_en": "Giver of boons, who can take any form she wishes"
+  },
+  {
+   "te": "విద్యారంభం కరిష్యామి",
+   "tr": "Vidyarambham Karishyami",
+   "mean_te": "నేను చదువు మొదలుపెడుతున్నాను",
+   "mean_en": "I am beginning my studies"
+  },
+  {
+   "te": "సిద్ధిర్భవతు మే సదా",
+   "tr": "Siddhirbhavatu Me Sada",
+   "mean_te": "నాకు ఎప్పుడూ విజయం కలిగేలా దీవించు!",
+   "mean_en": "Bless me with success, always"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3"
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3"
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3"
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3"
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "జై సరస్వతీ మాత!",
+   "caption_en": "JAI SARASWATI!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.08,
+    1.0
+   ],
+   [
+    1.08,
+    2.39
+   ],
+   [
+    2.95,
+    3.49
+   ],
+   [
+    3.54,
+    4.75
+   ],
+   [
+    5.47,
+    6.53
+   ],
+   [
+    6.62,
+    7.58
+   ],
+   [
+    8.1,
+    9.28
+   ],
+   [
+    9.38,
+    9.58
+   ],
+   [
+    9.6,
+    9.89
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    0.27,
+    3.0
+   ],
+   [
+    3.77,
+    6.06
+   ],
+   [
+    7.38,
+    9.47
+   ],
+   [
+    9.85,
+    12.0
+   ],
+   [
+    13.96,
+    16.32
+   ],
+   [
+    16.79,
+    19.15
+   ],
+   [
+    20.59,
+    22.9
+   ],
+   [
+    23.71,
+    24.4
+   ],
+   [
+    24.5,
+    25.7
+   ]
+  ]
+ }
+}

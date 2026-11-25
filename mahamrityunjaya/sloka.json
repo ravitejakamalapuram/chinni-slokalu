@@ -1,0 +1,226 @@
+{
+ "id": "mahamrityunjaya",
+ "character": "shiva",
+ "bg": "radial-gradient(circle at 50% 38%, #E8F1FF 0%, #9DB8F0 28%, #5A4FA8 64%, #241B4F 100%)",
+ "petal_color": "#FFFFFF",
+ "title_top": "LET'S LEARN",
+ "title_main": "MAHA MRITYUNJAYA!",
+ "title_te": "మహా మృత్యుంజయ మంత్రం",
+ "hero_label": "SHIVA",
+ "lines": [
+  {
+   "te": "ఓం త్ర్యంబకం యజామహే",
+   "tr": "Om Tryambakam Yajamahe",
+   "mean_te": "మూడు కన్నుల శివయ్యను మనం పూజిస్తాం",
+   "mean_en": "We worship the three-eyed Lord Shiva"
+  },
+  {
+   "te": "సుగంధిం పుష్టివర్ధనమ్",
+   "tr": "Sugandhim Pushtivardhanam",
+   "mean_te": "మంచి సువాసన గలవాడు, అందరికీ బలం, పోషణ ఇచ్చేవాడు",
+   "mean_en": "Fragrant one, who nourishes all and makes us grow strong"
+  },
+  {
+   "te": "ఉర్వారుకమివ బంధనాన్",
+   "tr": "Urvarukamiva Bandhanan",
+   "mean_te": "పండిన దోసకాయ తీగ నుండి సులువుగా విడిపోయినట్లు",
+   "mean_en": "Like a ripe cucumber gently freed from its vine"
+  },
+  {
+   "te": "మృత్యోర్ముక్షీయ మామృతాత్",
+   "tr": "Mrityor Mukshiya Maamritat",
+   "mean_te": "మమ్మల్ని భయం, మృత్యువు నుండి విడిపించి, అమృతం లాంటి ఆనందం ఇవ్వు",
+   "mean_en": "Free us from fear and death, and give us the nectar of joy"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3",
+   "fix": {
+    "words": [
+     [
+      0.35,
+      2.5
+     ],
+     [
+      3.35,
+      4.85
+     ],
+     [
+      5.34,
+      7.05
+     ]
+    ],
+    "meaning_at": 7.95
+   }
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3",
+   "fix": {
+    "words": [
+     [
+      0.35,
+      1.25
+     ],
+     [
+      2.27,
+      3.4
+     ]
+    ],
+    "meaning_at": 4.2
+   }
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3",
+   "fix": {
+    "words": [
+     [
+      0.1,
+      1.7
+     ],
+     [
+      2.76,
+      3.95
+     ]
+    ],
+    "meaning_at": 5.1
+   }
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3",
+   "fix": {
+    "words": [
+     [
+      0.1,
+      2.4
+     ],
+     [
+      2.89,
+      4.25
+     ]
+    ],
+    "meaning_at": 4.95
+   }
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "ఓం నమః శివాయ!",
+   "caption_en": "OM NAMAH SHIVAYA!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.63,
+    2.23
+   ],
+   [
+    3.56,
+    4.43
+   ],
+   [
+    4.93,
+    7.07
+   ],
+   [
+    8.3,
+    9.11
+   ],
+   [
+    9.57,
+    11.95
+   ],
+   [
+    13.38,
+    15.08
+   ],
+   [
+    15.47,
+    17.01
+   ],
+   [
+    18.22,
+    21.09
+   ],
+   [
+    21.3,
+    22.17
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    0.67,
+    1.07
+   ],
+   [
+    1.37,
+    3.35
+   ],
+   [
+    4.05,
+    5.9
+   ],
+   [
+    7.41,
+    8.83
+   ],
+   [
+    9.13,
+    12.18
+   ],
+   [
+    13.91,
+    16.48
+   ],
+   [
+    17.06,
+    19.0
+   ],
+   [
+    20.19,
+    23.0
+   ],
+   [
+    23.09,
+    24.7
+   ]
+  ]
+ }
+}

@@ -1,0 +1,178 @@
+{
+ "id": "guru",
+ "character": "guru",
+ "bg": "radial-gradient(circle at 50% 38%, #E6F7D9 0%, #A9DB8E 38%, #5FA35A 72%, #2F6B3A 100%)",
+ "petal_color": "#FFB347",
+ "title_top": "LET'S LEARN",
+ "title_main": "GURU SLOKA!",
+ "title_te": "గురు శ్లోకం",
+ "hero_label": "GURU",
+ "lines": [
+  {
+   "te": "గురుర్బ్రహ్మా గురుర్విష్ణుః",
+   "tr": "Gurur Brahma Gurur Vishnuhu",
+   "mean_te": "గురువే బ్రహ్మ, గురువే విష్ణువు",
+   "mean_en": "The Guru is Brahma, the Guru is Vishnu"
+  },
+  {
+   "te": "గురుర్దేవో మహేశ్వరః",
+   "tr": "Gurur Devo Maheshwaraha",
+   "mean_te": "గురువే మహేశ్వరుడు, అంటే శివుడు",
+   "mean_en": "The Guru is Lord Maheshwara (Shiva)"
+  },
+  {
+   "te": "గురుస్సాక్షాత్ పరబ్రహ్మ",
+   "tr": "Guru Sakshat Parabrahma",
+   "mean_te": "గురువే సాక్షాత్తు ఆ పరమాత్మ",
+   "mean_en": "The Guru is truly the Supreme God"
+  },
+  {
+   "te": "తస్మై శ్రీ గురవే నమః",
+   "tr": "Tasmai Shri Gurave Namaha",
+   "mean_te": "అలాంటి గొప్ప గురువుకు నమస్కారం!",
+   "mean_en": "I bow to that great Guru"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3"
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3"
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3"
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3"
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "గురుభ్యో నమః!",
+   "caption_en": "THANK YOU, GURU!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.1,
+    1.7
+   ],
+   [
+    2.06,
+    3.42
+   ],
+   [
+    4.01,
+    5.23
+   ],
+   [
+    5.46,
+    6.65
+   ],
+   [
+    7.6,
+    9.01
+   ],
+   [
+    9.23,
+    10.24
+   ],
+   [
+    10.88,
+    11.7
+   ],
+   [
+    11.75,
+    12.35
+   ],
+   [
+    12.52,
+    13.15
+   ],
+   [
+    13.2,
+    13.75
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    0.63,
+    2.15
+   ],
+   [
+    3.55,
+    5.91
+   ],
+   [
+    7.83,
+    10.01
+   ],
+   [
+    10.61,
+    13.68
+   ],
+   [
+    15.55,
+    17.85
+   ],
+   [
+    18.54,
+    20.18
+   ],
+   [
+    21.37,
+    22.0
+   ],
+   [
+    22.26,
+    22.76
+   ],
+   [
+    23.24,
+    24.62
+   ],
+   [
+    24.97,
+    26.05
+   ]
+  ]
+ }
+}

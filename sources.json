@@ -1,0 +1,957 @@
+{
+ "asatoma/audio/01_intro.mp3": {
+  "id": "1Gy1cGadN4QtNyfFjygX5cp70Arx4j_eV",
+  "sha256": "f59dd48b3c253e0ed481142116a3347f9028662767928a06291b6521647fdf5e",
+  "size": 206504
+ },
+ "asatoma/audio/02_full.mp3": {
+  "id": "1KHY1IWdI95TDsIiD6qoRZ1xc0MP5hZsM",
+  "sha256": "2ab242b461d8b9db7c0218685388684cbe6c12179ca839222df0275a3de72818",
+  "size": 290932
+ },
+ "asatoma/audio/03_learn.mp3": {
+  "id": "1xyiChKTmtB-qg0-lQOw0igLcLkc3Q6Tx",
+  "sha256": "f6fafefb22715049c850b9e5bcfc214eaec2657570fec3ef2490d1a881730381",
+  "size": 53949
+ },
+ "asatoma/audio/04_line1.mp3": {
+  "id": "1ZBQMIgYN3v2Z92BpxM2i1BQ7YEhQpthk",
+  "sha256": "24210ccdad34791cc0dd63e9e69330e0451cf68ab7e39f11c58778d7f0566f01",
+  "size": 189786
+ },
+ "asatoma/audio/05_line2.mp3": {
+  "id": "19IJTOj2uV1lA8hCXCqFA3nwNPim7gv72",
+  "sha256": "6637d087255f5c5067e669c775574e847090db968cd1083e4c2299786c105c80",
+  "size": 169306
+ },
+ "asatoma/audio/06_line3.mp3": {
+  "id": "1WGIHr0Fs5Z0Z8YIrC-6vzd9Nn20WTbXL",
+  "sha256": "0ce39e59e374d9f1d090ffabf7427c8299298e9b0c10ad7ba83e9656ac9e209d",
+  "size": 224476
+ },
+ "asatoma/audio/07_line4.mp3": {
+  "id": "1PMAnu1zT1gsI3hJs40J2Qgr8rF6ESctG",
+  "sha256": "36746aba905099bd94b7f2fa4123b3f92cd72a61d1670f2af6aef8a431370319",
+  "size": 219043
+ },
+ "asatoma/audio/08_together.mp3": {
+  "id": "19QnawS7pTCkyEggJVN7d9nQurZLbmD9w",
+  "sha256": "e3702f695bec49f39c75800f17946832a5f5c4a4a62b720ca90629749289b8ed",
+  "size": 55203
+ },
+ "asatoma/audio/09_jai.mp3": {
+  "id": "1NHxBo9E5jgzWmCNKzhzfR6nqOWF1RD8U",
+  "sha256": "bcee22cbfa68134ffcbc471e4e5d0529851dd5dc477f198b2a6b3a06b52669f0",
+  "size": 155095
+ },
+ "asatoma/audio/10_sung.mp3": {
+  "id": "1h71bnTO1-eEc1LqUwZGRpEABqE5p0oup",
+  "sha256": "1a09e984beea3c03edcf7f362309d77a31c69c7e5bd3d0716fcf4e5c095ede46",
+  "size": 679191
+ },
+ "bhojana/audio/01_intro.mp3": {
+  "id": "1gJ7Ym3QzOj-Y7UxIQ_PfHBZAFLmDCqL9",
+  "sha256": "7933644373b2133ab000e2f2c094af7ba48955c7e6b6c5e532d874dc61a42554",
+  "size": 244311
+ },
+ "bhojana/audio/02_full.mp3": {
+  "id": "1GEhYbf6ESAPeql7W-d7yAffA-A-JM1y3",
+  "sha256": "4d2a56f7007d6bc259a66c0772027acf0991fed3965cc6ada501bf0b9414d697",
+  "size": 317655
+ },
+ "bhojana/audio/03_learn.mp3": {
+  "id": "11cyY6Kl7a_xTe_c-yC6g5wxO2tVXPcn4",
+  "sha256": "fa783d00820a9dc1856961e4e63e78f3f987945c812cc9349d1c8fb423e9c297",
+  "size": 57687
+ },
+ "bhojana/audio/04_line1.mp3": {
+  "id": "1YIS8r8rvaf1RzG8SxIRcwQe2cvw6dxbt",
+  "sha256": "d548788777e2b7e846f462cd3537ff7a528ea3dd94448c5c2ab3122a70aeca07",
+  "size": 174423
+ },
+ "bhojana/audio/05_line2.mp3": {
+  "id": "1MQW90PAedHx0aPNt8IY-SVnvrv-NECsj",
+  "sha256": "e755cb499212a463d2374f6eb0bca91606258300457722052e01d5bc796cd33b",
+  "size": 211671
+ },
+ "bhojana/audio/06_line3.mp3": {
+  "id": "1DWFKw4yP0zij2LSYzPdSxQ8QBgh4gxSN",
+  "sha256": "2bfdb9b0290f443c9ad9c0cb1037c99170a627e252ba5e71148c45fddeb479a5",
+  "size": 168663
+ },
+ "bhojana/audio/07_line4.mp3": {
+  "id": "1tz_iuijRgdXpkQrAnNT5YuwjRaiHyuJn",
+  "sha256": "1cdb2674c61ab40957590725d785db99d66a75bb4fc985639ee3bbcf82c04d03",
+  "size": 145239
+ },
+ "bhojana/audio/08_together.mp3": {
+  "id": "1izDb9sLpzToz5Mr0b1sSYIyn8pdWqILW",
+  "sha256": "350a8cbce134b19e9bc49121ee564ce2bcfc366dbd254239d17c7f164869615f",
+  "size": 82647
+ },
+ "bhojana/audio/09_jai.mp3": {
+  "id": "1B2jGCUGYLJz1wu-BGiZotRnDVhmdWyBX",
+  "sha256": "869ea0963db894452bd8bda77b5a7d4bbc3d8abc6385e50e6288f7995e59cf66",
+  "size": 268503
+ },
+ "bhojana/audio/10_sung.mp3": {
+  "id": "1Dj4UYWvva2Z5Qp1G_uRluZJoOGSp5tA7",
+  "sha256": "eb6ebc6781c03cf73af7d7edc00be26b4f30a8f89f0960ad511b88185dc0949c",
+  "size": 606807
+ },
+ "chalisa/audio/c00.mp3": {
+  "id": "1VsgfDIdUutQCL1c-UOjLVZmxgWXOXWt5",
+  "sha256": "eb16a4ab2ecaded04a62795ef8e2c78e95692c40399551dfa8125cd95d3c35d7",
+  "size": 336907
+ },
+ "chalisa/audio/c01.mp3": {
+  "id": "1bKa-MQBWPHuUM9EW5Vo9NoJ2q2fj4p71",
+  "sha256": "2f2df6393fe65da2549ec01d9b1c37f3a15e725f523d065121c8e5c2a80f099a",
+  "size": 427604
+ },
+ "chalisa/audio/c02.mp3": {
+  "id": "1FTtIs0PmxC21bRGpptJ4HXo-iohC2kCR",
+  "sha256": "6e2524d63f3ef6065481482ce164218788900194e41d03f042c68ff16eb5405d",
+  "size": 413812
+ },
+ "chalisa/audio/c03.mp3": {
+  "id": "1IGA1X9ba7zQkw1AfGC_TNBAiYoN1e3zA",
+  "sha256": "11770b665dc7847a30937ef084df444df0ad690e4e8c46ea1c018c9fe3b702e4",
+  "size": 412558
+ },
+ "chalisa/audio/c04.mp3": {
+  "id": "1ZbhwBNs7QUrg4m7ZR6r1IeJUdP8liAQ7",
+  "sha256": "c63a62394d9749225e4fba4b8a8d53063197d5b9e58698337396080526d92060",
+  "size": 426351
+ },
+ "chalisa/audio/c05.mp3": {
+  "id": "1EplV9yHirLVD1FORiYxZnQIrTwc4NEms",
+  "sha256": "9b87f89836a7de324781fdf901d33e44c46c01680f18411a3d7d7ec17e8febb6",
+  "size": 410050
+ },
+ "chalisa/audio/c06.mp3": {
+  "id": "1zBORiWcCdP0h_Q625tcvyUgMGBgp2qV1",
+  "sha256": "9314211c14d7fb97769dd95b2bdba4231c2346ea75490e566f23db5ffd732065",
+  "size": 372852
+ },
+ "chalisa/audio/c07.mp3": {
+  "id": "1nnHrOtfQIP5IV4CAYV3bjd0IXrviaPx_",
+  "sha256": "ede17e740ed1ff8139eafe02fd3c6e6613744454802d5e04cb55994d2b85cfef",
+  "size": 380375
+ },
+ "chalisa/audio/c08.mp3": {
+  "id": "16l4nWkO7k0OcShQZm7bwsvFz-ozcROdn",
+  "sha256": "07747446182519b6989b794a60e47a7baff15f8a49e871d960424ae39b7249fb",
+  "size": 394586
+ },
+ "chalisa/audio/c09.mp3": {
+  "id": "1p2XUgUhY5eG4a-E7ZpEMJVsVVd0W9vOc",
+  "sha256": "602b909c10c0240dac9b5cf14cb9643ace0e5451f71287595494163558bfec51",
+  "size": 382883
+ },
+ "chalisa/audio/c10.mp3": {
+  "id": "1qxiyESjVtpXKtnRAHIgaDg6QGyPfb7SA",
+  "sha256": "d0bbd9faf7ef4b4373aebd33edcbbc4b2dd0e92d10ed1300c91aa0ba160a4a2b",
+  "size": 400855
+ },
+ "chalisa/audio/c11.mp3": {
+  "id": "1LQNQALZIrQkq6Q6muyVkGWQIPPbaM6Js",
+  "sha256": "9cd6c6660eeae8ec78c99c57310ac3d02a280f1f4f002460c29b01df374e4360",
+  "size": 175575
+ },
+ "chalisa/audio/intro.mp3": {
+  "id": "1r7CWuOajsqXhY7cqjvAs8LKsq4nRYV-0",
+  "sha256": "2190e58c4d7e2db5efcd165dc5f6c50788507aedf59ea6ccd88bc982a61d72f1",
+  "size": 94909
+ },
+ "chalisa/audio/outro.mp3": {
+  "id": "1cP-Nja0m2hlNo_v0M5GJxctf0EWas0lS",
+  "sha256": "a658a470e6208ec449c7e632215829100f576153dc7ac218600e23162c862f38",
+  "size": 65652
+ },
+ "deepam/audio/01_intro.mp3": {
+  "id": "1MwlzFS-fgF4z0M9PcNhIJ4F40Zd1jsBt",
+  "sha256": "caf0a0c56b3c19add3e00f8c12e23a3815b97b29028b77c6e098265d5ccb0da4",
+  "size": 129600
+ },
+ "deepam/audio/02_full.mp3": {
+  "id": "1_c4CIs7nOKTkAmequDu6z5xMuM9jVlzS",
+  "sha256": "50123a58c0abd20e6e727b2d68b0cef4bf72fdb6000685915fb1068ab54da273",
+  "size": 235761
+ },
+ "deepam/audio/03_learn.mp3": {
+  "id": "15lMEzifjZ3l_O2xG0ywfTP8vEhDFwUa-",
+  "sha256": "f6fafefb22715049c850b9e5bcfc214eaec2657570fec3ef2490d1a881730381",
+  "size": 53949
+ },
+ "deepam/audio/04_line1.mp3": {
+  "id": "1mLcqe2hikx8m6nC4oHGoNXA4go7FUUOA",
+  "sha256": "93005cd9589db2d92a5d82ef1d483d3c244a94d633ac748c373a6e7828ffaa84",
+  "size": 151333
+ },
+ "deepam/audio/05_line2.mp3": {
+  "id": "1ilCg1jK44ZrJu7KacbL41sQbLZZAnGiW",
+  "sha256": "50e0a58f9ee3e385611dbbc38faebfe0603afc29f671abbdf853448b0a5a839b",
+  "size": 170560
+ },
+ "deepam/audio/06_line3.mp3": {
+  "id": "1HHyi9iM65mqzCOdDQxZaE7fyNLS_0QzO",
+  "sha256": "89e9b7de8f56ef529e91b79b586f9d8876891a861f7a0283242039dcc7a11c05",
+  "size": 170560
+ },
+ "deepam/audio/07_line4.mp3": {
+  "id": "1gndjeooCRKZu978QFSY9DZbANFQO-HTz",
+  "sha256": "14b6d448b2b3456d811f00c6bddea38096e6a4767d3d635bf5f0433a55665991",
+  "size": 151333
+ },
+ "deepam/audio/08_together.mp3": {
+  "id": "1JZuCN3Z6NkFv3zDGCLtaJC4zGlFwHQcI",
+  "sha256": "e3702f695bec49f39c75800f17946832a5f5c4a4a62b720ca90629749289b8ed",
+  "size": 55203
+ },
+ "deepam/audio/09_jai.mp3": {
+  "id": "1R3o7oVTalhLJ9whYFtDEqTEQw935tt4m",
+  "sha256": "570380ec9f0cf9567aa6eeeeba302ab65675ecfc82aacbbb68b2621d73228066",
+  "size": 101596
+ },
+ "deepam/audio/10_sung.mp3": {
+  "id": "1_MEunoQZCF-WOIqe0vak4kIbLYYbBIaM",
+  "sha256": "e03158bc6edc330da5d6eabade34f86847e1177618a8d8a4c3a62514157d42bf",
+  "size": 738322
+ },
+ "gayatri/audio/01_intro.mp3": {
+  "id": "1YRJDgGNagft1ExmJCOr1Xu2nG_bDux6p",
+  "sha256": "ecbee03e7479b9d43fccba872ec6361d02bf9fd1e9cdf82ef5ea122afc316d5c",
+  "size": 148826
+ },
+ "gayatri/audio/02_full.mp3": {
+  "id": "1sC_MAJN8Mu2fmAsQbrE7VqS_RyaLePpq",
+  "sha256": "ed97578ded276227086bc1148c54b0f707fbc6034dcee862b36f44b72ab3c662",
+  "size": 246210
+ },
+ "gayatri/audio/03_learn.mp3": {
+  "id": "1xSYSbdHgBQ_3uv0mGclULkT1E70xCoII",
+  "sha256": "f6fafefb22715049c850b9e5bcfc214eaec2657570fec3ef2490d1a881730381",
+  "size": 53949
+ },
+ "gayatri/audio/04_line1.mp3": {
+  "id": "1zVIWP_JLXfpi5aXtx2vEmS6lE-IG1csU",
+  "sha256": "2e8d0fdc7a12620faff97a8ea029a9942e31c87b954707270f415bf66b4c5d57",
+  "size": 191040
+ },
+ "gayatri/audio/05_line2.mp3": {
+  "id": "1IIMrJ-lNA7jD2H0mEfSSwn0GFeFCEYa8",
+  "sha256": "5fb1c394e4083f1bf6128794cbb07d5ff0a257de5b975b84a7cc558a4530f7fb",
+  "size": 156349
+ },
+ "gayatri/audio/06_line3.mp3": {
+  "id": "1lnlE-pnh8DnIPQ7mOHasENiBImmrFmb5",
+  "sha256": "b31356147adc9bd54622773e3af1ece3017a6ea224c540f515c79d8ca532ee86",
+  "size": 170560
+ },
+ "gayatri/audio/07_line4.mp3": {
+  "id": "12Kl9PLsRYRjiMlbhfc6nWLMO12WdYvN_",
+  "sha256": "7fa8d9112e3059cb6ea546b8b3dee051076f6b017e22310c42c6bcc05bc446c8",
+  "size": 193547
+ },
+ "gayatri/audio/08_together.mp3": {
+  "id": "1mXnax4IAKjzuUQ5QWff99K0lkFUULFYX",
+  "sha256": "e3702f695bec49f39c75800f17946832a5f5c4a4a62b720ca90629749289b8ed",
+  "size": 55203
+ },
+ "gayatri/audio/09_jai.mp3": {
+  "id": "1Gma4Tl8subFCWgxZfs5Dbis25QoN_1Wn",
+  "sha256": "c25781958550d74339070d040b1f6dfe02110c84ae13632641de1c5f88b532e2",
+  "size": 71921
+ },
+ "gayatri/audio/10_sung.mp3": {
+  "id": "11DUH-Jxa6O5irD6_jSP874ToZrg4G3Pk",
+  "sha256": "a9eb387ce11946ebf2222e5c280dfde953da903e4e0ce6efcae0cf7aa00f5ce7",
+  "size": 738322
+ },
+ "guru/audio/01_intro.mp3": {
+  "id": "1tkqKjMb58HLqFmHB8kWDMHzrqmbUDijK",
+  "sha256": "2947723af06e61e5deaf3079fe34e8c4fa747e513cafe5b0d3fba72cd13a1c00",
+  "size": 146318
+ },
+ "guru/audio/02_full.mp3": {
+  "id": "1VIzQhiiYi6_M77xVBlCPTQogaVg8-iRD",
+  "sha256": "afb348c5e7a700a06ba7168970d43b00ed270e2ed71dce964a0e54a3c4a4bba7",
+  "size": 240777
+ },
+ "guru/audio/03_learn.mp3": {
+  "id": "14zU7-I3pqzM9zky0vVNQN8ZKBeq2wdwR",
+  "sha256": "f6fafefb22715049c850b9e5bcfc214eaec2657570fec3ef2490d1a881730381",
+  "size": 53949
+ },
+ "guru/audio/04_line1.mp3": {
+  "id": "1b5H_zXBGl1HUqrVvd2lrw5sAEGhhB3Ns",
+  "sha256": "99d0a40aacb59c8f79a5c9223fdbf861fb20a7f34b4ac96bae7885dc20add9fe",
+  "size": 155095
+ },
+ "guru/audio/05_line2.mp3": {
+  "id": "1AWqAFStxfR27JKr_p43aOr5IdGEC83cp",
+  "sha256": "5dfb101f4c01b22fc6c721bcbfd4f4a1efbf107d845ab5ce18a12648cb9b2b88",
+  "size": 168052
+ },
+ "guru/audio/06_line3.mp3": {
+  "id": "1xu9Jh5elu_PhMTHgTbQyfgpneZ21OxPi",
+  "sha256": "9485379f76bad7390c24365b357e1d281d6b68b9c11c8571e55eaeda4fb405ba",
+  "size": 157603
+ },
+ "guru/audio/07_line4.mp3": {
+  "id": "1eaMoEfM1Yl9j2mhVpPRcSBfqyUfmtFcE",
+  "sha256": "43d40592553064c608071be00ff7e413fb99fe3df82c68cdb24c69efdfccf1cd",
+  "size": 160111
+ },
+ "guru/audio/08_together.mp3": {
+  "id": "1-oyNZUK0E0tBYVlvV_37pJ13iZY1p9wF",
+  "sha256": "e3702f695bec49f39c75800f17946832a5f5c4a4a62b720ca90629749289b8ed",
+  "size": 55203
+ },
+ "guru/audio/09_jai.mp3": {
+  "id": "1WWCjy6pPgrOKQyUyx-rwX_BssZGzlhmM",
+  "sha256": "337b919664f09919b848cba04fbf6f9f949697d651ff429be8ce751f93f9ac23",
+  "size": 78191
+ },
+ "guru/audio/10_sung.mp3": {
+  "id": "1FgOBNxpPF3nTlQoBzlfY8d8nfcN79XSO",
+  "sha256": "3c31843e55c74dca37810e81112c24d4b5e43d797a5fe6bc06cda0d8a0951d6d",
+  "size": 738322
+ },
+ "hanuman/audio/01_intro.mp3": {
+  "id": "1Q8o-q4gqzNkcP-QWIA1j4PkDM1u0-G1L",
+  "sha256": "7798d215dcaf1d24c22785410b2b1ebc24018a44091adef02691a57d266b7c05",
+  "size": 147572
+ },
+ "hanuman/audio/02_full.mp3": {
+  "id": "1LzRcRwnkTvejfxmW8T4TG_lbs6nf53fO",
+  "sha256": "2451db729f87db8239507ba4369a2a76bfd0c0197f38ac8da8a8c9ff478615f0",
+  "size": 258749
+ },
+ "hanuman/audio/03_learn.mp3": {
+  "id": "1tgrUZN6Q3PdWCSjeaLWKUWHKa68h7_of",
+  "sha256": "f6fafefb22715049c850b9e5bcfc214eaec2657570fec3ef2490d1a881730381",
+  "size": 53949
+ },
+ "hanuman/audio/04_line1.mp3": {
+  "id": "1Ntjw7QhYV7K_OnwnlWlOOO-Race2RdqE",
+  "sha256": "de75c93ef6e872082c327361735d0421811e3abfa10de1b853c5324f6b0bb814",
+  "size": 170560
+ },
+ "hanuman/audio/05_line2.mp3": {
+  "id": "1VKgg1jqNluliOK571FZEOhny1UXDVLUw",
+  "sha256": "e2997b5cd15fdfd8b1330643f18a369215bbd7fa021f29b9fd42f582fedcebad",
+  "size": 140884
+ },
+ "hanuman/audio/06_line3.mp3": {
+  "id": "1CApV8r19kM7DWnfapu1SJ47i9KSk93PR",
+  "sha256": "f360b98fb1b87ff315aa2d491891f5f0bef6228f030dba5f36ac685db48fe7c1",
+  "size": 178083
+ },
+ "hanuman/audio/07_line4.mp3": {
+  "id": "18zgdivgRp0kPhHLmxl5r0JlNZQ7UHij5",
+  "sha256": "50240b9a0f85b663ca48727f3983c5f5434aec7190cf9b4563ad6990ce6aa961",
+  "size": 173067
+ },
+ "hanuman/audio/08_together.mp3": {
+  "id": "1b2tx90wSZTaZ4rboNhZSoMUnmQcwWHO3",
+  "sha256": "e3702f695bec49f39c75800f17946832a5f5c4a4a62b720ca90629749289b8ed",
+  "size": 55203
+ },
+ "hanuman/audio/09_jai.mp3": {
+  "id": "19Fw-22XEZPWK6Yu5vlXgxr_JfFkLd1tW",
+  "sha256": "6d2a9a9963b465182eef73fe15f6b524b9d436c0df1a512bda96974be7aba0d8",
+  "size": 68160
+ },
+ "hanuman/audio/10_sung.mp3": {
+  "id": "13I1FDXC8Ys_tdHNAMiYF1XGXVRbHuleU",
+  "sha256": "1cde128fa0db7d2b683c95e2dd060ec4dcb95ff745ce840c203949c520d85a21",
+  "size": 738322
+ },
+ "karpura/audio/01_intro.mp3": {
+  "id": "1EjNaktRscwbxrcdJ9u7L2pMizSS6cBLp",
+  "sha256": "8ad738a76b8565fb9ecc943f40250bcdadf8ee42e662fdf75f488576246e499c",
+  "size": 144855
+ },
+ "karpura/audio/02_full.mp3": {
+  "id": "1fIb_LKJ9Ms_UjdbaEIyrxsnZWETxBNkw",
+  "sha256": "0c43bfd40ca8d6556d5dafd661b2bb237d9bbfd9168237be867aa662fdb784d6",
+  "size": 290007
+ },
+ "karpura/audio/03_learn.mp3": {
+  "id": "1jH33Cc3b1ip-a-ZWnsN2QQDscNSoo29-",
+  "sha256": "fa783d00820a9dc1856961e4e63e78f3f987945c812cc9349d1c8fb423e9c297",
+  "size": 57687
+ },
+ "karpura/audio/04_line1.mp3": {
+  "id": "13ulko_8gdkT7SMYfQ4bRuLJR-1ll3iFv",
+  "sha256": "19f360aea9c96e871c438f2d4f058339733696a385d3986629bb92af1db6e8d9",
+  "size": 197463
+ },
+ "karpura/audio/05_line2.mp3": {
+  "id": "1ppWq2b7aMzqFW2l0I5rZwgUwr7wFMZtM",
+  "sha256": "921c8775fc767e8d4db21e9d149851d4f83577beb0a2a542ab3f0d521ea1e8f7",
+  "size": 196695
+ },
+ "karpura/audio/06_line3.mp3": {
+  "id": "1vnC0-grb5M3YBTttFOBprniUqtqceYLE",
+  "sha256": "373b004e7155b586a3d8d3e6f5080d2bd36001a597e28e85014a5785e02df01f",
+  "size": 187095
+ },
+ "karpura/audio/07_line4.mp3": {
+  "id": "125G0ecaS5W9EkLIKj6L2iThLk-rJxHEk",
+  "sha256": "5fb6dafa90391108f54f90c202e9dba5275f6604f0d2a5bac340a874a7d81a89",
+  "size": 194007
+ },
+ "karpura/audio/08_together.mp3": {
+  "id": "13hxCXnz0PxQTIT8cmMU2k_hZX5fxGF_Z",
+  "sha256": "350a8cbce134b19e9bc49121ee564ce2bcfc366dbd254239d17c7f164869615f",
+  "size": 82647
+ },
+ "karpura/audio/09_jai.mp3": {
+  "id": "128SIEM9VJ5ZuVDT5V0Oob0-94axbuNye",
+  "sha256": "f8b67848491bc5d6933078d9e41e33289151d566b0a8359f8d08e95df03ec81c",
+  "size": 100695
+ },
+ "karpura/audio/10_sung.mp3": {
+  "id": "1btkkDkjDvOKqEiZy_ka9a5lmS3ejF6-O",
+  "sha256": "8fd08968b9efadfb05e53eb8f27e5ebf3d14a9928fb7a202fb24d25e451a1562",
+  "size": 738322
+ },
+ "krishna/audio/01_intro.mp3": {
+  "id": "1_43fYTZqOneNmE5ZkT1zlgE9-5Okpo2y",
+  "sha256": "38e251b992e642dc881e606a7b8f25a56351a386467441df70ae23396cfffee5",
+  "size": 138711
+ },
+ "krishna/audio/02_full.mp3": {
+  "id": "1EtZgSu_7vCkh_mmLYP1yBm8WaLKfWvKB",
+  "sha256": "d51e3fd966277b47fc3c5489e3713ac67eabcd2a146a097d6f6e33f7915ffa20",
+  "size": 300759
+ },
+ "krishna/audio/03_learn.mp3": {
+  "id": "1nnAc0evSOvyW9kL6BzjjUWb-SzeP7UpJ",
+  "sha256": "fa783d00820a9dc1856961e4e63e78f3f987945c812cc9349d1c8fb423e9c297",
+  "size": 57687
+ },
+ "krishna/audio/04_line1.mp3": {
+  "id": "1gpN9fV5D_uNBRAATwfpUzxgY1X_sG97u",
+  "sha256": "dadac93e0099cdf54ee760846079613b13d226547c92658d892db6d99bbc6fee",
+  "size": 197847
+ },
+ "krishna/audio/05_line2.mp3": {
+  "id": "1ZqIf1kYoXWi81nk3e9T9fX6kL5nCzaiQ",
+  "sha256": "c410c09adad694dbca74a29d480bfe856872ed4f63b5684d5369eca649909c23",
+  "size": 205911
+ },
+ "krishna/audio/06_line3.mp3": {
+  "id": "1tInRxT_3ZxeyqtyvLSjq7muE29mBvgC-",
+  "sha256": "d0e8ecf5904d4742386bd65c1b11237cb6dc626cd8883971eb019242ae429766",
+  "size": 149463
+ },
+ "krishna/audio/07_line4.mp3": {
+  "id": "1WRpEZe0hSEFQA74g7Jx5POI--dOFzzu4",
+  "sha256": "58e1785afc2c2b998057dab232d3eb74e57505c2c3de63d53f168f44e772ab3d",
+  "size": 169815
+ },
+ "krishna/audio/08_together.mp3": {
+  "id": "1oHRNzBj0wHjIAzlNY3Qkq5DIHRXiso7S",
+  "sha256": "350a8cbce134b19e9bc49121ee564ce2bcfc366dbd254239d17c7f164869615f",
+  "size": 82647
+ },
+ "krishna/audio/09_jai.mp3": {
+  "id": "1RogCt1Yfyt53-qBDSmx7Dr14lK42QWOX",
+  "sha256": "749d88105037c83fdaafdc3cddb71877ef3800f9e3bacb9efea5e0a2784c25c4",
+  "size": 68439
+ },
+ "krishna/audio/10_sung.mp3": {
+  "id": "1odQyeQJtfDCqroobT6SiAMpWp8am8XU-",
+  "sha256": "fe723b8ca0843506abac2b9acfacb151d66b465971233cae8c7f4524e1ce15d5",
+  "size": 859282
+ },
+ "lakshmi/audio/01_intro.mp3": {
+  "id": "16kX0p1HJXQCOtsCmWCfpKdyqF_Q5DLUm",
+  "sha256": "250eb98570fb3608a1db41fd3169f20804d8eb83a578276b01e30ef87e775e7d",
+  "size": 198615
+ },
+ "lakshmi/audio/02_full.mp3": {
+  "id": "1_7x7u_wd1IzAs45RYKevENZjW9Elv-k6",
+  "sha256": "7b21f6e5a128f190fac27b209fc126a298ad552f2c89e56466dcdce123d33c03",
+  "size": 343383
+ },
+ "lakshmi/audio/03_learn.mp3": {
+  "id": "1KlSkvgfH_mIGrYhAuAXhgQ_SXa0LQIFC",
+  "sha256": "fa783d00820a9dc1856961e4e63e78f3f987945c812cc9349d1c8fb423e9c297",
+  "size": 57687
+ },
+ "lakshmi/audio/04_line1.mp3": {
+  "id": "1uLAf3gYp5RPWZqcRAGhzSIMsD0AEaOsS",
+  "sha256": "0c51ddc154a2107e4e566999f36a23bb85fbdc26dd21c2389e69e6b7ffb2d4f6",
+  "size": 163287
+ },
+ "lakshmi/audio/05_line2.mp3": {
+  "id": "1o9WDNC1dPQs11EAvy0b0xSNyj4BpYKq5",
+  "sha256": "d222ee6732f001bb6b76be7be7a2d03b9412c6d16b2d64fc990845dd50a4e134",
+  "size": 178647
+ },
+ "lakshmi/audio/06_line3.mp3": {
+  "id": "1gCCm0WZBX-RxvY2psOVsxev9k2ED7IKR",
+  "sha256": "af2850ab81f9a89e845a82f42a855163788283cfcae95502f94c7c5847f743ac",
+  "size": 202455
+ },
+ "lakshmi/audio/07_line4.mp3": {
+  "id": "1dF3A8xuVWQWOABHw64eM_dUcfE5-hzhg",
+  "sha256": "54edb8baedbbceb5eaa8a10c2745b3a5b855b54d744bd646b2960c232f3d170f",
+  "size": 151767
+ },
+ "lakshmi/audio/08_together.mp3": {
+  "id": "1XYINUs6Pz96to7-n4z_RORlC7gpo3QVj",
+  "sha256": "350a8cbce134b19e9bc49121ee564ce2bcfc366dbd254239d17c7f164869615f",
+  "size": 82647
+ },
+ "lakshmi/audio/09_jai.mp3": {
+  "id": "1bhC8QPDn5Ovg9i5LtwZhyHv0rCcFKXPT",
+  "sha256": "0dae82f6e5d9f0275d5daa467741763ffdcce1682279d611e5427b0b1ec7b845",
+  "size": 72663
+ },
+ "lakshmi/audio/10_sung.mp3": {
+  "id": "1sshg5yAqqiwX4qlqsv8eW0J1t4182NvF",
+  "sha256": "160cbb2abf457a2665ef32729ba38b62d15328fb267370461547df0d8e1ecf3e",
+  "size": 858706
+ },
+ "mahamrityunjaya/audio/01_intro.mp3": {
+  "id": "1ync_zY6lMOLfP_Ak3npJLqtPr-eLoXRB",
+  "sha256": "8c1d058974a840d3a9d87281ebadb59bf42176a0a0b6f4b99b1ade31931963dc",
+  "size": 159063
+ },
+ "mahamrityunjaya/audio/02_full.mp3": {
+  "id": "1otlLVQjREounclhKkvD1-3GBAeLEIAUm",
+  "sha256": "f54dd5fda8a1f7f9479cc0aa8206838d41cf12a7c9a4523b6bec8a0d90a00279",
+  "size": 370647
+ },
+ "mahamrityunjaya/audio/03_learn.mp3": {
+  "id": "1WPoMU2n4VQJpI5EMl6h38ihnnWatWIG_",
+  "sha256": "fa783d00820a9dc1856961e4e63e78f3f987945c812cc9349d1c8fb423e9c297",
+  "size": 57687
+ },
+ "mahamrityunjaya/audio/04_line1.mp3": {
+  "id": "1bZf7xOHAe6DFm16MxhHnImFCa_rPGIM2",
+  "sha256": "2cc25631fcc31142c788bc9830e46fa7a44ef86892f55bb130f8d58b4858d58b",
+  "size": 187095
+ },
+ "mahamrityunjaya/audio/05_line2.mp3": {
+  "id": "1zk8ldf68XilyE3mm3_UDapVjZukQ17hk",
+  "sha256": "4e3f5eb3ff35b7f622b0cc048385adc646f25a888e3f22df9be05c3806bb1514",
+  "size": 183639
+ },
+ "mahamrityunjaya/audio/06_line3.mp3": {
+  "id": "10ZzDMlDDsVU7bdnzS1ETy90AxlnUj4f-",
+  "sha256": "5ab8aa12109fd950ede05689633fe553b8b5934066e9f6ac838c8d8d516978f5",
+  "size": 192855
+ },
+ "mahamrityunjaya/audio/07_line4.mp3": {
+  "id": "1Qw9KaGFSt8BQP77maYrxQNFL0FJ701r7",
+  "sha256": "61a86212427794251c899298bd0460ea8ff6dfe2ae315a8c30b49cd94c8785ee",
+  "size": 211287
+ },
+ "mahamrityunjaya/audio/08_together.mp3": {
+  "id": "1TIh2V3HO4WxH2PfCvG4AV3VewXO72v1B",
+  "sha256": "350a8cbce134b19e9bc49121ee564ce2bcfc366dbd254239d17c7f164869615f",
+  "size": 82647
+ },
+ "mahamrityunjaya/audio/09_jai.mp3": {
+  "id": "1jRcOGgQSie-9ftmUEiJQfcgYF6KShv-Q",
+  "sha256": "e47878c7f021dc7bb6c695f2f2af67d960b41180e269fcc1fb33d3347e7eafae",
+  "size": 130647
+ },
+ "mahamrityunjaya/audio/10_sung.mp3": {
+  "id": "1t25EnZHKTdFRLKgfMdkhVpr8itisYbU0",
+  "sha256": "d8057580e6a5b1b27ab320082b9f49e94e5c967a3190fb72d72381ac7fe8c1fa",
+  "size": 858706
+ },
+ "rama/audio/01_intro.mp3": {
+  "id": "10YAHiLp77UD3unroJpjLQU1M8jIDWuds",
+  "sha256": "b4539a5b514d1f38a070aacb0b70174e6fa9d7c366efb91012f4d021b8eea3c3",
+  "size": 258903
+ },
+ "rama/audio/02_full.mp3": {
+  "id": "1amoaUsJp-s9SaowERJHxC3DBQsJLB890",
+  "sha256": "90c9401314243526316bb3f08953bd25480c1c0b4e810332b5e679e553ef6a52",
+  "size": 295767
+ },
+ "rama/audio/03_learn.mp3": {
+  "id": "13NrJcg3gaUi0qCEE6fcBt5NZcN07R0Nw",
+  "sha256": "fa783d00820a9dc1856961e4e63e78f3f987945c812cc9349d1c8fb423e9c297",
+  "size": 57687
+ },
+ "rama/audio/04_line1.mp3": {
+  "id": "1ot8suEL3dokmFYTyvU_Ic25oiPdVLFME",
+  "sha256": "30082e14353ae1e89cddd6961d065761789d1140b92778df2a8e3fd69eee0f02",
+  "size": 200535
+ },
+ "rama/audio/05_line2.mp3": {
+  "id": "1sqQLO5aFdQ-IgibDSK3Op3gtQq0LE44n",
+  "sha256": "4cfc4c6c2b939cd2d6ed33487870ae1f4859a980a618128023546c9e3d028fe5",
+  "size": 143703
+ },
+ "rama/audio/06_line3.mp3": {
+  "id": "15V9CANtuuFTkBO_0d0ovKbsbDU0j4Rmy",
+  "sha256": "6696938a684e4baa0894c8d72de8fc635d0ee84aaacdcef0cb138cdb284d3b82",
+  "size": 192855
+ },
+ "rama/audio/07_line4.mp3": {
+  "id": "1P804KobOtoOdRLDNiVJs7oUQd7MLrlPu",
+  "sha256": "8279e9fa8a2f675bafa91f74c5c62a19f2ac47806c0acf4565ae9651962e4845",
+  "size": 162135
+ },
+ "rama/audio/08_together.mp3": {
+  "id": "1P21e9x7Y3kW5AHMAaqQX4C-TcG8vwqzL",
+  "sha256": "350a8cbce134b19e9bc49121ee564ce2bcfc366dbd254239d17c7f164869615f",
+  "size": 82647
+ },
+ "rama/audio/09_jai.mp3": {
+  "id": "12RQk4ZnP_E-Y3GMeywMFyH370wsGxApF",
+  "sha256": "38bcbf27dd53de3feef06962c793d99f064b010bc3b2d1275b95c712de15f246",
+  "size": 72663
+ },
+ "rama/audio/10_sung.mp3": {
+  "id": "1gv04m8PA676V1FUYwiscb5HVfzTCYkVE",
+  "sha256": "c12917c6edc1dda4ea947d2d87167682e066de1f908751c094f3e24f8f35f8dd",
+  "size": 978514
+ },
+ "sahana/audio/01_intro.mp3": {
+  "id": "1tS3MW0x8pdofncqsQTxJzOovFDXVRrga",
+  "sha256": "e9947357b2b63725dd757fc63a9ded6131f44b708db6630568fbd8a5a3e2bd24",
+  "size": 218967
+ },
+ "sahana/audio/02_full.mp3": {
+  "id": "1uiHnIOr-yS09ux8sT08_nSkGQjt0RHot",
+  "sha256": "e5712ffc063577a757973c05872853224e78d38bd292a9b0f4af348c01e6a6a2",
+  "size": 374487
+ },
+ "sahana/audio/03_learn.mp3": {
+  "id": "1Kum4EurJomFZYMkzV2pitlCk88La910N",
+  "sha256": "fa783d00820a9dc1856961e4e63e78f3f987945c812cc9349d1c8fb423e9c297",
+  "size": 57687
+ },
+ "sahana/audio/04_line1.mp3": {
+  "id": "1NlCcC7vQK5XEf56UqaMv4koX5g7CZXlu",
+  "sha256": "55b50aebf8a4fabe924e7deed7332944c417823fa08aec8ab8f1c5ca08679c5c",
+  "size": 233943
+ },
+ "sahana/audio/05_line2.mp3": {
+  "id": "19RcBD4uNeAMF5ioHtekUHVWwnG-pEB-k",
+  "sha256": "60ca05164c1be85e4861c618abfad90f69500fcb45ab6cecc49b32564c356223",
+  "size": 198999
+ },
+ "sahana/audio/06_line3.mp3": {
+  "id": "1EyfniRXij3oY9yl9quZJF_pNLTRgQBEN",
+  "sha256": "a9ad79ef436a60ac9734daf2f4283a3bbc31172ca7aa2c91403f123ae1b9917d",
+  "size": 203223
+ },
+ "sahana/audio/07_line4.mp3": {
+  "id": "19L-oxGZm1Diju62AtdVBrnYC5Lf4M7Tg",
+  "sha256": "910e32d946541709e56c2d8cfc06214786878856466609f5739c61c90815eb5a",
+  "size": 227415
+ },
+ "sahana/audio/08_together.mp3": {
+  "id": "15tvPytOCvdn-jg3zxCwuxOEU261QBvh7",
+  "sha256": "350a8cbce134b19e9bc49121ee564ce2bcfc366dbd254239d17c7f164869615f",
+  "size": 82647
+ },
+ "sahana/audio/09_jai.mp3": {
+  "id": "1Un6if2CBltImbexfjZ3kVf3Vl6ZtICyE",
+  "sha256": "252a0ba3fc8318005e7221d8b7fa78b65d69e91d0a1739a4728ca3bedbd903e2",
+  "size": 198999
+ },
+ "sahana/audio/10_sung.mp3": {
+  "id": "1A0w_1gL72wwXqVmv7XbI1Kuj2C1RZrYd",
+  "sha256": "6617b80696e374636ab7f9c9c6e36a9d706fa7665db00841a843184f97672545",
+  "size": 858706
+ },
+ "saraswati/audio/01_intro.mp3": {
+  "id": "1pbpQKS4MTe91NYuAYv3Cq-Cyt9l93Cht",
+  "sha256": "8c3b133855120528323b20e8b5ae662b07f4a591507681f5a8ce5588eef2ef3a",
+  "size": 187278
+ },
+ "saraswati/audio/02_full.mp3": {
+  "id": "1SrR9GK9HbO9V6SnjJTY09YY-_kAuixMD",
+  "sha256": "47109720da69edf377a65454727d86bbdef8b2afe74ca043a1a32cc26fb3a32c",
+  "size": 181844
+ },
+ "saraswati/audio/03_learn.mp3": {
+  "id": "1AxvpZVkVNc-E0oa5efTc2UrxInmk-Dag",
+  "sha256": "0b8bf0955a3dbe525c56780c829ac6868bfcadf841761e2e0f49a1993fde276e",
+  "size": 76937
+ },
+ "saraswati/audio/04_line1.mp3": {
+  "id": "1BHCUnh7yngkDBoHjOeDLEEri8pKD_yel",
+  "sha256": "79d1ac0e552d5f581babe16dbb94a31e209a1373458dc2032fd089b18e2c315d",
+  "size": 157603
+ },
+ "saraswati/audio/05_line2.mp3": {
+  "id": "17QJ2oLZN4JUOhmncR_-0V-iYW6BHmD-g",
+  "sha256": "bb4f1c35c42c2bd212d0badefe5912ae544a476845e025ca7197c1cf106930cf",
+  "size": 165544
+ },
+ "saraswati/audio/06_line3.mp3": {
+  "id": "1toO8aSOPd_oncMiQPuBi48Ln5TqxonlV",
+  "sha256": "89be7bbe04f0e39db699a8b591b0706ff96a71f1faab5318d210e5f29f86bcad",
+  "size": 146318
+ },
+ "saraswati/audio/07_line4.mp3": {
+  "id": "1rJlv1-uO-6zTPg2eFiG_0x6piEsP6S2_",
+  "sha256": "d01d755b2ba8a7af458b1878e35ef93f8f1b84f814c4087a1432b53d14711682",
+  "size": 164290
+ },
+ "saraswati/audio/08_together.mp3": {
+  "id": "1n175F4J4Nem1At0s2ovuwHFn0tEsTrT3",
+  "sha256": "2e7b5f850c6d00962eab220213f6640ce74e28b47165150b600717927849c716",
+  "size": 73175
+ },
+ "saraswati/audio/09_jai.mp3": {
+  "id": "1aRbv4b713CY0djBOxUb8EmszoHRh7-xB",
+  "sha256": "dbd1b95fbba9445cd8052705d0f33ba4df6b14aceab142b10e6b450d8e6d352c",
+  "size": 86132
+ },
+ "saraswati/audio/10_sung.mp3": {
+  "id": "1aHLwxj1XI5OTrsJhPEXUVMT9yOZuNTR0",
+  "sha256": "56a9507691bcbb6444defc0f530311964c7f19cf28d33c11d012f869ce1cf869",
+  "size": 738322
+ },
+ "sarva/audio/01_intro.mp3": {
+  "id": "1dalcoFcMbSYXCmdK_CspXJCUFyg0wI7e",
+  "sha256": "b411ab5f915ef910578fb2d2cdaa534edd7ae54419788b956897762cf42b48d2",
+  "size": 153687
+ },
+ "sarva/audio/02_full.mp3": {
+  "id": "1tquvdW4vy-3DMWR1gnsMdqA4KxPnEuKR",
+  "sha256": "190256ab1834e00c82ee3070b5252fd53ae97a5115fc6eebfa3d21fb7c4a83ed",
+  "size": 305367
+ },
+ "sarva/audio/03_learn.mp3": {
+  "id": "17T4j3fltX4gPs7pvQMXZ6_BqeIp30LDj",
+  "sha256": "659d08eeb1e0b8d25a20b2cc9083dfdb053c1d51ce0e4e5da079239525fdd56b",
+  "size": 57687
+ },
+ "sarva/audio/04_line1.mp3": {
+  "id": "1B99bEAWoy2xLjZCIJKig5IyeIDPotq2V",
+  "sha256": "01d32d68b18101aee681218693ad09c035cd3b6d8a32470e9cc4af33cfe816eb",
+  "size": 119895
+ },
+ "sarva/audio/05_line2.mp3": {
+  "id": "1tQDIQUfdT-DZNIrYxpkAz1zU8_ID8o20",
+  "sha256": "fdc0a4552767c7047fc0b6f9c1b1b669dfde9d516134e8e05c96c5e5d19b316d",
+  "size": 195543
+ },
+ "sarva/audio/06_line3.mp3": {
+  "id": "1iiHaybQFwMCJ7FAajUbYRA_YSe26DByO",
+  "sha256": "22a0a1c9cb400885da5109f79e9bc411d1bae2437d602a500eb4baa6b3325b5b",
+  "size": 215127
+ },
+ "sarva/audio/07_line4.mp3": {
+  "id": "1XpVJPjQuy_PVyvzwW2SgX1jEeP_T-apU",
+  "sha256": "7c62f03b24fc6da4f5fa92eaa6539ca97375d3bae956eaea67a7247401d07baa",
+  "size": 149463
+ },
+ "sarva/audio/08_together.mp3": {
+  "id": "1mAKPA8Dk22GfwCAFUpSP89MkfThGPXHf",
+  "sha256": "4114c3814c4f1b8a457de36ab0892cfcb249ebca1a915a3d8a13f45f659a683f",
+  "size": 82647
+ },
+ "sarva/audio/09_jai.mp3": {
+  "id": "1AcH_98otKxUWBjwzdRZkVrfRDp_mDDJD",
+  "sha256": "fe7240e381d550757fcaf21c2da80bac5e0aea6b2f7dc33e36f002879fd63b83",
+  "size": 65367
+ },
+ "sarva/audio/10_sung.mp3": {
+  "id": "1sbL_iRBj5h4YDqPSPCZ-H6oJHtasmNlw",
+  "sha256": "582ea428670f2ddc67fee4d8f065f071888085ce41c2c3af0503db50e5650f0d",
+  "size": 738322
+ },
+ "shantakaram/audio/01_intro.mp3": {
+  "id": "170wR-YXgApN-reM7EIrhu0y5ZH6GBynI",
+  "sha256": "78663c845c9e40a28025b9a38d35a13d160f7f46a92de399e0be266d19fcf373",
+  "size": 221271
+ },
+ "shantakaram/audio/02_full.mp3": {
+  "id": "1_EGdfrcaF66MES2Nuynts1O5iF8Bvr9t",
+  "sha256": "50f1205a08281f0892d1e6c896ee50ce378aea1503198f9b5714d00b050b778d",
+  "size": 484695
+ },
+ "shantakaram/audio/03_learn.mp3": {
+  "id": "1mJ8VikL2RMKsO1jOczNlOwMoxtio460A",
+  "sha256": "fa783d00820a9dc1856961e4e63e78f3f987945c812cc9349d1c8fb423e9c297",
+  "size": 57687
+ },
+ "shantakaram/audio/04_line1.mp3": {
+  "id": "1tfpYc0cpqh9MxewW0Pw0DIRfQdSBDrDO",
+  "sha256": "18bc24f7a422a9be6e5dcc6bca0d97c05ac5cc10b07a03a309fece55fbab5b39",
+  "size": 324567
+ },
+ "shantakaram/audio/05_line2.mp3": {
+  "id": "1-ka_mIAQmP_SuqSyHQdFc44BKwTXDz4w",
+  "sha256": "3e8a3118e1977603ddf47cb876ab3885e4851d441867ca218220ed72659e87e0",
+  "size": 339159
+ },
+ "shantakaram/audio/06_line3.mp3": {
+  "id": "1NLIOtkUmY_dzHzEiVF853Xb74p76ad42",
+  "sha256": "6634e4c13f99e7293c98555662c5919653ccdccd95534bee50926fa0fc3ccff0",
+  "size": 256983
+ },
+ "shantakaram/audio/07_line4.mp3": {
+  "id": "1_3Jrq79jOB6R53oBg7pw0VBLhU5CW3_m",
+  "sha256": "bcce5cc9af8ee0311a8bf94c65a38d7a23a0393cf8af293e504b03cd5f78dae3",
+  "size": 284631
+ },
+ "shantakaram/audio/08_together.mp3": {
+  "id": "1zK_N3_STf81JPnmEMpDF-8nfELRUftrc",
+  "sha256": "350a8cbce134b19e9bc49121ee564ce2bcfc366dbd254239d17c7f164869615f",
+  "size": 82647
+ },
+ "shantakaram/audio/09_jai.mp3": {
+  "id": "1xwe-fR6B7omlejixbcpkNXTtXPN31OeZ",
+  "sha256": "9b835fe45a99b4000ae171b824b68afacd26da2000633e8d0dc653fdf6eb06da",
+  "size": 89175
+ },
+ "shantakaram/audio/10_sung.mp3": {
+  "id": "1o2u-O5XEC7fwEj-YYqEvg8c5wpjiR9nT",
+  "sha256": "2b7f92b62021d8e8eea6ce9db2417d9f528d6b698ba66ab6783fa06fc9429bc1",
+  "size": 858706
+ },
+ "suprabhatam/audio/intro.mp3": {
+  "id": "1I7E53Qkygq2FUDIzAmkhZwd-uysgajQ2",
+  "sha256": "f1cde5104f7d94e2b3bed19909f2f9f5ea42809a1a34452524f84b96ce46256a",
+  "size": 195159
+ },
+ "suprabhatam/audio/sung.mp3": {
+  "id": "1JLti51u3353lwanliFzXcFQcSJ6i3mo-",
+  "sha256": "9f836079e6de0c47f548183934187eae50b1fb86cd66b49ceecf09deaef2722c",
+  "size": 2658706
+ },
+ "suprabhatam/audio/together.mp3": {
+  "id": "1eoW6aV9Ksnvod7AP1djjHmLf_qi4y7XA",
+  "sha256": "8daadd09d2b83df49ed661105db2fa3ac954c91b89fc58a1234af70c49f610d4",
+  "size": 79959
+ },
+ "suprabhatam/audio/v1.mp3": {
+  "id": "1UEofySNaqkdAY6cPdS2D3i-9j1LTQigK",
+  "sha256": "772d6210fdd95f1109194cd2222166a5342c8e3aac367eeb3f04236a3917d978",
+  "size": 449367
+ },
+ "suprabhatam/audio/v2.mp3": {
+  "id": "1oSsUsAROrdHk_3QHrws9LzTdcj3dI7yV",
+  "sha256": "6c6d39cd9d72fca0370678b21b30c768e73c6265eba141861f4090a674f56e1a",
+  "size": 371415
+ },
+ "suprabhatam/audio/v3.mp3": {
+  "id": "1Rs8AbALUyrje4A5M_vvxvT-iFPUpyefd",
+  "sha256": "cabbf284cd70a699a4457e043c68ddb84902eeb76e5a0eb618843d547bba86cd",
+  "size": 594519
+ },
+ "suprabhatam/audio/v4.mp3": {
+  "id": "1Hbo1d6Tj5ado1Zur-lDiBDnsNGdGsBLm",
+  "sha256": "fd6b27a11fee50087558e8abd02d36bdcad2ba4d21666367ae16195f5c9f17c6",
+  "size": 602967
+ },
+ "surya/audio/01_intro.mp3": {
+  "id": "1EAIeLW5_8JW_plil3LZQ-SQ8nohvGRW_",
+  "sha256": "40011816f1e9a4af3968a20f70d465404cd4103a15a5fcbc46b2e98ec75860bf",
+  "size": 145623
+ },
+ "surya/audio/02_full.mp3": {
+  "id": "1kWzb1VQhqI3-RVQ_ZQynnyjIjX8gFKYO",
+  "sha256": "f7c872debe5dcfa211ad8bca426b3fcf42c891c8a110e088635c7b2e801fb8c2",
+  "size": 280023
+ },
+ "surya/audio/03_learn.mp3": {
+  "id": "1jP-R_hyeedxGGIablHKUQanD5LFVrqO_",
+  "sha256": "fa783d00820a9dc1856961e4e63e78f3f987945c812cc9349d1c8fb423e9c297",
+  "size": 57687
+ },
+ "surya/audio/04_line1.mp3": {
+  "id": "1gJG1RoWFwbo9VcrwoNjz_b82Os-kfZ1m",
+  "sha256": "81e7ca83b04f8d90136c44686dece069d3cb228fc04fca1406b181541c80925d",
+  "size": 144855
+ },
+ "surya/audio/05_line2.mp3": {
+  "id": "1NDsCMYYKBaz9g2vcPVeeU7k450eIV4xr",
+  "sha256": "043f4e223ada272d6c378092d19a9495a8362fc5a5ab4af63add62d446db2761",
+  "size": 154071
+ },
+ "surya/audio/06_line3.mp3": {
+  "id": "1LSUyBSqoR7pPjbbE4EvQUy2uR6vVBRmi",
+  "sha256": "79a198bad27fed00d1064322e1e8b6773ca1c4486e99a7744deb8c2712b0bd49",
+  "size": 231255
+ },
+ "surya/audio/07_line4.mp3": {
+  "id": "1MDCzFVPWEGzChUbpPHBAyDXmvT2IBYaj",
+  "sha256": "a99ddb4b3abb8cf334bde1c57abb3d9d620360585418ce66f3dd69b034ef7628",
+  "size": 149463
+ },
+ "surya/audio/08_together.mp3": {
+  "id": "173HoWoD4Frff0BqdLpSlipdNjemuIktZ",
+  "sha256": "350a8cbce134b19e9bc49121ee564ce2bcfc366dbd254239d17c7f164869615f",
+  "size": 82647
+ },
+ "surya/audio/09_jai.mp3": {
+  "id": "1X7m8CoCMJx1ib5XAm2NfoOYfG8BHs-0q",
+  "sha256": "7cf8f7869aa04d41f77af2a9e01a511ddc3c1678d6a0eee0a0f95594bc20ca26",
+  "size": 62295
+ },
+ "surya/audio/10_sung.mp3": {
+  "id": "1YY610P_HtBs1BmuCU4Sr9_PKuqD11Lzg",
+  "sha256": "96c0b9381e9ed208cfa75c645a182a34afd4f06066634855eaa487186b498a23",
+  "size": 858706
+ },
+ "vakratunda/audio/01_intro.mp3": {
+  "id": "1fEnxrDfD8d4UT1uUvuBzbwnuIv5Wf4qr",
+  "sha256": "1dab1a838a792917c9e02e63f1609dbd24c5b43655fc8b8c10ac44888a1e57c7",
+  "size": 132567
+ },
+ "vakratunda/audio/02_full.mp3": {
+  "id": "13QWc9T5z9-Z2S2pGqFbQdGQ6nMR1vMbk",
+  "sha256": "4973cc1448280b29e11f65573733b015d02236194c25dbef247196c03f19c0f3",
+  "size": 277335
+ },
+ "vakratunda/audio/03_learn.mp3": {
+  "id": "1kC4q-Hcx95k7VC9IcUGLXSKhQAiqZW7I",
+  "sha256": "8237e90b6a886c775492d527c831d530f4f1e63eec1481091a15b1fb3f6c1cc4",
+  "size": 57687
+ },
+ "vakratunda/audio/04_line1.mp3": {
+  "id": "1M42o8qYtHyp_68W5GGvl9sEKPAoG6NFk",
+  "sha256": "d91f16f161a943b1536aaafaccf5fa8f842543e979e51beadb6372321bdf52cd",
+  "size": 140247
+ },
+ "vakratunda/audio/05_line2.mp3": {
+  "id": "146MIlHlVjKfeQ5ybbLZrRMGOjfMeaBSw",
+  "sha256": "ab40fc22df59d4a1f1daa2b7836d23af2f4726276e1a4d8daf078e74fe361c9b",
+  "size": 165975
+ },
+ "vakratunda/audio/06_line3.mp3": {
+  "id": "1gEzbQhEFrCj_al9PM05NEPhKypYDCTOO",
+  "sha256": "10ce1627d7951dc3f4f1c0c9deebb649a65f29c7ab04e3f6e3313395af3ee986",
+  "size": 214743
+ },
+ "vakratunda/audio/07_line4.mp3": {
+  "id": "1W1VH2tpz7oegZTJbK4OPsur78thYKurH",
+  "sha256": "2cdec7aa5ea6b0bae2827e6c852bfa5fbfe5e6720dbba4427ac4ce31cef4b3bd",
+  "size": 156375
+ },
+ "vakratunda/audio/08_together.mp3": {
+  "id": "1EwK-XFbBuMViU_KzuDjTmVp_Onur2QWz",
+  "sha256": "b6fd000a74e5fc0c53c620adc2c9d504358a0273b5e8a215e8f03ba0e0e03229",
+  "size": 82647
+ },
+ "vakratunda/audio/09_jai.mp3": {
+  "id": "1EQKYKYmZ9GGUNK5CRT90a6_hm8JHvDmv",
+  "sha256": "a47aac43f99486d1c8bbd71e4144f2b6195ad1e90b0995e2233c4e1cd52f9fe4",
+  "size": 73815
+ },
+ "vakratunda/audio/10_sung.mp3": {
+  "id": "19S4FpmS5GXwNQhLFsQPPz8wG5ljTzOcn",
+  "sha256": "511db1e3930ecc6d4585984cb56d61d26e1b5864c0a67f508bb7fddd31eeef55",
+  "size": 738322
+ }
+}

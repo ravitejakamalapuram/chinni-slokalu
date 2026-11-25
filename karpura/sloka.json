@@ -1,0 +1,178 @@
+{
+ "id": "karpura",
+ "character": "shiva",
+ "bg": "radial-gradient(circle at 50% 38%, #E8F1FF 0%, #9DB8F0 28%, #5A4FA8 64%, #241B4F 100%)",
+ "petal_color": "#FFFFFF",
+ "title_top": "LET'S LEARN",
+ "title_main": "KARPURA GAURAM!",
+ "title_te": "కర్పూరగౌరం శ్లోకం",
+ "hero_label": "SHIVA",
+ "lines": [
+  {
+   "te": "కర్పూరగౌరం కరుణావతారం",
+   "tr": "Karpura Gauram Karunavataram",
+   "mean_te": "కర్పూరంలా తెల్లగా మెరిసేవాడు, దయకు రూపమైనవాడు",
+   "mean_en": "Fair as camphor, compassion in person"
+  },
+  {
+   "te": "సంసారసారం భుజగేంద్రహారమ్",
+   "tr": "Samsara Saaram Bhujagendra Haaram",
+   "mean_te": "లోకానికంతటికీ సారమైనవాడు, నాగరాజును హారంగా వేసుకున్నవాడు",
+   "mean_en": "The essence of the world, wearing the king of snakes as a garland"
+  },
+  {
+   "te": "సదా వసంతం హృదయారవిందే",
+   "tr": "Sadaa Vasantam Hridayaravinde",
+   "mean_te": "ఎప్పుడూ మన హృదయ కమలంలో ఉండేవాడు",
+   "mean_en": "He always lives in the lotus of our heart"
+  },
+  {
+   "te": "భవం భవానీసహితం నమామి",
+   "tr": "Bhavam Bhavani Sahitam Namaami",
+   "mean_te": "పార్వతీ దేవితో కలిసి ఉన్న శివయ్యకు నమస్కారం",
+   "mean_en": "I bow to Shiva, together with Mother Parvati"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3"
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3"
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3"
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3"
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "హర హర మహాదేవ!",
+   "caption_en": "HARA HARA MAHADEVA!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.25,
+    1.9
+   ],
+   [
+    2.46,
+    4.08
+   ],
+   [
+    4.55,
+    6.48
+   ],
+   [
+    6.93,
+    8.68
+   ],
+   [
+    9.35,
+    10.1
+   ],
+   [
+    10.15,
+    11.08
+   ],
+   [
+    11.57,
+    13.05
+   ],
+   [
+    13.67,
+    14.3
+   ],
+   [
+    14.35,
+    15.77
+   ],
+   [
+    16.34,
+    17.22
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    0.8,
+    2.25
+   ],
+   [
+    3.55,
+    6.1
+   ],
+   [
+    7.9,
+    10.15
+   ],
+   [
+    11.35,
+    13.55
+   ],
+   [
+    15.25,
+    15.85
+   ],
+   [
+    16.3,
+    17.2
+   ],
+   [
+    18.55,
+    21.05
+   ],
+   [
+    22.45,
+    23.1
+   ],
+   [
+    23.9,
+    26.7
+   ],
+   [
+    27.4,
+    28.4
+   ]
+  ]
+ }
+}

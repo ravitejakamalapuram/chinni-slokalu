@@ -1,0 +1,204 @@
+{
+ "id": "krishna",
+ "character": "krishna",
+ "bg": "radial-gradient(circle at 50% 38%, #E6F4FF 0%, #9CC8F2 28%, #3E6FD0 64%, #1B2A6B 100%)",
+ "petal_color": "#FFD23F",
+ "title_top": "LET'S LEARN",
+ "title_main": "VASUDEVA SUTAM!",
+ "title_te": "శ్రీ కృష్ణ శ్లోకం",
+ "hero_label": "KRISHNA",
+ "lines": [
+  {
+   "te": "వసుదేవ సుతం దేవం",
+   "tr": "Vasudeva Sutam Devam",
+   "mean_te": "వసుదేవుడి ముద్దుల కొడుకు, మన దేవుడు",
+   "mean_en": "The divine son of Vasudeva"
+  },
+  {
+   "te": "కంస చాణూర మర్దనమ్",
+   "tr": "Kamsa Chanura Mardanam",
+   "mean_te": "చెడ్డ రాజు కంసుడిని, మల్లుడు చాణూరుడిని ఓడించినవాడు",
+   "mean_en": "Who defeated wicked Kamsa and the wrestler Chanura"
+  },
+  {
+   "te": "దేవకీ పరమానందం",
+   "tr": "Devaki Paramanandam",
+   "mean_te": "దేవకీ అమ్మకు ఎంతో ఎంతో ఆనందం ఇచ్చినవాడు",
+   "mean_en": "The greatest joy of mother Devaki"
+  },
+  {
+   "te": "కృష్ణం వందే జగద్గురుమ్",
+   "tr": "Krishnam Vande Jagadgurum",
+   "mean_te": "లోకానికే గురువైన కృష్ణయ్యకు నమస్కారం",
+   "mean_en": "I bow to Krishna, teacher of the whole world"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3",
+   "fix": {
+    "words": [
+     [
+      0.25,
+      1.49
+     ],
+     [
+      2.7,
+      3.6
+     ],
+     [
+      4.6,
+      5.54
+     ]
+    ],
+    "meaning_at": 6.6
+   }
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3",
+   "fix": {
+    "words": [
+     [
+      0.29,
+      0.99
+     ],
+     [
+      1.93,
+      2.88
+     ],
+     [
+      3.76,
+      4.77
+     ]
+    ],
+    "meaning_at": 5.95
+   }
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3",
+   "fix": {
+    "words": [
+     [
+      0.31,
+      1.23
+     ],
+     [
+      1.64,
+      2.65
+     ]
+    ],
+    "meaning_at": 3.35
+   }
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3",
+   "fix": {
+    "words": [
+     [
+      0.27,
+      1.19
+     ],
+     [
+      1.87,
+      2.73
+     ],
+     [
+      3.4,
+      4.61
+     ]
+    ],
+    "meaning_at": 5.45
+   }
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "జై శ్రీ కృష్ణ!",
+   "caption_en": "JAI SHRI KRISHNA!"
+  }
+ ],
+ "word_timings": {
+  "10_sung.mp3": [
+   [
+    0.1,
+    1.8
+   ],
+   [
+    1.8,
+    2.8
+   ],
+   [
+    2.8,
+    4.1
+   ],
+   [
+    4.1,
+    5.2
+   ],
+   [
+    5.2,
+    6.3
+   ],
+   [
+    6.3,
+    7.8
+   ],
+   [
+    7.8,
+    9.3
+   ],
+   [
+    9.3,
+    11.2
+   ],
+   [
+    11.2,
+    12.8
+   ],
+   [
+    12.8,
+    13.9
+   ],
+   [
+    13.9,
+    16.5
+   ]
+  ]
+ }
+}

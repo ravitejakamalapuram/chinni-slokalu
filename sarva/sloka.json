@@ -1,0 +1,178 @@
+{
+ "id": "sarva",
+ "character": "durga",
+ "bg": "radial-gradient(circle at 50% 38%, #FFF1C9 0%, #FFB36B 28%, #D94F70 64%, #5E1B45 100%)",
+ "petal_color": "#FFD166",
+ "title_top": "LET'S LEARN",
+ "title_main": "SARVA MANGALA!",
+ "title_te": "సర్వమంగళ శ్లోకం",
+ "hero_label": "AMMA",
+ "lines": [
+  {
+   "te": "సర్వమంగళ మాంగల్యే",
+   "tr": "Sarva Mangala Maangalye",
+   "mean_te": "అన్ని శుభాలకూ శుభమైన అమ్మా",
+   "mean_en": "O Mother, the goodness in all good things"
+  },
+  {
+   "te": "శివే సర్వార్థ సాధికే",
+   "tr": "Shive Sarvaartha Saadhike",
+   "mean_te": "మన మంచి కోరికలన్నీ తీర్చే తల్లీ",
+   "mean_en": "Kind one, who fulfils all our good wishes"
+  },
+  {
+   "te": "శరణ్యే త్ర్యంబకే గౌరి",
+   "tr": "Sharanye Tryambake Gauri",
+   "mean_te": "అందరినీ కాపాడే గౌరీ దేవీ",
+   "mean_en": "Our refuge, O Gauri, wife of three-eyed Shiva"
+  },
+  {
+   "te": "నారాయణి నమోస్తుతే",
+   "tr": "Naaraayani Namostute",
+   "mean_te": "ఓ నారాయణీ, నీకు నమస్కారం",
+   "mean_en": "O Narayani, I bow to you"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3"
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3"
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3"
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3"
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "జై మాతా దీ!",
+   "caption_en": "JAI MATA DI!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.63,
+    2.09
+   ],
+   [
+    2.49,
+    4.44
+   ],
+   [
+    5.1,
+    5.86
+   ],
+   [
+    6.12,
+    7.09
+   ],
+   [
+    7.42,
+    9.18
+   ],
+   [
+    10.0,
+    10.98
+   ],
+   [
+    11.13,
+    12.18
+   ],
+   [
+    12.42,
+    13.74
+   ],
+   [
+    14.5,
+    15.9
+   ],
+   [
+    16.0,
+    18.19
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    0.75,
+    2.1
+   ],
+   [
+    2.15,
+    4.0
+   ],
+   [
+    6.7,
+    7.4
+   ],
+   [
+    7.45,
+    8.55
+   ],
+   [
+    8.6,
+    10.75
+   ],
+   [
+    13.8,
+    14.75
+   ],
+   [
+    14.8,
+    16.4
+   ],
+   [
+    16.45,
+    19.05
+   ],
+   [
+    20.6,
+    21.65
+   ],
+   [
+    21.7,
+    24.1
+   ]
+  ]
+ }
+}

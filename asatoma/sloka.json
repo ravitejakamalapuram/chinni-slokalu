@@ -1,0 +1,210 @@
+{
+ "id": "asatoma",
+ "character": "ulooka",
+ "bg": "radial-gradient(circle at 50% 38%, #FFE9A8 0%, #F4A261 28%, #3D5A98 64%, #14213D 100%)",
+ "petal_color": "#FFF59D",
+ "title_top": "LET'S LEARN",
+ "title_main": "ASATO MA SADGAMAYA!",
+ "title_te": "అసతో మా సద్గమయ",
+ "hero_label": "ULOOKA",
+ "lines": [
+  {
+   "te": "ఓం అసతో మా సద్గమయ",
+   "tr": "Om Asato Maa Sadgamaya",
+   "mean_te": "అబద్ధం నుండి నిజం వైపు నన్ను నడిపించు",
+   "mean_en": "Lead me from untruth to truth"
+  },
+  {
+   "te": "తమసో మా జ్యోతిర్గమయ",
+   "tr": "Tamaso Maa Jyotirgamaya",
+   "mean_te": "చీకటి నుండి వెలుగు వైపు నన్ను నడిపించు",
+   "mean_en": "Lead me from darkness to light"
+  },
+  {
+   "te": "మృత్యోర్మా అమృతం గమయ",
+   "tr": "Mrityor Maa Amritam Gamaya",
+   "mean_te": "మరణం నుండి అమరత్వం వైపు నన్ను నడిపించు",
+   "mean_en": "Lead me from death to immortality"
+  },
+  {
+   "te": "ఓం శాంతిః శాంతిః శాంతిః",
+   "tr": "Om Shantih Shantih Shantih",
+   "mean_te": "అంతటా శాంతి కలుగుగాక",
+   "mean_en": "Peace, peace, peace everywhere"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3"
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3"
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3"
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3"
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "ఓం శాంతి!",
+   "caption_en": "OM SHANTI!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.27,
+    1.66
+   ],
+   [
+    1.93,
+    2.5
+   ],
+   [
+    2.6,
+    3.1
+   ],
+   [
+    3.2,
+    4.76
+   ],
+   [
+    5.29,
+    5.8
+   ],
+   [
+    5.85,
+    6.3
+   ],
+   [
+    6.4,
+    8.18
+   ],
+   [
+    8.72,
+    9.9
+   ],
+   [
+    10.26,
+    10.95
+   ],
+   [
+    11.0,
+    11.73
+   ],
+   [
+    12.41,
+    13.2
+   ],
+   [
+    13.4,
+    14.43
+   ],
+   [
+    14.59,
+    15.55
+   ],
+   [
+    15.77,
+    16.75
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    1.07,
+    1.6
+   ],
+   [
+    1.99,
+    2.82
+   ],
+   [
+    3.03,
+    3.55
+   ],
+   [
+    4.44,
+    6.64
+   ],
+   [
+    7.5,
+    8.4
+   ],
+   [
+    8.88,
+    9.62
+   ],
+   [
+    10.83,
+    13.12
+   ],
+   [
+    14.34,
+    16.75
+   ],
+   [
+    17.35,
+    18.82
+   ],
+   [
+    19.01,
+    20.12
+   ],
+   [
+    20.7,
+    21.8
+   ],
+   [
+    22.3,
+    23.2
+   ],
+   [
+    23.5,
+    24.4
+   ],
+   [
+    24.7,
+    25.6
+   ]
+  ]
+ }
+}

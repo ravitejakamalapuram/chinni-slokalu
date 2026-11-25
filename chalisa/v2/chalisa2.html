@@ -1,0 +1,77 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<script src="assets/gsap.min.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#FFE3A3;font-family:'Baloo Tammudu 2',sans-serif}
+.abs{position:absolute}
+.bg{left:0;top:0;width:1080px;height:1920px;opacity:0}
+.bg svg{width:1080px;height:1920px}
+#hero{left:240px;top:380px;width:600px;height:900px}
+#hero svg{width:600px;height:900px;overflow:visible}
+#topbar{left:0;top:70px;width:1080px;text-align:center}
+.ttl{font-family:'Luckiest Guy',sans-serif;font-size:76px;color:#FFD23F;-webkit-text-stroke:14px #2B1407;paint-order:stroke fill;text-shadow:0 8px 0 rgba(43,20,7,.45)}
+.ttl .te{font-family:'Baloo Tammudu 2';font-weight:800;font-size:84px;color:#FFF4D6}
+.pill{display:inline-block;margin-top:8px;background:#E63946;color:#fff;border:6px solid #2B1407;border-radius:40px;padding:6px 34px 0;font-weight:800;font-size:50px;line-height:1.3;box-shadow:0 8px 0 rgba(43,20,7,.4)}
+#panel{left:30px;top:1300px;width:1020px;height:580px;background:rgba(255,248,230,.94);border:8px solid #2B1407;border-radius:50px;box-shadow:0 14px 0 rgba(43,20,7,.45);box-sizing:border-box;padding:30px 24px;text-align:center}
+.vline{position:absolute;left:24px;right:24px;text-align:center;font-weight:800;font-size:76px;line-height:1.2;white-space:nowrap;color:#7A2E0B}
+.vline .w{display:inline-block;margin:0 9px}
+.mean{position:absolute;left:40px;right:40px;top:300px;text-align:center}
+.mte{display:block;font-weight:800;font-size:46px;line-height:1.3;color:#2B1407}
+.men{display:block;font-family:'Luckiest Guy',sans-serif;font-size:34px;line-height:1.2;color:#C2410C;margin-top:10px;letter-spacing:.5px}
+.divider{position:absolute;left:120px;right:120px;top:276px;height:6px;border-radius:3px;background:#F2B33D}
+.big{left:0;width:1080px;text-align:center;font-family:'Luckiest Guy',sans-serif;color:#FFD23F;-webkit-text-stroke:16px #2B1407;paint-order:stroke fill;text-shadow:0 10px 0 rgba(43,20,7,.45)}
+.spark{left:0;top:0;width:60px;height:60px}
+</style></head><body>
+<div id="stage" data-composition-id="chalisa" data-width="1080" data-height="1920" data-duration="__DURATION__">
+<div id="shake" class="abs" style="left:0;top:0;width:1080px;height:1920px">
+<div id="world" class="abs" style="left:0;top:0;width:1080px;height:1920px">
+<div id="bgs"></div>
+<div id="hero" class="abs"><div id="hmv" style="width:600px;height:900px"></div></div>
+<div id="fgs"></div>
+<svg id="fxsvg" class="abs" style="left:0;top:0;width:1080px;height:1920px;overflow:visible" viewBox="0 0 1080 1920"></svg>
+<div id="flash" class="abs" style="left:0;top:0;width:1080px;height:1920px;background:#fff;opacity:0"></div>
+</div></div>
+<div id="topbar" class="abs"><div class="ttl"><span class="te">హనుమాన్ చాలీసా</span></div><div class="pill" id="pill">దోహా</div></div>
+<div id="panel" class="abs"></div>
+<div id="intro" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
+__AUDIO__
+</div>
+<script>
+__RIG__
+__STORY__
+const D = __DATA__;
+const T = D.duration;
+const tl = gsap.timeline({ paused: true, defaults: { immediateRender: false } });
+const $ = s => document.querySelector(s);
+const el = (tag, cls, html, parent) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; (parent || document.body).appendChild(e); return e; };
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const rep = p => Math.ceil(T / p) + 1;
+__INFRA__
+// ---------- verses ----------
+let curScene = 'hero';
+function runVerses() { D.verses.forEach((v, vi) => {
+  const t0 = v.start, h2 = v.halves[1][0], t1 = v.end;
+  const sw = vi === 0 ? t0 - 0.7 : (D.verses[vi - 1].end + t0) / 2 - 0.25; show(v.key, sw);
+  tl.set('#pill', { innerHTML: v.label }, t0 - 0.3);
+  if (vi === 0 || D.verses[vi - 1].label !== v.label) tl.fromTo('#pill', { scale: 0.6 }, { scale: 1, duration: 0.4, ease: 'back.out(3)' }, t0 - 0.3);
+  // text panel
+  const P = el('div', 'abs', '', $('#panel')); P.style.cssText = 'left:0;top:0;width:100%;height:100%;opacity:0';
+  const lines = [v.l1, v.l2].map((t, i) => { const fs = i ? v.fs2 : v.fs1, two = fs < 0; const d = el('div', 'vline', t.split(' ').map(w => `<span class="w">${w}</span>` + (two && w.endsWith(',') ? '<br>' : '')).join(' '), P); d.style.top = (two ? 24 + i * 124 : 36 + i * 112) + 'px'; d.style.fontSize = Math.abs(fs) + 'px'; if (two) d.style.lineHeight = '1.15'; return d; });
+  el('div', 'divider', '', P);
+  el('div', 'mean', `<span class="mte">${v.mte}</span><span class="men">${v.men}</span>`, P);
+  tl.to(P, { opacity: 1, duration: 0.3 }, t0 - 0.35);
+  tl.to(P, { opacity: 0, duration: 0.25 }, t1 + 0.05);
+  const spans = lines.flatMap(l => [...l.querySelectorAll('.w')]);
+  spans.forEach((sp, i) => { const [a, b] = v.words[i];
+    tl.to(sp, { color: '#E63946', scale: 1.16, duration: 0.16, ease: 'back.out(3)' }, a);
+    tl.to(sp, { color: '#C2410C', scale: 1, duration: 0.2 }, b); });
+  v.words.forEach(([a]) => { tl.to('#headNod', { y: 6, duration: 0.1 }, a); tl.to('#headNod', { y: 0, duration: 0.18 }, a + 0.1); });
+  const n1 = v.l1.split(' ').length; ST.S[v.key].act(t0, h2, t1, v.words.map(x => x[0]), n1);
+}); }
+runVerses();
+__TAIL__
+tl.to({}, { duration: 0 }, T);
+window.__timelines = window.__timelines || {}; window.__timelines['chalisa'] = tl;
+</script></body></html>

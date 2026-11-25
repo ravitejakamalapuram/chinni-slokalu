@@ -1,0 +1,24 @@
+{
+  "_doc": "One entry per finished reel. build: script under the repo (template reels use template/build_reel.sh <id>). hook: first sung line that opens the reel (audio:from:to:line, 'auto' = from sloka.json word_timings). out: file name in Drive chittiSlokalu/Reels.",
+  "reels": [
+    {"id": "vakratunda", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "vakratunda-leda-hook-reel.mp4"},
+    {"id": "saraswati", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "saraswati-hook-reel.mp4"},
+    {"id": "hanuman", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "hanuman-hook-reel.mp4"},
+    {"id": "gayatri", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "gayatri-hook-reel.mp4"},
+    {"id": "guru", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "guru-hook-reel.mp4"},
+    {"id": "deepam", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "deepam-hook-reel.mp4"},
+    {"id": "asatoma", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "asatoma-hook-reel.mp4"},
+    {"id": "karpura", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "karpura-hook-reel.mp4"},
+    {"id": "sarva", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "sarva-mangala-hook-reel.mp4"},
+    {"id": "mahamrityunjaya", "build": "mahamrityunjaya/build_mmj.sh", "hook": "10_sung.mp3:0.3:6.7:0", "out": "mahamrityunjaya-hook-reel.mp4"},
+    {"id": "sahana", "build": "sahana/build_sahana.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "sahana-hook-reel.mp4"},
+    {"id": "surya", "build": "surya/build_surya.sh", "hook": "10_sung.mp3:0.3:6.7:0", "out": "surya-hook-reel.mp4"},
+    {"id": "lakshmi", "build": "lakshmi/build_lak.sh", "hook": "10_sung.mp3:0.3:6.2:0", "out": "lakshmi-hook-reel.mp4"},
+    {"id": "shantakaram", "build": "shantakaram/build_shk.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "shantakaram-hook-reel.mp4"},
+    {"id": "krishna", "build": "krishna/build_krishna.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "krishna-hook-reel.mp4"},
+    {"id": "rama", "build": "rama/build_rama.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "rama-hook-reel.mp4"},
+    {"id": "bhojana", "build": "bhojana/build_bj.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "bhojana-hook-reel.mp4"},
+    {"id": "suprabhatam", "build": "suprabhatam/build_sup.sh", "hook": "hook", "out": "suprabhatam-hook-reel.mp4"},
+    {"id": "chalisa", "build": "chalisa/build_v2.sh", "hook": "", "out": "hanuman-chalisa-v2-reel.mp4"}
+  ]
+}

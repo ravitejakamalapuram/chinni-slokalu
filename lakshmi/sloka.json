@@ -1,0 +1,254 @@
+{
+ "id": "lakshmi",
+ "character": "lakshmi",
+ "bg": "radial-gradient(circle at 50% 38%, #FFF6E0 0%, #FFD1DC 30%, #E0607E 66%, #6B1F45 100%)",
+ "petal_color": "#FF8FB1",
+ "title_top": "LET'S LEARN",
+ "title_main": "MAHALAKSHMI!",
+ "title_te": "మహాలక్ష్మి శ్లోకం",
+ "hero_label": "LAKSHMI",
+ "lines": [
+  {
+   "te": "నమస్తేఽస్తు మహామాయే",
+   "say": "నమస్తేస్తు... మహామాయే",
+   "tr": "Namaste'stu Mahamaaye",
+   "mean_te": "అద్భుతమైన శక్తి గల అమ్మా, నీకు నమస్కారం",
+   "mean_en": "Salutations to you, Mother of wondrous divine power"
+  },
+  {
+   "te": "శ్రీపీఠే సురపూజితే",
+   "say": "శ్రీపీఠే... సురపూజితే",
+   "tr": "Shree Peethe Sura Poojite",
+   "mean_te": "శ్రీ పీఠం మీద కూర్చునే అమ్మా, దేవతలందరూ నిన్ను పూజిస్తారు",
+   "mean_en": "You sit on the holy throne, and all the gods worship you"
+  },
+  {
+   "te": "శంఖ చక్ర గదా హస్తే",
+   "say": "శంఖ... చక్ర... గదా... హస్తే",
+   "tr": "Shankha Chakra Gadaa Haste",
+   "mean_te": "చేతుల్లో శంఖం, చక్రం, గద పట్టుకున్న అమ్మా",
+   "mean_en": "You hold the conch, the discus and the mace"
+  },
+  {
+   "te": "మహాలక్ష్మి నమోఽస్తు తే",
+   "say": "మహాలక్ష్మి... నమోస్తు తే",
+   "tr": "Mahalakshmi Namo'stu Te",
+   "mean_te": "ఓ మహాలక్ష్మీ, నీకు మా నమస్కారం",
+   "mean_en": "O Mahalakshmi, we bow to you"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3",
+   "fix": {
+    "words": [
+     [
+      0.41,
+      1.63
+     ],
+     [
+      2.12,
+      3.45
+     ]
+    ],
+    "meaning_at": 4.0
+   }
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3",
+   "fix": {
+    "words": [
+     [
+      0.05,
+      1.45
+     ],
+     [
+      2.19,
+      3.23
+     ]
+    ],
+    "meaning_at": 4.1
+   }
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3",
+   "fix": {
+    "words": [
+     [
+      0.1,
+      1.18
+     ],
+     [
+      1.88,
+      2.49
+     ],
+     [
+      3.2,
+      3.73
+     ],
+     [
+      4.32,
+      4.91
+     ]
+    ],
+    "meaning_at": 5.85
+   }
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3",
+   "fix": {
+    "words": [
+     [
+      0.46,
+      1.43
+     ],
+     [
+      1.97,
+      2.64
+     ],
+     [
+      2.64,
+      3.19
+     ]
+    ],
+    "meaning_at": 4.4
+   }
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "జై మహాలక్ష్మీ!",
+   "caption_en": "JAI MAHALAKSHMI!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.05,
+    2.3
+   ],
+   [
+    2.35,
+    4.66
+   ],
+   [
+    5.5,
+    7.23
+   ],
+   [
+    7.58,
+    9.86
+   ],
+   [
+    10.67,
+    11.86
+   ],
+   [
+    12.21,
+    13.36
+   ],
+   [
+    13.74,
+    14.6
+   ],
+   [
+    14.65,
+    15.81
+   ],
+   [
+    16.58,
+    18.32
+   ],
+   [
+    18.74,
+    20.4
+   ],
+   [
+    20.45,
+    21.0
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    0.66,
+    3.18
+   ],
+   [
+    3.3,
+    5.34
+   ],
+   [
+    6.58,
+    8.74
+   ],
+   [
+    8.9,
+    11.64
+   ],
+   [
+    12.62,
+    13.42
+   ],
+   [
+    13.76,
+    14.46
+   ],
+   [
+    15.28,
+    15.88
+   ],
+   [
+    16.38,
+    17.52
+   ],
+   [
+    18.38,
+    20.62
+   ],
+   [
+    21.4,
+    22.9
+   ],
+   [
+    22.9,
+    23.58
+   ]
+  ]
+ }
+}
