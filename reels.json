@@ -1,7 +1,7 @@
 {
   "_doc": "One entry per finished reel. build: script under the repo (template reels use template/build_reel.sh <id>). hook: first sung line that opens the reel (audio:from:to:line, 'auto' = from sloka.json word_timings). out: file name in Drive chittiSlokalu/Reels.",
   "reels": [
-    {"id": "vakratunda", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "vakratunda-leda-hook-reel.mp4"},
+    {"id": "vakratunda", "build": "vakratunda/build_vak.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "vakratunda-leda-hook-reel.mp4"},
     {"id": "saraswati", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "saraswati-hook-reel.mp4"},
     {"id": "hanuman", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "hanuman-hook-reel.mp4"},
     {"id": "gayatri", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "gayatri-hook-reel.mp4"},
