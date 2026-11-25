@@ -1,0 +1,294 @@
+{
+ "id": "rama",
+ "character": "shiva",
+ "bg": "radial-gradient(circle at 50% 38%, #FFF6DA 0%, #FFD58A 28%, #4F8FD8 66%, #1E3A78 100%)",
+ "petal_color": "#FFE08A",
+ "title_top": "LET'S LEARN",
+ "title_main": "SRI RAMA NAMAM!",
+ "title_te": "శ్రీ రామ రామ రామేతి",
+ "hero_label": "SHIVA",
+ "lines": [
+  {
+   "te": "శ్రీ రామ రామ రామేతి",
+   "tr": "Sri Rama Rama Rameti",
+   "mean_te": "\"శ్రీ రామ, రామ, రామ\" అని జపిస్తూ",
+   "mean_en": "Chanting \"Sri Rama, Rama, Rama\""
+  },
+  {
+   "te": "రమే రామే మనోరమే",
+   "tr": "Rame Rame Manorame",
+   "mean_te": "మనసుకు ఆనందం ఇచ్చే రాముడిలో నేను సంతోషిస్తాను",
+   "mean_en": "I rejoice in Rama, who fills the heart with joy"
+  },
+  {
+   "te": "సహస్రనామ తత్తుల్యం",
+   "tr": "Sahasranama Tattulyam",
+   "mean_te": "విష్ణువు వెయ్యి పేర్లు చదివినంత పుణ్యం",
+   "mean_en": "Equal to all the thousand names of Vishnu"
+  },
+  {
+   "te": "రామనామ వరాననే",
+   "tr": "Rama Nama Varanane",
+   "mean_te": "ఒక్క రామ నామంతోనే వస్తుంది, ఓ పార్వతీ!",
+   "mean_en": "comes from the one name \"Rama\", O Parvati!"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3",
+   "fix": {
+    "words": [
+     [
+      0.2,
+      1.0
+     ],
+     [
+      1.51,
+      2.35
+     ],
+     [
+      2.9,
+      3.77
+     ],
+     [
+      4.41,
+      5.87
+     ]
+    ],
+    "meaning_at": 6.95
+   }
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3",
+   "fix": {
+    "words": [
+     [
+      0.25,
+      1.1
+     ],
+     [
+      1.15,
+      2.05
+     ],
+     [
+      2.29,
+      3.4
+     ]
+    ],
+    "meaning_at": 4.0
+   }
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3",
+   "fix": {
+    "words": [
+     [
+      0.34,
+      1.95
+     ],
+     [
+      3.2,
+      4.46
+     ]
+    ],
+    "meaning_at": 6.09
+   }
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3",
+   "fix": {
+    "words": [
+     [
+      0.29,
+      1.95
+     ],
+     [
+      2.68,
+      3.84
+     ]
+    ],
+    "meaning_at": 4.62
+   }
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "జై శ్రీరామ్!",
+   "caption_en": "JAI SHRI RAM!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.24,
+    1.1
+   ],
+   [
+    1.2,
+    2.29
+   ],
+   [
+    2.71,
+    3.57
+   ],
+   [
+    3.91,
+    5.13
+   ],
+   [
+    5.9,
+    6.7
+   ],
+   [
+    6.8,
+    7.65
+   ],
+   [
+    8.23,
+    9.53
+   ],
+   [
+    10.55,
+    12.17
+   ],
+   [
+    12.77,
+    13.89
+   ],
+   [
+    14.62,
+    16.12
+   ],
+   [
+    16.55,
+    17.75
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    3.5,
+    4.55
+   ],
+   [
+    4.55,
+    5.7
+   ],
+   [
+    5.7,
+    6.85
+   ],
+   [
+    6.85,
+    8.5
+   ],
+   [
+    8.65,
+    9.95
+   ],
+   [
+    9.95,
+    11.2
+   ],
+   [
+    11.2,
+    13.15
+   ],
+   [
+    13.35,
+    15.65
+   ],
+   [
+    15.65,
+    17.4
+   ],
+   [
+    17.55,
+    19.45
+   ],
+   [
+    19.45,
+    21.05
+   ],
+   [
+    21.15,
+    22.35
+   ],
+   [
+    22.35,
+    23.5
+   ],
+   [
+    23.5,
+    24.65
+   ],
+   [
+    24.65,
+    26.05
+   ],
+   [
+    26.05,
+    27.3
+   ],
+   [
+    27.3,
+    28.55
+   ],
+   [
+    28.55,
+    30.7
+   ],
+   [
+    30.7,
+    33.0
+   ],
+   [
+    33.0,
+    34.9
+   ],
+   [
+    34.9,
+    36.8
+   ],
+   [
+    36.8,
+    38.3
+   ]
+  ]
+ }
+}

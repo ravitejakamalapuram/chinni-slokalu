@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<script src="assets/gsap.min.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+    background: __BG__;
+    font-family: 'Baloo Tammudu 2', sans-serif; }
+  .abs { position: absolute; }
+  #grain { left: 0; top: 0; width: 1080px; height: 1920px; opacity: .22; mix-blend-mode: multiply; }
+  #floor { left: -100px; width: 1280px; top: 1500px; height: 600px; border-radius: 50%;
+    background: radial-gradient(ellipse at 50% 30%, rgba(90,40,10,.35), rgba(90,40,10,0) 65%); }
+  #hero { left: 200px; top: 420px; width: 680px; height: 873px; transform-origin: 50% 0%; }
+  #hero svg { width: 680px; height: 873px; overflow: visible; }
+  .petal { left: 0; top: 0; width: 70px; height: 70px; }
+  .scene { left: 0; top: 0; width: 1080px; height: 1920px; opacity: 0; }
+  .title { left: 60px; width: 960px; top: 230px; text-align: center; font-family: 'Luckiest Guy', sans-serif;
+    color: #FFD23F; font-size: 112px; line-height: 1.02; letter-spacing: 2px;
+    -webkit-text-stroke: 16px #2B1407; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(43,20,7,.45); }
+  .title .sm { font-size: 78px; color: #FFF4D6; display: block; }
+  .te { font-family: 'Baloo Tammudu 2', sans-serif; font-weight: 800; color: #fff;
+    -webkit-text-stroke: 14px #2B1407; paint-order: stroke fill; text-shadow: 0 8px 0 rgba(43,20,7,.45); }
+  .en { font-family: 'Luckiest Guy', sans-serif; color: #FFD23F; -webkit-text-stroke: 10px #2B1407; paint-order: stroke fill; }
+  .label { left: 0; width: 1080px; top: 1060px; text-align: center; font-family: 'Luckiest Guy', sans-serif; font-size: 150px;
+    color: #FF7A1A; -webkit-text-stroke: 16px #2B1407; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(43,20,7,.5); }
+  .cap { left: 60px; width: 960px; top: 1320px; text-align: center; }
+  .cap .te { font-size: 104px; line-height: 1.25; display: block; }
+  .cap .en { font-size: 58px; display: block; margin-top: 6px; }
+  .panel { left: 40px; width: 1000px; top: 1000px; text-align: center; }
+  .panel.full { left: 30px; width: 1020px; }
+  .full .row { display: block; font-size: 84px; line-height: 1.32; }
+  .w { display: inline-block; margin: 0 16px; }
+  .big .row { display: block; font-size: 88px; line-height: 1.18; }
+  .tr { display: block; font-family: 'Luckiest Guy', sans-serif; font-size: 56px; color: #FFF4D6;
+    -webkit-text-stroke: 9px #2B1407; paint-order: stroke fill; margin-top: 4px; letter-spacing: 1px; }
+  .card { left: 80px; width: 920px; top: 1345px; background: #FFF3D6; border: 8px solid #2B1407; border-radius: 44px;
+    box-shadow: 0 12px 0 rgba(43,20,7,.45); padding: 78px 34px 30px; box-sizing: border-box; text-align: center; opacity: 0; }
+  .card .tag { position: absolute; left: 50%; top: -38px; transform: translateX(-50%); background: #E63946; color: #fff;
+    border: 6px solid #2B1407; border-radius: 30px; padding: 8px 30px 4px; line-height: 1; font-family: 'Luckiest Guy', sans-serif; font-size: 40px; white-space: nowrap; }
+  .card .mte { font-family: 'Baloo Tammudu 2', sans-serif; font-weight: 800; font-size: 58px; line-height: 1.3; color: #7A2E0B; display: block; }
+  .card .men { font-family: 'Luckiest Guy', sans-serif; font-size: 40px; line-height: 1.2; color: #2B1407; display: block; margin-top: 8px; }
+  .badge { left: 340px; width: 400px; top: 250px; height: 0; text-align: center; }
+  .dots { left: 0; width: 1080px; top: 372px; text-align: center; }
+  .dot { display: inline-block; width: 34px; height: 34px; border-radius: 50%; margin: 0 12px; border: 6px solid #2B1407; background: #FFF4D6; }
+  .dot.on { background: #FFD23F; }
+  .burst { left: 540px; top: 900px; width: 0; height: 0; }
+  .burst svg { position: absolute; left: -40px; top: -40px; width: 80px; height: 80px; }
+</style>
+</head>
+<body>
+<div id="stage" data-composition-id="sloka" data-width="1080" data-height="1920" data-duration="__DURATION__">
+  <svg id="grain" class="abs" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="7"/><feColorMatrix type="saturate" values="0"/></filter>
+    <rect width="1080" height="1920" filter="url(#n)"/>
+  </svg>
+  <svg id="rayswrap" class="abs" style="left:-460px;top:-160px;width:2000px;height:2000px" viewBox="-1000 -1000 2000 2000">
+    <g id="bigrays" fill="#FFE08A" opacity=".16"></g>
+  </svg>
+  <div id="floor" class="abs"></div>
+  <div id="petals"></div>
+
+  <div id="hero" class="abs">
+  __HERO_SVG__
+  </div>
+
+  <div id="vis" class="abs" style="left:40px;top:425px;width:1000px;height:545px;opacity:0;border:8px solid #2B1407;border-radius:48px;overflow:hidden;box-shadow:0 12px 0 rgba(43,20,7,.45);box-sizing:border-box;background:#FFF8E6"><svg viewBox="0 0 1000 540" preserveAspectRatio="xMidYMid slice" style="width:984px;height:529px;display:block">__SC_SVG__</svg></div>
+  <div id="twinkles"></div>
+  <div id="scenes"></div>
+  <div id="bursts"></div>
+__AUDIO__
+</div>
+<script>
+const D = __DATA__;
+__HERO_JS__
+__ART__
+const T = D.duration;
+const $ = (s) => document.querySelector(s);
+const el = (tag, cls, html, parent) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; (parent || document.body).appendChild(e); return e; };
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+// rays
+const raysSvg = (n, r1, r2, w) => { let s = ''; for (let i = 0; i < n; i++) { const a = i * 2 * Math.PI / n, b = w;
+  const p = [[Math.cos(a - b) * r1, Math.sin(a - b) * r1], [Math.cos(a) * r2, Math.sin(a) * r2], [Math.cos(a + b) * r1, Math.sin(a + b) * r1]];
+  s += `<polygon points="${p.map(q => q.join(',')).join(' ')}"/>`; } return s; };
+$('#bigrays').innerHTML = raysSvg(18, 0, 1000, 0.07);
+const raysG = document.getElementById('rays');
+if (raysG) { raysG.innerHTML = raysSvg(20, 180, 290, 0.06);
+  // translate lives on a wrapper so rotating #rays about its own 0,0 keeps it centred on the halo
+  const wrap = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  wrap.setAttribute('transform', `translate(${raysG.dataset.c || '300 230'})`);
+  raysG.parentNode.insertBefore(wrap, raysG); wrap.appendChild(raysG); }
+
+// petals and sparkles
+const flower = `<svg viewBox="-35 -35 70 70">${[...Array(8)].map((_, i) => `<ellipse rx="11" ry="20" cy="-14" transform="rotate(${i * 45})" fill="${D.petal_color || '#FF8C1A'}" stroke="#2B1407" stroke-width="3"/>`).join('')}<circle r="10" fill="#FFC93C" stroke="#2B1407" stroke-width="3"/></svg>`;
+const spark = `<svg viewBox="-35 -35 70 70"><path d="M0 -32 Q5 -5 32 0 Q5 5 0 32 Q-5 5 -32 0 Q-5 -5 0 -32Z" fill="#FFF3B0" stroke="#2B1407" stroke-width="3"/></svg>`;
+const petals = [];
+for (let i = 0; i < 16; i++) petals.push(el('div', 'petal abs', i % 3 === 2 ? spark : flower, $('#petals')));
+
+// scenes
+const tl = gsap.timeline({ paused: true });
+const scenes = $('#scenes');
+const words = (text) => text.split(' ').map(w => `<span class="w">${w}</span>`).join(' ');
+const dotsHtml = (k) => D.lines.map((_, i) => `<span class="dot${i <= k ? ' on' : ''}"></span>`).join('');
+
+function popIn(target, at, opts) { tl.fromTo(target, { opacity: 0, scale: 0.6, y: 40 }, Object.assign({ opacity: 1, scale: 1, y: 0, duration: 0.5, ease: 'back.out(2)' }, opts || {}), at); }
+function hero(state, at) {
+  const s = { big: { scale: 1, y: 0 }, small: { scale: 0.62, y: 30 }, mid: { scale: 0.78, y: -40 } }[state]; s.opacity = 1;
+  tl.to('#vis', { opacity: 0, duration: 0.3 }, at);
+  tl.to('#hero', Object.assign({ duration: 0.6, ease: 'power2.inOut' }, s), at);
+}
+// picture-story window: scene i between a and b, key moment m
+function vis(i, a, m, b, first) {
+  if (first) { tl.to('#hero', { opacity: 0, duration: 0.3 }, a); tl.fromTo('#vis', { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(2)' }, a + 0.1); }
+  SC.act[i](tl, a, m, b); tl.set('#sc' + i, { opacity: 0 }, b);
+}
+// head nods on every chanted word (shared by all characters)
+function nods(times, offset) {
+  if (!document.getElementById('head')) return;
+  times.forEach(([a]) => { tl.to('#headNod', { y: 7, duration: 0.12, ease: 'power1.out' }, offset + a); tl.to('#headNod', { y: 0, duration: 0.22, ease: 'sine.out' }, offset + a + 0.12); });
+}
+function karaoke(spans, times, offset) {
+  spans.forEach((sp, i) => { const [a, b] = times[i];
+    tl.to(sp, { color: '#FFD23F', scale: 1.14, duration: 0.18, ease: 'back.out(3)' }, offset + a);
+    tl.to(sp, { scale: 1, duration: 0.25 }, offset + b); });
+}
+
+D.segments.forEach((seg, si) => {
+  const t0 = seg.start, t1 = seg.start + seg.span;
+  const sc = el('div', 'scene abs', null, scenes);
+  if (seg.type === 'intro') {
+    el('div', 'title abs', `<span class="sm">${D.title_top}</span><span style="font-size:${D.title_main.length > 14 ? 92 : 112}px">${D.title_main}</span>`, sc);
+    el('div', 'label abs', D.hero_label, sc);
+    const c = el('div', 'cap abs', `<span class="te">${D.title_te}</span>`, sc); c.style.top = '1320px';
+    hero('big', t0);
+    popIn(sc.querySelector('.title'), t0 + 0.1);
+    popIn(sc.querySelector('.label'), t0 + 0.9);
+    tl.to(sc.querySelector('.label'), { opacity: 0, y: 40, duration: 0.4 }, t0 + 3.2);
+    popIn(c, t0 + 3.4);
+    tl.fromTo(sc.querySelector('.title'), { rotation: -2 }, { rotation: 2, duration: 0.8, ease: 'sine.inOut', repeat: Math.max(1, Math.floor((seg.span - 1) / 0.8)), yoyo: true }, t0 + 0.6);
+  } else if (seg.type === 'full') {
+    el('div', 'title abs', seg.caption_en, sc);
+    const p = el('div', 'panel full te abs', D.lines.map(l => `<span class="row">${words(l.te)}</span>`).join(''), sc);
+    p.style.top = '1110px';
+    if (seg.audio === '10_sung.mp3') {
+      const o = t0 + seg.audio_offset; let k = 0; const st = D.lines.map(l => { const w = seg.words[k][0]; k += l.te.split(' ').length; return o + w; });
+      st.forEach((s, i) => { const a = i ? s - 0.3 : t0, b = i < 3 ? st[i + 1] - 0.3 : t1; vis(i, a, a + Math.min(2.2, (b - a) * 0.4), b, i === 0); });
+    } else hero('mid', t0);
+    popIn(sc.querySelector('.title'), t0 + 0.05);
+    const rows = [...p.querySelectorAll('.row')];
+    rows.forEach((r, i) => popIn(r, t0 + 0.15 + i * 0.12));
+    karaoke([...p.querySelectorAll('.w')], seg.words, t0 + seg.audio_offset);
+    nods(seg.words, t0 + seg.audio_offset);
+    HERO.chant(tl, t0 + seg.audio_offset, seg.span, seg.words);
+  } else if (seg.type === 'learn' || seg.type === 'outro') {
+    el('div', 'title abs', seg.caption_en, sc);
+    const c = el('div', 'cap abs', `<span class="te">${seg.caption}</span>`, sc);
+    hero('big', t0);
+    popIn(sc.querySelector('.title'), t0 + 0.05);
+    popIn(c, t0 + 0.35);
+    tl.to(c, { scale: 1.06, duration: 0.5, ease: 'sine.inOut', yoyo: true, repeat: Math.max(1, Math.floor((seg.span - 1.2) / 0.5)) }, t0 + 0.9);
+    if (seg.type === 'outro') {
+      for (let i = 0; i < 26; i++) {
+        const b = el('div', 'burst abs', i % 2 ? flower : spark, $('#bursts'));
+        const a = rnd() * Math.PI * 2, d = 380 + rnd() * 380;
+        tl.fromTo(b, { x: 0, y: 0, scale: 0.2, opacity: 0, rotation: 0 },
+          { x: Math.cos(a) * d, y: Math.sin(a) * d * 1.3, scale: 0.9 + rnd() * 0.8, opacity: 1, rotation: rnd() * 540 - 270, duration: 1.4, ease: 'power3.out' }, t0 + 0.3 + rnd() * 0.3);
+        tl.to(b, { y: '+=500', opacity: 0, duration: 1.6, ease: 'power1.in' }, t0 + 1.8 + rnd() * 0.5);
+      }
+      tl.to('#hero', { rotation: -4, duration: 0.25, yoyo: true, repeat: 7, ease: 'sine.inOut' }, t0 + 0.3);
+      HERO.outro(tl, t0);
+    }
+  } else if (seg.type === 'hook') {  // short sung opening: one line + its scene, then the reel proper
+    const LS = (seg.lines || [seg.line]).map(k => D.lines[k]), o = t0 + seg.audio_offset;
+    el('div', 'title abs', seg.caption_en, sc);
+    const p = el('div', 'panel big abs', LS.map((L, i) => `<span class="row te"${i ? ' style="margin-top:28px"' : ''}>${words(L.te)}</span><span class="tr">${L.tr}</span>`).join(''), sc);
+    p.style.top = '990px';
+    const c = el('div', 'cap abs', `<span class="te">${seg.caption}</span>`, sc); c.style.top = LS.length > 1 ? '1420px' : '1330px';
+    vis(seg.line, t0, o + Math.min(2.2, seg.span * 0.4), t1, true);
+    popIn(sc.querySelector('.title'), t0);
+    popIn(p, t0 + 0.1);
+    popIn(c, t0 + 0.6);
+    karaoke([...p.querySelectorAll('.w')], seg.words, o);
+  } else if (seg.type === 'line') {
+    const L = D.lines[seg.line];
+    el('div', 'title abs', `LINE ${seg.line + 1} <span style="color:#FFF4D6">OF</span> ${D.lines.length}`, sc);
+    el('div', 'dots abs', dotsHtml(seg.line), sc);
+    const p = el('div', 'panel big abs', `<span class="row te">${words(L.te)}</span><span class="tr">${L.tr}</span>`, sc);
+    p.style.top = '990px';
+    const card = el('div', 'card abs', `<div class="tag">MEANING · <span style="font-family:\'Baloo Tammudu 2\';font-weight:800">అర్థం</span></div><span class="mte">${L.mean_te}</span><span class="men">${L.mean_en}</span>`, sc);
+    vis(seg.line, t0, t0 + seg.audio_offset + seg.meaning_at, t1, true);
+    popIn(sc.querySelector('.title'), t0 + 0.05);
+    popIn(sc.querySelector('.dots'), t0 + 0.15);
+    popIn(p, t0 + 0.2);
+    karaoke([...p.querySelectorAll('.w')], seg.words, t0 + seg.audio_offset);
+    const mt = t0 + seg.audio_offset + seg.meaning_at;
+    tl.fromTo(card, { opacity: 0, y: 120, rotation: -3 }, { opacity: 1, y: 0, rotation: 0, duration: 0.55, ease: 'back.out(1.8)' }, mt - 0.15);
+    nods(seg.words, t0 + seg.audio_offset);
+    HERO.meaning(tl, mt);
+  }
+  tl.set(sc, { opacity: 1 }, t0);
+  if (si < D.segments.length - 1) tl.to(sc, { opacity: 0, y: -50, duration: 0.3, ease: 'power2.in' }, t1 - 0.3);
+});
+
+// ---- shared ambient motion (every character gets this) ----
+const rep = (period) => Math.ceil(T / period) + 1;
+gsap.set('#hero svg', { overflow: 'visible' });
+tl.fromTo('#hero svg', { y: 0 }, { y: -22, duration: 1.1, ease: 'sine.inOut', yoyo: true, repeat: rep(1.1) }, 0);
+tl.fromTo('#head', { rotation: -3 }, { rotation: 3, svgOrigin: HERO.headOrigin, duration: 1.7, ease: 'sine.inOut', yoyo: true, repeat: rep(1.7) }, 0);
+if (document.getElementById('halo')) tl.fromTo('#halo', { scale: 1 }, { scale: 1.05, svgOrigin: raysG ? raysG.dataset.c : '300 230', duration: 1.4, ease: 'sine.inOut', yoyo: true, repeat: rep(1.4) }, 0);
+if (raysG) tl.fromTo('#rays', { rotation: 0 }, { rotation: 360, svgOrigin: '0 0', duration: T, ease: 'none' }, 0);
+tl.fromTo('#bigrays', { rotation: 0 }, { rotation: 120, svgOrigin: '0 0', duration: T, ease: 'none' }, 0);
+const lids = document.getElementById('lids');
+if (lids) {
+  const o = lids.dataset.o; gsap.set(lids, { scaleY: 0, svgOrigin: o });
+  for (let b = 1.6; b < T; b += 2.8 + (b % 1.3)) {
+    tl.to(lids, { scaleY: 1, svgOrigin: o, duration: 0.08, ease: 'none' }, b);
+    tl.to(lids, { scaleY: 0, svgOrigin: o, duration: 0.1, ease: 'none' }, b + 0.12);
+  }
+}
+// twinkling sparkles around the character
+[[230, 470], [880, 520], [170, 860], [930, 900], [300, 1240], [800, 1230]].forEach(([x, y], i) => {
+  const s = el('div', 'petal abs', spark, $('#twinkles'));
+  gsap.set(s, { x: x - 35, y: y - 35, scale: 0 });
+  for (let k = i * 0.37; k < T; k += 2.2) {
+    tl.to(s, { scale: 0.9, rotation: '+=90', duration: 0.45, ease: 'back.out(3)' }, k);
+    tl.to(s, { scale: 0, rotation: '+=90', duration: 0.45, ease: 'power1.in' }, k + 0.7);
+  }
+});
+HERO.motion(tl, T, rep, rnd);
+petals.forEach((p, i) => {
+  const x = 40 + rnd() * 1000, dur = 7 + rnd() * 6, s = 0.6 + rnd() * 0.7, off = -rnd() * dur;
+  for (let k = 0; off + k * dur < T; k++) {
+    const st = off + k * dur, f = st < 0 ? -st / dur : 0, dx = rnd() * 240 - 120, rr = rnd() * 720 - 360;
+    tl.fromTo(p, { x: x + dx * f, y: -120 + 2160 * f, rotation: rr * f, scale: s, opacity: 0.95 },
+      { x: x + dx, y: 2040, rotation: rr, duration: dur * (1 - f), ease: 'none', immediateRender: k === 0 }, Math.max(0, st));
+  }
+});
+tl.to({}, { duration: 0 }, T);
+// shrink any sloka row that would wrap, once the fonts are in
+document.fonts.ready.then(() => document.querySelectorAll('.panel').forEach(p => p.querySelectorAll('.row').forEach(r => {
+  r.style.whiteSpace = 'nowrap'; let fs = parseFloat(getComputedStyle(r).fontSize);
+  while (r.scrollWidth > p.clientWidth && fs > 48) { fs -= 2; r.style.fontSize = fs + 'px'; }
+})));
+window.__timelines = window.__timelines || {};
+window.__timelines['sloka'] = tl;
+</script>
+</body>
+</html>

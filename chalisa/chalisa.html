@@ -1,0 +1,185 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<script src="assets/gsap.min.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#FFE3A3;font-family:'Baloo Tammudu 2',sans-serif}
+.abs{position:absolute}
+.bg{left:0;top:0;width:1080px;height:1920px;opacity:0}
+.bg svg{width:1080px;height:1920px}
+#hero{left:240px;top:380px;width:600px;height:900px}
+#hero svg{width:600px;height:900px;overflow:visible}
+#topbar{left:0;top:70px;width:1080px;text-align:center}
+.ttl{font-family:'Luckiest Guy',sans-serif;font-size:76px;color:#FFD23F;-webkit-text-stroke:14px #2B1407;paint-order:stroke fill;text-shadow:0 8px 0 rgba(43,20,7,.45)}
+.ttl .te{font-family:'Baloo Tammudu 2';font-weight:800;font-size:84px;color:#FFF4D6}
+.pill{display:inline-block;margin-top:8px;background:#E63946;color:#fff;border:6px solid #2B1407;border-radius:40px;padding:6px 34px 0;font-weight:800;font-size:50px;line-height:1.3;box-shadow:0 8px 0 rgba(43,20,7,.4)}
+#panel{left:30px;top:1300px;width:1020px;height:580px;background:rgba(255,248,230,.94);border:8px solid #2B1407;border-radius:50px;box-shadow:0 14px 0 rgba(43,20,7,.45);box-sizing:border-box;padding:30px 24px;text-align:center}
+.vline{position:absolute;left:24px;right:24px;text-align:center;font-weight:800;font-size:76px;line-height:1.2;white-space:nowrap;color:#7A2E0B}
+.vline .w{display:inline-block;margin:0 9px}
+.mean{position:absolute;left:40px;right:40px;top:300px;text-align:center}
+.mte{display:block;font-weight:800;font-size:46px;line-height:1.3;color:#2B1407}
+.men{display:block;font-family:'Luckiest Guy',sans-serif;font-size:34px;line-height:1.2;color:#C2410C;margin-top:10px;letter-spacing:.5px}
+.divider{position:absolute;left:120px;right:120px;top:276px;height:6px;border-radius:3px;background:#F2B33D}
+.big{left:0;width:1080px;text-align:center;font-family:'Luckiest Guy',sans-serif;color:#FFD23F;-webkit-text-stroke:16px #2B1407;paint-order:stroke fill;text-shadow:0 10px 0 rgba(43,20,7,.45)}
+.spark{left:0;top:0;width:60px;height:60px}
+</style></head><body>
+<div id="stage" data-composition-id="chalisa" data-width="1080" data-height="1920" data-duration="__DURATION__">
+<div id="bgs"></div>
+<div id="hero" class="abs"></div>
+<div id="fx"></div>
+<div id="topbar" class="abs"><div class="ttl"><span class="te">హనుమాన్ చాలీసా</span></div><div class="pill" id="pill">దోహా</div></div>
+<div id="panel" class="abs"></div>
+<div id="intro" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
+__AUDIO__
+</div>
+<script>
+__RIG__
+__SCENES__
+const D = __DATA__;
+const T = D.duration;
+const tl = gsap.timeline({ paused: true, defaults: { immediateRender: false } });
+const $ = s => document.querySelector(s);
+const el = (tag, cls, html, parent) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; (parent || document.body).appendChild(e); return e; };
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const rep = p => Math.ceil(T / p) + 1;
+$('#hero').innerHTML = HM.svg();
+// backdrops
+const BG = {}; Object.keys(SC.B).forEach(k => { BG[k] = el('div', 'bg abs', `<svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">${SC.B[k]}</svg>`, $('#bgs')); });
+// mountain rides in the right hand
+$('#foreR').insertAdjacentHTML('beforeend', `<g id="mtnWrap" opacity="0"><g id="mtnRot">${SC.mountain}</g></g>`);
+gsap.set('#mtnWrap', { x: 420, y: 760 });
+const spark = `<svg viewBox="-35 -35 70 70"><path d="M0 -32 Q5 -5 32 0 Q5 5 0 32 Q-5 5 -32 0 Q-5 -5 0 -32Z" fill="#FFF3B0" stroke="#2B1407" stroke-width="3"/></svg>`;
+const HP = { // hero placement per scene: x,y (px offset of #hero), scale
+  pray: [0, 60, 1], hero: [0, 0, 1], lanka: [0, 0, 1], mountain: [60, -40, 0.95], rama: [-170, 80, 0.92], friends: [-200, 20, 0.95], sun: [-150, 300, 0.62], ocean: [-500, 120, 0.8], guard: [-190, 20, 0.98], bless: [0, 20, 1], heart: [0, 170, 0.86] };
+function place(scene, at, d = 0.8) { const [x, y, s] = HP[scene]; tl.to('#hero', { x, y, scale: s, transformOrigin: '50% 100%', duration: d, ease: 'power2.inOut' }, at); }
+function eyes(closed, at) { tl.to('#calm', { opacity: closed ? 1 : 0, duration: 0.2 }, at); tl.to(['#pupils'], { opacity: closed ? 0 : 1, duration: 0.2 }, at); tl.to('#eyes ellipse:not(#lids ellipse)', { opacity: closed ? 0 : 1, duration: 0.2 }, at); }
+function burst(x, y, at, n = 8, col) { for (let i = 0; i < n; i++) { const s = el('div', 'spark abs', spark, $('#fx')); const a = i / n * 6.283, r = 140 + rnd() * 80; gsap.set(s, { opacity: 0 });
+  tl.fromTo(s, { x: x - 30, y: y - 30, scale: 0, opacity: 1 }, { x: x - 30 + Math.cos(a) * r, y: y - 30 + Math.sin(a) * r, scale: 1, rotation: 180, duration: 0.7, ease: 'power2.out' }, at);
+  tl.to(s, { opacity: 0, scale: 0.3, duration: 0.4 }, at + 0.6); } }
+const pose = (n, at, d) => HM.pose(tl, n, at, d);
+
+// ---------- intro ----------
+const I = D.intro;
+const intro = $('#intro');
+intro.innerHTML = `<div class="big abs" style="top:250px;font-size:96px">LET'S CHANT</div><div class="big abs" style="top:360px;font-size:120px;color:#FF7A1A">HANUMAN<br>CHALISA</div>`;
+tl.set(BG.hero, { opacity: 1 }, 0);
+tl.set(['#topbar', '#panel'], { opacity: 0 }, 0);
+tl.fromTo(intro.children, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(2)', stagger: 0.3 }, 0.2);
+pose('hero', 0, 0.01); tl.set('#hero', { y: 330, scale: 0.8, transformOrigin: '50% 100%' }, 0);
+pose('roar', 1.5); pose('hero', 2.6); burst(540, 900, 1.6, 10);
+tl.to(intro, { opacity: 0, duration: 0.4 }, I.end - 0.4);
+tl.to(['#topbar', '#panel'], { opacity: 1, duration: 0.4 }, I.end - 0.2);
+
+// ---------- verses ----------
+let curScene = 'hero';
+function runVerses() { D.verses.forEach((v, vi) => {
+  const t0 = v.start, h2 = v.halves[1][0], t1 = v.end;
+  if (v.scene !== curScene) { tl.to(BG[curScene], { opacity: 0, duration: 0.6 }, t0 - 0.5); tl.to(BG[v.scene], { opacity: 1, duration: 0.6 }, t0 - 0.5); place(v.scene, t0 - 0.5); curScene = v.scene; }
+  tl.set('#pill', { innerHTML: v.label }, t0 - 0.3);
+  if (vi === 0 || D.verses[vi - 1].label !== v.label) tl.fromTo('#pill', { scale: 0.6 }, { scale: 1, duration: 0.4, ease: 'back.out(3)' }, t0 - 0.3);
+  // text panel
+  const P = el('div', 'abs', '', $('#panel')); P.style.cssText = 'left:0;top:0;width:100%;height:100%;opacity:0';
+  const lines = [v.l1, v.l2].map((t, i) => { const fs = i ? v.fs2 : v.fs1, two = fs < 0; const d = el('div', 'vline', t.split(' ').map(w => `<span class="w">${w}</span>` + (two && w.endsWith(',') ? '<br>' : '')).join(' '), P); d.style.top = (two ? 24 + i * 124 : 36 + i * 112) + 'px'; d.style.fontSize = Math.abs(fs) + 'px'; if (two) d.style.lineHeight = '1.15'; return d; });
+  el('div', 'divider', '', P);
+  el('div', 'mean', `<span class="mte">${v.mte}</span><span class="men">${v.men}</span>`, P);
+  tl.to(P, { opacity: 1, duration: 0.3 }, t0 - 0.35);
+  tl.to(P, { opacity: 0, duration: 0.25 }, t1 + 0.05);
+  const spans = lines.flatMap(l => [...l.querySelectorAll('.w')]);
+  spans.forEach((sp, i) => { const [a, b] = v.words[i];
+    tl.to(sp, { color: '#E63946', scale: 1.16, duration: 0.16, ease: 'back.out(3)' }, a);
+    tl.to(sp, { color: '#C2410C', scale: 1, duration: 0.2 }, b); });
+  v.words.forEach(([a]) => { tl.to('#headNod', { y: 6, duration: 0.1 }, a); tl.to('#headNod', { y: 0, duration: 0.18 }, a + 0.1); });
+  ACT[v.key] && ACT[v.key](t0, h2, t1);
+}); }
+const ACT = {
+  D1: (t, h) => { pose('kneel', t - 0.4); eyes(true, t); },
+  D2: (t, h) => { burst(540, 760, h, 8); },
+  1: (t, h) => { eyes(false, t - 0.4); pose('hero', t - 0.4); burst(540, 700, h, 8); },
+  2: (t, h) => { pose('stand', t); tl.to('#flag', { opacity: 0 }, t); },
+  3: (t, h) => { pose('roar', t); pose('hero', h); },
+  4: (t, h) => { pose('stand', t); [0, 1, 2].forEach(k => burst(540 + (k - 1) * 200, 700 + k * 60, t + 0.4 + k * 0.9, 6)); },
+  5: (t, h) => { pose('hero', t); tl.fromTo('#flagCloth', { skewY: 0 }, { skewY: 12, svgOrigin: '180 305', duration: 0.4, yoyo: true, repeat: 7, ease: 'sine.inOut' }, t); },
+  6: (t, h) => { pose('namaste', t); eyes(true, t + 0.2); eyes(false, h + 0.5); },
+  7: (t, h) => { pose('guard', t); pose('roar', h); },
+  8: (t, h) => { pose('namaste', t); tl.to('#heartGlow', { opacity: 1, duration: 0.4 }, h); tl.fromTo('#heartGlow', { scale: 1 }, { scale: 1.15, svgOrigin: '300 500', duration: 0.35, yoyo: true, repeat: 5 }, h); tl.to('#heartGlow', { opacity: 0, duration: 0.3 }, h + 2.6); },
+  9: (t, h) => { pose('kneel', t - 0.5, 0.01); tl.set('#hero', { x: -150, y: -170, scale: 0.36 }, t - 0.5); tl.to('#palmL', { opacity: 1 }, t);
+    tl.to('#ring', { opacity: 1, duration: 0.3 }, t + 0.2); tl.to('#ring', { opacity: 0, duration: 0.3 }, h - 0.3);
+    tl.to('#hero', { x: 0, y: 0, scale: 1.12, duration: 0.9, ease: 'back.out(1.6)' }, h); pose('roar', h);
+    tl.to('#sita', { opacity: 0, duration: 0.4 }, h); tl.to('#ashoka', { opacity: 0.35, duration: 0.4 }, h);
+    tl.to('#fires', { opacity: 1, duration: 0.6 }, h + 0.3);
+    tl.fromTo('#fires .flame', { scaleY: 0.85 }, { scaleY: 1.15, transformOrigin: '50% 100%', duration: 0.3, yoyo: true, repeat: 40, stagger: 0.07, ease: 'sine.inOut' }, h + 0.3); },
+  10: (t, h) => { pose('guard', t); tl.to('#demons', { opacity: 1, duration: 0.4 }, t + 0.2); tl.fromTo('#demons .demon', { y: 0 }, { y: -20, duration: 0.25, yoyo: true, repeat: 5, stagger: 0.1 }, t + 0.3);
+    pose('roar', h - 0.6); burst(540, 800, h - 0.4, 10); tl.to('#demons .demon', { x: (i) => (i % 2 ? 900 : -900), y: -700, rotation: 540, duration: 1.1, ease: 'power2.in', stagger: 0.12 }, h - 0.3); tl.to('#fires', { opacity: 0.5, duration: 1 }, h); tl.set('#demons', { opacity: 0 }, h + 1.8); },
+  11: (t, h, e) => { pose('lift', t - 0.5); tl.to('#mtnWrap', { opacity: 1, duration: 0.3 }, t - 0.2); tl.set('#mtnRot', { rotation: 195, svgOrigin: '0 0' }, t - 0.5);
+    tl.fromTo('#hero', { y: -40 }, { y: -90, duration: 0.8, yoyo: true, repeat: Math.ceil((e - t) / 0.8), ease: 'sine.inOut' }, t);
+    tl.fromTo('#speedClouds', { x: 0 }, { x: 1400, duration: e - t + 1, ease: 'none' }, t - 0.5); tl.fromTo('#speedLines', { x: -400 }, { x: 1200, duration: 0.7, repeat: Math.ceil((e - t) / 0.7), ease: 'none' }, t - 0.5);
+    tl.fromTo('#mtn .herb', { scale: 0.7 }, { scale: 1.3, transformOrigin: '50% 50%', duration: 0.3, yoyo: true, repeat: 30, stagger: 0.05 }, t);
+    tl.to('#mtnWrap', { opacity: 0, duration: 0.3 }, e + 0.1); },
+  12: (t, h) => { pose('kneel', t - 0.4); eyes(false, t); tl.fromTo('#rama .armL', { rotation: 0 }, { rotation: 35, svgOrigin: '-56 60', duration: 0.6, yoyo: true, repeat: 1 }, h); },
+  13: (t, h) => { pose('namaste', h - 0.3); tl.to('#hero', { x: 60, duration: 0.8 }, h - 0.3); tl.to('#rama .armL', { rotation: 70, svgOrigin: '-56 60', duration: 0.6 }, h + 0.3); tl.to('#rama .armL', { rotation: 0, svgOrigin: '-56 60', duration: 0.6 }, h + 3.2); burst(560, 640, h + 0.6, 10); },
+  14: (t, h) => { pose('kneel', t, 0.5); tl.to('#hero', { x: -170, duration: 0.6 }, t); petals(t, 6); },
+  15: (t, h) => { pose('namaste', t); eyes(true, t); eyes(false, h + 2); },
+  16: (t, h) => { pose('stand', t - 0.4); tl.fromTo('#flyCrown', { x: -520, y: 150, scale: 0.5, opacity: 1 }, { x: 0, y: 0, scale: 1, duration: 1.2, ease: 'power2.inOut' }, h); burst(780, 760, h + 1.2, 8); },
+  17: (t, h) => { pose('guard', t); tl.set('#flyCrown', { x: -520, y: 150, scale: 0.5 }, t); tl.to('#flyCrown', { x: 0, y: 0, scale: 1, duration: 1.2, ease: 'power2.inOut' }, t + 0.5); pose('roar', h); },
+  18: (t, h, e) => { pose('leap', t - 0.4); eyes(false, t); tl.fromTo('#hero', { x: -150, y: 300 }, { x: 140, y: -200, duration: e - t, ease: 'sine.inOut' }, t);
+    tl.fromTo('#sunRays', { rotation: 0 }, { rotation: 90, svgOrigin: '0 0', duration: e - t, ease: 'none' }, t); tl.to('#bigSun', { x: 80, y: -60, scale: 0.9, duration: 1, ease: 'power1.inOut' }, h + 1); },
+  19: (t, h, e) => { pose('leap', t - 0.4); tl.to('#ring', { opacity: 1, duration: 0.3 }, t); tl.to('#ring', { opacity: 0, duration: 0.3 }, e);
+    tl.fromTo('#hero', { x: -520 }, { x: 420, duration: e - t + 0.4, ease: 'none' }, t - 0.2); tl.fromTo('#hero', { y: 260 }, { y: -160, duration: (e - t) / 2, yoyo: true, repeat: 1, ease: 'sine.out' }, t - 0.2);
+    ['#wave1', '#wave2', '#wave3'].forEach((w, i) => tl.fromTo(w, { x: 0 }, { x: -180, duration: 1.4 - i * 0.3, repeat: Math.ceil((e - t) / 1) + 2, ease: 'none' }, t - 1)); },
+  20: (t, h) => { pose('stand', t - 0.4); burst(300, 700, h, 8); },
+  21: (t, h) => { pose('guard', t); tl.fromTo('#gate', { scale: 1 }, { scale: 1.03, svgOrigin: '780 800', duration: 0.5, yoyo: true, repeat: 1 }, h); },
+  22: (t, h) => { pose('stand', t); burst(300, 650, h + 0.3, 8); },
+  23: (t, h) => { pose('roar', t); rings(h); tl.to('#hero', { x: -180, duration: 0.08, yoyo: true, repeat: 7 }, h); },
+  24: (t, h) => { pose('guard', t); tl.to('#ghosts', { opacity: 1, duration: 0.4 }, t + 0.2); tl.fromTo('#ghosts .ghost', { y: 0 }, { y: -30, duration: 0.5, yoyo: true, repeat: 3, stagger: 0.15 }, t + 0.2);
+    pose('roar', h); tl.to('#ghosts .ghost', { x: 700, y: -400, rotation: 90, duration: 1, ease: 'power2.in', stagger: 0.12 }, h + 0.2); },
+  25: (t, h) => { pose('stand', t); [0, 1].forEach(k => burst(380, 600 + k * 200, t + 0.5 + k * 1.2, 6)); },
+  26: (t, h) => { pose('namaste', t); eyes(true, t + 0.3); eyes(false, h + 1.5); },
+  27: (t, h) => { pose('guard', t); },
+  28: (t, h) => { pose('stand', t); burst(380, 650, h + 0.3, 10); },
+  29: (t, h) => { pose('hero', t); burst(380, 600, h, 8); },
+  30: (t, h) => { pose('roar', t); rings(t + 0.5); pose('guard', h); },
+  31: (t, h) => { pose('bless', t - 0.4); eyes(false, t); treasure(t + 0.3, h); },
+  32: (t, h, e) => { pose('sitnam', t); eyes(true, t + 0.2); ramaWords(t, e); },
+  33: (t, h, e) => { ramaWords(t, e); },
+  34: (t, h) => { pose('bless', t); eyes(false, t); burst(540, 600, h, 8); },
+  35: (t, h) => { pose('sitnam', t); eyes(true, t + 0.2); },
+  36: (t, h) => { pose('bless', t); eyes(false, t); burst(540, 600, h, 10); },
+  37: (t, h) => { pose('stand', t, 0.5); tl.to('#hero', { y: -30, duration: 0.25, yoyo: true, repeat: 5 }, t); burst(540, 640, t + 0.4, 10); },
+  38: (t, h) => { pose('bless', t); burst(540, 640, h, 8); },
+  39: (t, h) => { pose('namaste', t - 0.4); eyes(true, t); tl.to('#heartGlow', { opacity: 1, duration: 0.5 }, h); },
+  40: (t, h) => { tl.fromTo('#heartGlow', { scale: 1 }, { scale: 1.2, svgOrigin: '300 500', duration: 0.4, yoyo: true, repeat: 9 }, t); },
+  D3: (t, h, e) => { tl.to('#trio', { opacity: 1, duration: 0.8 }, t); tl.fromTo('#trio', { y: 200 }, { y: 140, duration: 1, ease: 'back.out(1.5)' }, t); burst(540, 520, t + 0.8, 12); eyes(false, h); pose('bless', h, 0.01); pose('namaste', h); },
+};
+runVerses();
+function petals(t, n) { for (let i = 0; i < 14; i++) { const s = el('div', 'spark abs', `<svg viewBox="-35 -35 70 70">${[...Array(6)].map((_, k) => `<ellipse rx="10" ry="18" cy="-12" transform="rotate(${k * 60})" fill="#FF8FB1" stroke="#2B1407" stroke-width="3"/>`).join('')}<circle r="8" fill="#FFC93C"/></svg>`, $('#fx'));
+  const x = 80 + rnd() * 920; gsap.set(s, { opacity: 0 }); tl.fromTo(s, { x, y: -80, rotation: 0, opacity: 1 }, { x: x + rnd() * 200 - 100, y: 1250, rotation: 400, duration: n, ease: 'none' }, t + rnd() * 2); tl.set(s, { opacity: 0 }, t + n + 2); } }
+function rings(t) { const g = document.getElementById('roarRings'); for (let i = 0; i < 3; i++) { g.insertAdjacentHTML('beforeend', `<circle cx="300" cy="560" r="80" fill="none" stroke="#FFF3B0" stroke-width="14" opacity="0"/>`);
+  const c = g.lastElementChild; tl.fromTo(c, { attr: { r: 60 }, opacity: 0.9 }, { attr: { r: 700 }, opacity: 0, duration: 1.1, ease: 'power1.out' }, t + i * 0.3); } }
+function treasure(t, h) { const g = document.getElementById('treasure'); tl.to(g, { opacity: 1, duration: 0.3 }, t);
+  for (let i = 0; i < 17; i++) { const a = i / 17 * 6.283, gold = i >= 8; g.insertAdjacentHTML('beforeend', gold ? `<g><circle r="26" fill="#FFC93C" stroke="#2B1407" stroke-width="5"/><text y="12" font-size="34" text-anchor="middle" font-weight="800" fill="#7A2E0B">₹</text></g>` : `<path d="M0 -34 Q6 -6 34 0 Q6 6 0 34 Q-6 6 -34 0 Q-6 -6 0 -34Z" fill="#FFF3B0" stroke="#2B1407" stroke-width="4"/>`);
+    const c = g.lastElementChild, r = gold ? 360 : 260; gsap.set(c, { scale: 0 }); tl.fromTo(c, { x: 540, y: 700, scale: 0 }, { x: 540 + Math.cos(a) * r, y: 700 + Math.sin(a) * r * 0.8, scale: 1, duration: 0.6, ease: 'back.out(2)' }, (gold ? h : t + 0.3) + (i % 8) * 0.08); }
+  tl.to(g, { opacity: 0, duration: 0.5 }, h + 3.4); }
+function ramaWords(t, e) { const g = document.getElementById('ramaWords'); for (let k = 0; t + k * 0.9 < e - 0.6; k++) { g.insertAdjacentHTML('beforeend', `<text font-size="64" font-weight="800" font-family="Baloo Tammudu 2" fill="#FFD23F" stroke="#2B1407" stroke-width="8" paint-order="stroke" text-anchor="middle">రామ</text>`);
+  const w = g.lastElementChild, x = 200 + ((k * 263) % 680); gsap.set(w, { opacity: 0 }); tl.fromTo(w, { x, y: 1000, opacity: 0 }, { y: 250, opacity: 1, duration: 3, ease: 'none' }, t + k * 0.9); tl.to(w, { opacity: 0, duration: 0.6 }, t + k * 0.9 + 2.4); } }
+
+// ---------- outro ----------
+const Ou = D.outro;
+tl.to(BG[curScene], { opacity: 0, duration: 0.6 }, Ou.start - 0.4); tl.to(BG.hero, { opacity: 1, duration: 0.6 }, Ou.start - 0.4); place('hero', Ou.start - 0.4);
+tl.set('#trio', { opacity: 0 }, Ou.start); tl.to('#heartGlow', { opacity: 0, duration: 0.3 }, Ou.start - 0.4);
+tl.to(['#panel', '#topbar'], { opacity: 0, duration: 0.3 }, Ou.start - 0.3);
+const oc = el('div', 'big abs', 'JAI SHRI RAM!<br><span style="font-size:110px;color:#FF7A1A">JAI HANUMAN!</span>', $('#stage')); oc.style.cssText += ';top:1380px;font-size:96px;opacity:0';
+tl.fromTo(oc, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(2)' }, Ou.start);
+pose('roar', Ou.start + 0.2); eyes(false, Ou.start); burst(540, 800, Ou.start + 0.4, 12); pose('hero', Ou.start + 1.6); burst(540, 700, Ou.start + 2, 10);
+// ---------- ambient ----------
+tl.fromTo('#tail', { rotation: -6 }, { rotation: 6, svgOrigin: '262 640', duration: 1.2, ease: 'sine.inOut', yoyo: true, repeat: rep(1.2) }, 0);
+tl.fromTo('#head', { rotation: -3 }, { rotation: 3, svgOrigin: '300 385', duration: 1.7, ease: 'sine.inOut', yoyo: true, repeat: rep(1.7) }, 0);
+tl.fromTo('#torso', { scaleY: 1 }, { scaleY: 1.015, svgOrigin: '300 610', duration: 1.3, ease: 'sine.inOut', yoyo: true, repeat: rep(1.3) }, 0);
+const lids = document.getElementById('lids');
+for (let b = 2.2; b < T; b += 3.1 + (b % 1.7)) { tl.to(lids, { scaleY: 1, svgOrigin: '300 252', duration: 0.07, ease: 'none' }, b); tl.to(lids, { scaleY: 0.001, svgOrigin: '300 252', duration: 0.09, ease: 'none' }, b + 0.11); }
+tl.fromTo('#heroClouds .cloud', { x: 0 }, { x: -12 * T, duration: T, ease: 'none' }, 0);
+tl.fromTo('#prayRays,#heartRays,#blessRays', { rotation: 0 }, { rotation: 90, svgOrigin: '0 0', duration: T, ease: 'none' }, 0);
+document.querySelectorAll('.twk').forEach((s, i) => tl.fromTo(s, { opacity: 0.4 }, { opacity: 1, duration: 0.8, yoyo: true, repeat: Math.floor(T / 0.8) - 2, ease: 'sine.inOut' }, (i % 5) * 0.2));
+tl.to({}, { duration: 0 }, T);
+window.__timelines = window.__timelines || {}; window.__timelines['chalisa'] = tl;
+</script></body></html>

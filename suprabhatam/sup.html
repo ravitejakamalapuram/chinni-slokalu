@@ -1,0 +1,118 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<script src="assets/gsap.min.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#FFE3A3;font-family:'Baloo Tammudu 2',sans-serif}
+.abs{position:absolute}
+.bg{left:0;top:0;width:1080px;height:1920px;opacity:0}
+.bg svg{width:1080px;height:1920px}
+#hero{left:240px;top:380px;width:600px;height:900px}
+#hero svg{width:600px;height:900px;overflow:visible}
+#topbar{left:0;top:70px;width:1080px;text-align:center}
+.ttl{font-family:'Luckiest Guy',sans-serif;font-size:76px;color:#FFD23F;-webkit-text-stroke:14px #2B1407;paint-order:stroke fill;text-shadow:0 8px 0 rgba(43,20,7,.45)}
+.ttl .te{font-family:'Baloo Tammudu 2';font-weight:800;font-size:84px;color:#FFF4D6}
+.pill{display:inline-block;margin-top:8px;background:#E63946;color:#fff;border:6px solid #2B1407;border-radius:40px;padding:6px 34px 0;font-weight:800;font-size:50px;line-height:1.3;box-shadow:0 8px 0 rgba(43,20,7,.4)}
+#panel{left:30px;top:1300px;width:1020px;height:580px;background:rgba(255,248,230,.94);border:8px solid #2B1407;border-radius:50px;box-shadow:0 14px 0 rgba(43,20,7,.45);box-sizing:border-box;padding:30px 24px;text-align:center}
+.vline{position:absolute;left:24px;right:24px;text-align:center;font-weight:800;font-size:76px;line-height:1.2;white-space:nowrap;color:#7A2E0B}
+.vline .w{display:inline-block;margin:0 9px}
+.mean{position:absolute;left:40px;right:40px;top:300px;text-align:center}
+.mte{display:block;font-weight:800;font-size:44px;line-height:1.3;color:#2B1407}
+.men{display:block;font-family:'Luckiest Guy',sans-serif;font-size:34px;line-height:1.2;color:#C2410C;margin-top:10px;letter-spacing:.5px}
+.divider{position:absolute;left:120px;right:120px;top:276px;height:6px;border-radius:3px;background:#F2B33D}
+.big{left:0;width:1080px;text-align:center;font-family:'Luckiest Guy',sans-serif;color:#FFD23F;-webkit-text-stroke:16px #2B1407;paint-order:stroke fill;text-shadow:0 10px 0 rgba(43,20,7,.45)}
+.spark{left:0;top:0;width:60px;height:60px}
+</style></head><body>
+<div id="stage" data-composition-id="sup" data-width="1080" data-height="1920" data-duration="__DURATION__">
+<div id="shake" class="abs" style="left:0;top:0;width:1080px;height:1920px">
+<div id="world" class="abs" style="left:0;top:0;width:1080px;height:1920px">
+<div id="bgs"></div>
+<div id="hero" class="abs"><div id="hmv" style="width:600px;height:900px"></div></div>
+<div id="fgs"></div>
+<svg id="fxsvg" class="abs" style="left:0;top:0;width:1080px;height:1920px;overflow:visible" viewBox="0 0 1080 1920"></svg>
+<div id="flash" class="abs" style="left:0;top:0;width:1080px;height:1920px;background:#fff;opacity:0"></div>
+</div></div>
+<div id="topbar" class="abs"><div class="ttl"><span class="te" style="font-size:72px">శ్రీ వేంకటేశ్వర సుప్రభాతం</span></div><div class="pill" id="pill">శ్లోకం 1/4</div></div>
+<div id="panel" class="abs"></div>
+<div id="intro" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
+__AUDIO__
+</div>
+<script>
+__RIG__
+__STORY__
+const D = __DATA__;
+const T = D.duration;
+const tl = gsap.timeline({ paused: true, defaults: { immediateRender: false } });
+const $ = s => document.querySelector(s);
+const el = (tag, cls, html, parent) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; (parent || document.body).appendChild(e); return e; };
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const rep = p => Math.ceil(T / p) + 1;
+__INFRA__
+function panel(v, withMean) {
+  const P = el('div', 'abs', '', $('#panel')); P.style.cssText = 'left:0;top:0;width:100%;height:100%;opacity:0';
+  const lines = [v.l1, v.l2].map((t, i) => { const fs = i ? v.fs2 : v.fs1, two = fs < 0; const d = el('div', 'vline', t.split(' ').map(w => `<span class="w">${w}</span>` + (two && w.endsWith(',') ? '<br>' : '')).join(' '), P);
+    d.style.top = (withMean ? (two ? 20 + i * 128 : 36 + i * 112) : (two ? 60 + i * 200 : 120 + i * 150)) + 'px'; d.style.fontSize = Math.abs(fs) * (withMean ? 1 : 1.12) + 'px'; if (two) d.style.lineHeight = '1.15'; return d; });
+  if (withMean) { el('div', 'divider', '', P); el('div', 'mean', `<span class="mte">${v.mte}</span><span class="men">${v.men}</span>`, P); }
+  const spans = lines.flatMap(l => [...l.querySelectorAll('.w')]);
+  spans.forEach((sp, i) => { const [a, b] = v.words[i]; tl.to(sp, { color: '#E63946', scale: 1.16, duration: 0.16, ease: 'back.out(3)' }, a); tl.to(sp, { color: '#C2410C', scale: 1, duration: 0.2 }, b); });
+  return { P, lines };
+}
+// ---------- intro ----------
+const I = D.intro, intro = $('#intro');
+intro.innerHTML = `<div class="big abs" style="top:300px;font-size:84px">GOOD MORNING,</div><div class="big abs" style="top:400px;font-size:104px;color:#FF7A1A">VENKATESWARA!</div><div class="big abs" style="top:1420px;font-size:110px;color:#FFF4D6;font-family:'Baloo Tammudu 2';font-weight:800">సుప్రభాతం</div>`;
+const H0 = D.hook ? D.hook.end : 0;
+tl.set(['#topbar', '#panel'], { opacity: 0 }, 0);
+if (D.hook) {  // sung hook: first sung half-verse with verse 1's scene, then the reel proper
+  const K = D.hook, v0 = D.verses[0], dt = K.words[0][0] - v0.words[0][0];
+  const sh = x => Math.round((x + dt) * 100) / 100;
+  show(v0.key, -0.3);
+  ST.S[v0.key].act(Object.assign({}, v0, { start: sh(v0.start), h2: sh(v0.h2), cend: sh(v0.cend), ms: sh(v0.ms), me: sh(v0.me), end: sh(v0.end), words: v0.words.map(([a, b]) => [sh(a), sh(b)]) }));
+  const hk = el('div', 'abs', '', $('#stage')); hk.style.cssText = 'left:0;top:0;width:1080px;height:1920px';
+  const ttl = el('div', 'big abs', 'SING ALONG!', hk); ttl.style.cssText += ';top:110px;font-size:120px';
+  const card = el('div', 'abs', '', hk); card.style.cssText = 'left:30px;top:1480px;width:1020px;height:280px;background:rgba(255,248,230,.94);border:8px solid #2B1407;border-radius:50px;box-shadow:0 14px 0 rgba(43,20,7,.45);box-sizing:border-box';
+  const two = K.fs1 < 0, ln = el('div', 'vline', K.l1.split(' ').map(w => `<span class="w">${w}</span>` + (two && w.endsWith(',') ? '<br>' : '')).join(' '), card);
+  ln.style.top = (two ? 20 : 40) + 'px'; ln.style.fontSize = Math.abs(K.fs1) * 1.05 + 'px';
+  const cap = el('div', 'abs', 'పాడుకుందాం!', card); cap.style.cssText = 'left:0;right:0;top:150px;text-align:center;font-weight:800;font-size:72px;color:#E63946';
+  [...ln.querySelectorAll('.w')].forEach((sp, i) => { const [a, b] = K.words[i]; tl.to(sp, { color: '#E63946', scale: 1.16, duration: 0.16, ease: 'back.out(3)' }, a); tl.to(sp, { color: '#C2410C', scale: 1, duration: 0.2 }, b); });
+  tl.fromTo([ttl, card], { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(2)', stagger: 0.12 }, 0);
+  tl.to(hk, { opacity: 0, duration: 0.3 }, K.end - 0.3);
+  tl.set(['#topbar', '#panel'], { opacity: 0 }, 0);
+}
+if (D.hook) tl.set(intro.children, { opacity: 0 }, 0);
+show('intro', H0 - 0.3);
+tl.fromTo(intro.children, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(2)', stagger: 0.4 }, H0 + 0.2);
+ST.S.intro.act(I);
+tl.to(intro, { opacity: 0, duration: 0.4 }, I.end - 0.4);
+tl.to(['#topbar', '#panel'], { opacity: 1, duration: 0.4 }, I.end - 0.2);
+// ---------- verses ----------
+D.verses.forEach((v, vi) => {
+  const sw = vi === 0 ? v.start - 0.7 : (D.verses[vi - 1].end + v.start) / 2 - 0.25; show(v.key, sw);
+  tl.set('#pill', { innerHTML: v.label }, v.start - 0.3); tl.fromTo('#pill', { scale: 0.6 }, { scale: 1, duration: 0.4, ease: 'back.out(3)' }, v.start - 0.3);
+  const { P, lines } = panel(v, true);
+  const mean = P.querySelector('.mean');
+  tl.to(P, { opacity: 1, duration: 0.3 }, v.start - 0.35); tl.to(P, { opacity: 0, duration: 0.25 }, v.end + 0.3);
+  tl.set(mean, { opacity: 0.25 }, v.start - 0.35); tl.to(mean, { opacity: 1, duration: 0.3 }, v.ms - 0.2); tl.fromTo(mean, { scale: 0.92 }, { scale: 1, duration: 0.4, ease: 'back.out(2)' }, v.ms - 0.2);
+  tl.to(lines, { opacity: 0.45, duration: 0.3 }, v.ms - 0.2);
+  ST.S[v.key].act(v);
+});
+// ---------- together + sung ----------
+const G2 = D.tog, SG = D.sung;
+show('fin', G2.start - 0.5);
+tl.set('#pill', { innerHTML: 'అందరం పాడుకుందాం!' }, G2.start); tl.fromTo('#pill', { scale: 0.6 }, { scale: 1, duration: 0.4, ease: 'back.out(3)' }, G2.start);
+const tg = el('div', 'big abs', 'SING ALONG!', $('#stage')); tg.style.cssText += ';top:1480px;font-size:110px;opacity:0';
+tl.to('#panel', { opacity: 0, duration: 0.3 }, G2.start - 0.4); tl.fromTo(tg, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(2)' }, G2.start); tl.to(tg, { opacity: 0, duration: 0.3 }, SG.verses[0].start - 1.1);
+tl.to('#panel', { opacity: 1, duration: 0.4 }, SG.verses[0].start - 0.8);
+SG.verses.forEach((v, i) => { const { P } = panel(v, false); tl.to(P, { opacity: 1, duration: 0.35 }, v.start - 0.7); tl.to(P, { opacity: 0, duration: 0.3 }, i < 3 ? SG.verses[i + 1].start - 0.8 : SG.end - 0.6);
+  tl.set('#pill', { innerHTML: `పాడుకుందాం ${i + 1}/4` }, v.start - 0.6); });
+ST.S.fin.act(G2, SG);
+// ---------- outro ----------
+const Ou = D.outro;
+tl.to(['#panel'], { opacity: 0, duration: 0.3 }, Ou.start - 0.3);
+const oc = el('div', 'big abs', '<span style="font-family:\'Baloo Tammudu 2\';font-weight:800;color:#FFF4D6">గోవిందా! గోవిందా!</span>', $('#stage')); oc.style.cssText += ';top:1450px;font-size:110px;opacity:0';
+tl.fromTo(oc, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(2)' }, Ou.start);
+ST.S.fin.outro(Ou.start);
+amb();
+tl.to({}, { duration: 0 }, T);
+window.__timelines = window.__timelines || {}; window.__timelines['sup'] = tl;
+</script></body></html>

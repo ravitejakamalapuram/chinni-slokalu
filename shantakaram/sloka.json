@@ -1,0 +1,298 @@
+{
+ "id": "shantakaram",
+ "character": "vishnu",
+ "bg": "radial-gradient(circle at 50% 38%, #E6F7FF 0%, #A9D8F5 28%, #3F7FC4 64%, #1B2F6B 100%)",
+ "petal_color": "#FFE9A8",
+ "title_top": "LET'S LEARN",
+ "title_main": "SHANTAKARAM!",
+ "title_te": "శాంతాకారం శ్లోకం",
+ "hero_label": "VISHNU",
+ "lines": [
+  {
+   "te": "శాంతాకారం భుజగశయనం పద్మనాభం సురేశం",
+   "tr": "Shantakaram Bhujagashayanam Padmanabham Suresham",
+   "mean_te": "ఎప్పుడూ ప్రశాంతంగా ఉండేవాడు, ఆదిశేషుడు అనే పాము మీద పడుకునేవాడు, బొడ్డులో తామర పువ్వు ఉన్నవాడు, దేవతలకు రాజు",
+   "mean_en": "Ever peaceful, resting on the serpent, lotus at his navel, king of gods"
+  },
+  {
+   "te": "విశ్వాధారం గగనసదృశం మేఘవర్ణం శుభాంగమ్",
+   "tr": "Vishwadharam Gaganasadrisham Meghavarnam Shubhangam",
+   "mean_te": "ప్రపంచమంతటినీ మోసేవాడు, ఆకాశంలా అంతటా ఉండేవాడు, వాన మేఘం రంగులో ఉండేవాడు, అందమైన శుభ రూపం ఉన్నవాడు",
+   "mean_en": "Holds up the world, vast like the sky, rain-cloud blue, beautiful"
+  },
+  {
+   "te": "లక్ష్మీకాంతం కమలనయనం యోగిహృద్ధ్యానగమ్యమ్",
+   "tr": "Lakshmikantam Kamalanayanam Yogihruddhyanagamyam",
+   "mean_te": "లక్ష్మీదేవికి ప్రియమైనవాడు, తామర రేకుల్లాంటి కళ్ళు ఉన్నవాడు, యోగులు ధ్యానంలో మనసులో చూసేవాడు",
+   "mean_en": "Lakshmi's beloved, lotus-eyed, seen by yogis in their hearts"
+  },
+  {
+   "te": "వందే విష్ణుం భవభయహరం సర్వలోకైకనాథమ్",
+   "tr": "Vande Vishnum Bhavabhayaharam Sarvalokaikanatham",
+   "mean_te": "అన్ని భయాలను పోగొట్టే, అన్ని లోకాలకు ఒక్కడే నాథుడైన విష్ణువుకు నమస్కారం",
+   "mean_en": "I bow to Vishnu, remover of fear, the one Lord of all worlds"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3",
+   "fix": {
+    "words": [
+     [
+      0.26,
+      1.91
+     ],
+     [
+      2.42,
+      3.73
+     ],
+     [
+      4.31,
+      5.46
+     ],
+     [
+      5.89,
+      6.72
+     ]
+    ],
+    "meaning_at": 8.79
+   }
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3",
+   "fix": {
+    "words": [
+     [
+      0.28,
+      1.44
+     ],
+     [
+      2.3,
+      3.4
+     ],
+     [
+      4.29,
+      5.34
+     ],
+     [
+      6.07,
+      6.97
+     ]
+    ],
+    "meaning_at": 8.3
+   }
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3",
+   "fix": {
+    "words": [
+     [
+      0.05,
+      1.64
+     ],
+     [
+      1.97,
+      3.4
+     ],
+     [
+      3.4,
+      5.68
+     ]
+    ],
+    "meaning_at": 6.04
+   }
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3",
+   "fix": {
+    "words": [
+     [
+      0.26,
+      1.13
+     ],
+     [
+      1.76,
+      2.79
+     ],
+     [
+      3.2,
+      4.62
+     ],
+     [
+      5.08,
+      7.37
+     ]
+    ],
+    "meaning_at": 8.44
+   }
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "ఓం నమో నారాయణాయ!",
+   "caption_en": "OM NAMO NARAYANAYA!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.36,
+    2.01
+   ],
+   [
+    2.52,
+    3.83
+   ],
+   [
+    4.41,
+    5.56
+   ],
+   [
+    5.99,
+    6.82
+   ],
+   [
+    7.78,
+    8.94
+   ],
+   [
+    9.8,
+    10.9
+   ],
+   [
+    11.79,
+    12.84
+   ],
+   [
+    13.57,
+    14.47
+   ],
+   [
+    15.4,
+    16.99
+   ],
+   [
+    17.32,
+    18.75
+   ],
+   [
+    18.75,
+    21.03
+   ],
+   [
+    21.91,
+    22.78
+   ],
+   [
+    23.41,
+    24.44
+   ],
+   [
+    24.85,
+    26.27
+   ],
+   [
+    26.73,
+    29.02
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    3.4,
+    5.6
+   ],
+   [
+    5.6,
+    7.95
+   ],
+   [
+    7.95,
+    9.7
+   ],
+   [
+    9.7,
+    11.45
+   ],
+   [
+    11.45,
+    13.4
+   ],
+   [
+    13.4,
+    14.95
+   ],
+   [
+    14.95,
+    16.85
+   ],
+   [
+    16.85,
+    19.0
+   ],
+   [
+    19.0,
+    21.25
+   ],
+   [
+    21.25,
+    22.75
+   ],
+   [
+    22.75,
+    25.0
+   ],
+   [
+    25.0,
+    26.7
+   ],
+   [
+    26.7,
+    28.3
+   ],
+   [
+    28.3,
+    30.9
+   ],
+   [
+    30.9,
+    33.6
+   ]
+  ]
+ }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "vakratunda",
+  "title_top": "LET'S LEARN",
+  "title_main": "GANESHA SLOKA!",
+  "title_te": "గణపతి శ్లోకం",
+  "hero_label": "GANESHA",
+  "lines": [
+    {"te": "వక్రతుండ మహాకాయ", "tr": "Vakratunda Mahakaya",
+     "mean_te": "వంకర తొండం, పెద్ద శరీరం ఉన్న గణపయ్యా!",
+     "mean_en": "O Ganesha, with a curved trunk and a big, mighty body"},
+    {"te": "సూర్యకోటి సమప్రభ", "tr": "Suryakoti Samaprabha",
+     "mean_te": "కోటి సూర్యుల వెలుగుతో మెరిసేవాడా!",
+     "mean_en": "You shine as bright as a crore suns"},
+    {"te": "నిర్విఘ్నం కురు మే దేవ", "tr": "Nirvighnam Kuru Me Deva",
+     "mean_te": "దేవా, నాకు ఏ ఆటంకాలూ రాకుండా చూడు!",
+     "mean_en": "O God, please remove all obstacles for me"},
+    {"te": "సర్వకార్యేషు సర్వదా", "tr": "Sarvakaryeshu Sarvada",
+     "mean_te": "నేను చేసే అన్ని పనులలో, ఎప్పుడూ!",
+     "mean_en": "In everything I do, always"}
+  ],
+  "segments": [
+    {"type": "intro", "audio": "01_intro.mp3"},
+    {"type": "full", "audio": "02_full.mp3", "caption": "ముందు వినండి", "caption_en": "LISTEN FIRST"},
+    {"type": "learn", "audio": "03_learn.mp3", "caption": "ఒక్కో వరుస నేర్చుకుందాం", "caption_en": "LINE BY LINE"},
+    {"type": "line", "line": 0, "audio": "04_line1.mp3"},
+    {"type": "line", "line": 1, "audio": "05_line2.mp3"},
+    {"type": "line", "line": 2, "audio": "06_line3.mp3"},
+    {"type": "line", "line": 3, "audio": "07_line4.mp3"},
+    {"type": "learn", "audio": "08_together.mp3", "caption": "నాతో కలిసి చెప్పండి!", "caption_en": "SAY IT WITH ME!"},
+    {"type": "full", "audio": "02_full.mp3", "caption": "నాతో కలిసి", "caption_en": "ALL TOGETHER"},
+    {"type": "outro", "audio": "09_jai.mp3", "caption": "జై గణేశ!", "caption_en": "JAI GANESHA!"}
+  ],
+  "word_timings": {
+    "02_full.mp3": [[0.24,1.6],[1.84,3.24],[3.6,4.96],[5.2,6.88],[8.16,9.36],[9.6,9.84],[9.92,10.24],[10.32,11.08],[11.44,12.96],[13.2,14.16]]
+  }
+}

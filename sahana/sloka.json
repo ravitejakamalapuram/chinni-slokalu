@@ -1,0 +1,338 @@
+{
+ "id": "sahana",
+ "character": "guru",
+ "bg": "radial-gradient(circle at 50% 38%, #FFF6DA 0%, #FFD98A 28%, #E9935A 64%, #7A3B2E 100%)",
+ "petal_color": "#FFFFFF",
+ "title_top": "LET'S LEARN",
+ "title_main": "OM SAHANA VAVATU!",
+ "title_te": "ఓం సహనావవతు",
+ "hero_label": "GURU",
+ "lines": [
+  {
+   "te": "ఓం సహ నావవతు సహ నౌ భునక్తు",
+   "tr": "Om Saha Navavatu Saha Nau Bhunaktu",
+   "mean_te": "దేవుడు గురువునీ శిష్యుడినీ కలిసి కాపాడాలి, కలిసి పోషించాలి",
+   "mean_en": "May God protect us both, and nourish us both together",
+   "rows": [
+    "ఓం సహ నావవతు",
+    "సహ నౌ భునక్తు"
+   ]
+  },
+  {
+   "te": "సహ వీర్యం కరవావహై",
+   "tr": "Saha Veeryam Karavavahai",
+   "mean_te": "మనం ఇద్దరం కలిసి బలంగా, ఉత్సాహంగా పని చేద్దాం",
+   "mean_en": "May we work together with strength and energy"
+  },
+  {
+   "te": "తేజస్వి నావధీతమస్తు",
+   "tr": "Tejasvi Navadhitamastu",
+   "mean_te": "మనం కలిసి చదివే చదువు వెలుగులా ప్రకాశించాలి",
+   "mean_en": "May what we learn together shine bright"
+  },
+  {
+   "te": "మా విద్విషావహై ఓం శాంతిః శాంతిః శాంతిః",
+   "tr": "Ma Vidvishavahai, Om Shantih Shantih Shantih",
+   "mean_te": "మనం ఎప్పుడూ ఒకరినొకరు ద్వేషించుకోకూడదు. అంతటా శాంతి!",
+   "mean_en": "May we never dislike each other. Peace, peace, peace!",
+   "rows": [
+    "మా విద్విషావహై",
+    "ఓం శాంతిః శాంతిః శాంతిః"
+   ]
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3",
+   "fix": {
+    "words": [
+     [
+      0.39,
+      1.0
+     ],
+     [
+      1.59,
+      2.2
+     ],
+     [
+      2.2,
+      3.22
+     ],
+     [
+      3.69,
+      4.1
+     ],
+     [
+      4.1,
+      4.4
+     ],
+     [
+      4.7,
+      6.07
+     ]
+    ],
+    "meaning_at": 6.9
+   }
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3",
+   "fix": {
+    "words": [
+     [
+      0.21,
+      0.83
+     ],
+     [
+      1.45,
+      2.26
+     ],
+     [
+      2.88,
+      4.21
+     ]
+    ],
+    "meaning_at": 5.5
+   }
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3",
+   "fix": {
+    "words": [
+     [
+      0.26,
+      1.27
+     ],
+     [
+      2.59,
+      4.62
+     ]
+    ],
+    "meaning_at": 6.15
+   }
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3",
+   "fix": {
+    "words": [
+     [
+      0.24,
+      0.7
+     ],
+     [
+      0.7,
+      1.87
+     ],
+     [
+      2.67,
+      3.33
+     ],
+     [
+      3.65,
+      4.57
+     ],
+     [
+      4.77,
+      5.7
+     ],
+     [
+      6.1,
+      6.78
+     ]
+    ],
+    "meaning_at": 7.82
+   }
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "ఓం శాంతిః!",
+   "caption_en": "OM SHANTI!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.26,
+    0.98
+   ],
+   [
+    1.77,
+    2.21
+   ],
+   [
+    2.21,
+    3.51
+   ],
+   [
+    4.26,
+    4.62
+   ],
+   [
+    4.62,
+    4.98
+   ],
+   [
+    4.98,
+    6.24
+   ],
+   [
+    7.29,
+    7.63
+   ],
+   [
+    7.63,
+    8.65
+   ],
+   [
+    8.65,
+    9.84
+   ],
+   [
+    10.95,
+    11.88
+   ],
+   [
+    11.88,
+    13.35
+   ],
+   [
+    14.37,
+    14.65
+   ],
+   [
+    14.65,
+    16.16
+   ],
+   [
+    17.08,
+    17.74
+   ],
+   [
+    18.35,
+    19.34
+   ],
+   [
+    20.12,
+    21.04
+   ],
+   [
+    21.8,
+    22.7
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    4.8,
+    5.9
+   ],
+   [
+    5.9,
+    6.8
+   ],
+   [
+    6.8,
+    8.2
+   ],
+   [
+    8.6,
+    9.5
+   ],
+   [
+    9.6,
+    9.9
+   ],
+   [
+    9.9,
+    11.5
+   ],
+   [
+    11.9,
+    13.6
+   ],
+   [
+    14.3,
+    16.0
+   ],
+   [
+    16.0,
+    18.6
+   ],
+   [
+    19.1,
+    20.1
+   ],
+   [
+    20.3,
+    23.1
+   ],
+   [
+    23.8,
+    24.7
+   ],
+   [
+    24.8,
+    28.4
+   ],
+   [
+    28.6,
+    29.5
+   ],
+   [
+    29.6,
+    31.0
+   ],
+   [
+    31.1,
+    32.0
+   ],
+   [
+    32.0,
+    32.8
+   ]
+  ]
+ },
+ "rows": [
+  "ఓం సహ నావవతు",
+  "సహ నౌ భునక్తు",
+  "సహ వీర్యం కరవావహై",
+  "తేజస్వి నావధీతమస్తు",
+  "మా విద్విషావహై",
+  "ఓం శాంతిః శాంతిః శాంతిః"
+ ]
+}

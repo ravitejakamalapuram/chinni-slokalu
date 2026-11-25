@@ -1,0 +1,108 @@
+<title>Ishu's Sloka Reels</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Noto+Sans+Telugu:wght@500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow column, two plain lists (done / to do), one row per reel */
+:root{
+  --bg:#FBF8F3; --fg:#2A2320; --muted:#6F655E; --line:#E7DED3;
+  --accent:#C2561B; --ok:#2F7D4F; --chip:#F3ECE2;
+  --display:"Baloo 2",system-ui,sans-serif; --body:Inter,system-ui,sans-serif; --te:"Noto Sans Telugu",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1C1816; --fg:#F1EAE2; --muted:#A99E95; --line:#3A322D; --accent:#F08A4B; --ok:#6CC28F; --chip:#2A2420; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1C1816; --fg:#F1EAE2; --muted:#A99E95; --line:#3A322D; --accent:#F08A4B; --ok:#6CC28F; --chip:#2A2420; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 var(--body)}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font:700 2rem/1.1 var(--display);margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 28px}
+h2{font:700 1.3rem/1.2 var(--display);margin:32px 0 10px;display:flex;gap:10px;align-items:baseline}
+h2 .n{font:600 .8rem var(--body);color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.note{background:var(--chip);border-radius:8px;padding:10px 14px;margin:0 0 12px;font-size:.92rem}
+.note b{color:var(--accent)}
+ul{list-style:none;margin:0;padding:0}
+li{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.box{flex:none;width:22px;height:22px;border-radius:5px;border:2px solid var(--muted);display:grid;place-items:center}
+.done .box{background:var(--ok);border-color:var(--ok)}
+.done .box::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:translateY(-1px) rotate(45deg)}
+.thumb{flex:none;display:block;width:54px;aspect-ratio:9/16;border-radius:6px;overflow:hidden;background:var(--chip);border:0;padding:0;cursor:pointer;position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb::after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:15px;text-shadow:0 1px 4px #000a}
+.thumb:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.txt{flex:1;min-width:0}
+.t{font-weight:600}
+.te{font-family:var(--te);color:var(--muted);font-size:.88rem;margin-left:6px}
+.meta{color:var(--muted);font-size:.85rem}
+a.drive{flex:none;color:var(--accent);font-weight:600;text-decoration:none;font-size:.9rem;white-space:nowrap}
+a.drive:hover{text-decoration:underline}
+.later{color:var(--muted);font:600 .8rem var(--body);letter-spacing:.05em;text-transform:uppercase;margin:18px 0 0}
+.wip .box{border-color:var(--accent);background:linear-gradient(90deg,var(--accent) 50%,transparent 50%)}
+.tag{flex:none;font-size:.78rem;font-weight:600;color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:1px 9px}
+.pri{flex:none;width:22px;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem}
+footer{color:var(--muted);font-size:.82rem;margin-top:28px}
+</style>
+
+<div class="wrap">
+  <h1>Ishu's Sloka Reels</h1>
+  <p class="sub">17 reels made, 2 being built now, 12 tasks to go. Tap a cover to watch the full video in Drive.</p>
+
+  <h2>Done <span class="n">latest versions only</span></h2>
+  <ul id="done"></ul>
+
+  <h2>To do <span class="n">in order</span></h2>
+  <p class="note"><b>Standard for every new reel:</b> understand the meaning first, plan scenes that show it, then animate them like Hanuman Chalisa v2, so a child who can't read still gets it. Leda voice for speaking, ElevenLabs only for the sung song at the end.</p>
+  <ul id="todo"></ul>
+  <h2>Next batch <span class="n">after these</span></h2>
+  <ul id="later"></ul>
+
+  <footer>Videos open in your Drive folder "Sloka reels (latest)". To download a video with its cover, use the <a class="drive" href="https://claude.ai/artifact/Hx3J7pMqPzpTB5Mx4vYpSv" target="_blank" rel="noopener">posting kit</a>. Every reel now opens with a short sung line to sing along. Updated 25 Nov 2026.</footer>
+</div>
+
+
+<script>
+const DONE=[
+ ["vakratunda-leda","Vakratunda Mahakaya","వక్రతుండ మహాకాయ","Ganesha","2:07","1tCF6M6U6a7ocwls_oxT94QIRog8JySGS"],
+ ["saraswati","Saraswati Namastubhyam","సరస్వతీ నమస్తుభ్యం","Saraswati","1:58","1FxrrkxvImaFfr0GiBzADSaI9NPRW_L9T"],
+ ["hanuman","Hanuman sloka","హనుమాన్ శ్లోకం","Hanuman","1:59","1nB0y78vysXMWY-x8kgnvPDoiKy3IHmU_"],
+ ["gayatri","Gayatri Mantra","గాయత్రీ మంత్రం","Surya","2:03","1x-qeKiBVnZ6ZA0zUZY3-z2NgIqs_y1PL"],
+ ["guru","Guru Brahma","గురు బ్రహ్మ","Guru","1:56","1qWSpKcGZ7RoNP-hx5hEm8CIsNGbkv4i1"],
+ ["deepam","Deepa Jyoti","దీపజ్యోతి","Lamp","2:00","1p_zNax6LORef-tOWnPbMjfRYmE4JtciX"],
+ ["asatoma","Asato Ma Sadgamaya","అసతో మా సద్గమయ","Light over dark","2:16","15-0K__4ntbIy10G8NgU65V5pBij3cwIf"],
+ ["karpura","Karpura Gauram","కర్పూరగౌరం","Shiva","2:17","1kjBd3dOWMB4PCdC7FH5F8CiZQUUc_aDo"],
+ ["sarva-mangala","Sarva Mangala","సర్వమంగళ","Durga","2:04","1KVZTqMum7nRlnnse7ObL-fVsFJzvVY-2"],
+ ["hanuman-chalisa-v2","Hanuman Chalisa","హనుమాన్ చాలీసా","Hanuman, full chant-along","4:48","1daGL4x9Ai6SwhOuWGgHK_ZkNUkwjB75i"],
+ ["mahamrityunjaya","Mahamrityunjaya Mantra","మహామృత్యుంజయ మంత్రం","Shiva","2:30","1vTjxvsEHDEuIa2Vo7BllCr1pc30qZ_2f"],
+ ["sahana","Om Saha Navavatu","ఓం సహనావవతు","Study prayer","2:44","1DyHP2gqhdWNQfe_8G-WmYxrvXSOHQEuh"],
+ ["suprabhatam","Venkateswara Suprabhatam","వేంకటేశ్వర సుప్రభాతం","Venkateswara, verses 1 to 4","4:31","1pz1UuEaEs5HIlFhaLLMb_O7ha775aK1Z"],
+ ["surya","Japakusuma Sankasham","జపాకుసుమ సంకాశం","Surya","2:13","16mLqEU56BrQlkX7xhQix07D9VYK3i9DR"],
+ ["krishna","Vasudeva Sutam Devam","వసుదేవ సుతం దేవం","Krishna","2:18","1s9NyQ7EpKGwK--IMGMXVU9Fj2zpCXV3_"],
+ ["rama","Sri Rama Rama Rameti","శ్రీ రామ రామ రామేతి","Rama","2:27","1FUJKdkQf675-yYNnIo6g9EX7ohsxGHzp"],
+ ["lakshmi","Namastestu Mahamaye","నమస్తేఽస్తు మహామాయే","Lakshmi","2:21","1N1c4Y43_sq80_w-U-pGyTancUEkufUid"]
+];
+const TODO=[
+ ["Fix audio clicks: re-render Karpura, Sarva Mangala, Vakratunda","","Repair existing reels"],
+ ["Bhojana Mantra","బ్రహ్మార్పణం బ్రహ్మ హవిః","Before meals",1],
+ ["Shantakaram Bhujagashayanam","శాంతాకారం భుజగశయనం","Vishnu",1],
+ ["Suprabhatam part 2","సుప్రభాతం 2","Venkateswara, verse 5 onward"]
+];
+const LATER=[
+ ["Karagre Vasate Lakshmi","కరాగ్రే వసతే లక్ష్మీః","Morning, looking at our hands"],
+ ["Samudra Vasane Devi","సముద్రవసనే దేవి","Mother Earth, before stepping down"],
+ ["Shuklam Baradharam Vishnum","శుక్లాంబరధరం విష్ణుం","Ganesha"],
+ ["Om Namah Shivaya (Nagendraharaya)","నాగేంద్రహారాయ","Shiva"],
+ ["Annapurne Sadapurne","అన్నపూర్ణే సదాపూర్ణే","Annapurna"],
+ ["Gurave Sarvalokanam","గురవే సర్వలోకానాం","Dakshinamurthy"],
+ ["Ya Devi Sarvabhuteshu","యా దేవీ సర్వభూతేషు","Devi"],
+ ["Manojavam Marutatulyavegam","మనోజవం మారుతతుల్యవేగం","Hanuman"]
+];
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.getElementById("done").innerHTML=DONE.map(([id,t,te,who,len,url])=>`
+ <li class="done"><span class="box" aria-label="done"></span>
+  <a class="thumb" href="https://drive.google.com/file/d/${url}/view" target="_blank" rel="noopener" aria-label="Watch ${esc(t)} in Drive"><img src="v/${id}.jpg" alt="" loading="lazy"></a>
+  <div class="txt"><div class="t">${esc(t)}<span class="te">${te}</span></div><div class="meta">${esc(who)} · ${len}</div></div>
+</li>`).join("");
+const row=(list,start)=>list.map(([t,te,who,wip],i)=>`
+ <li class="${wip?'wip':''}"><span class="box" aria-label="${wip?'in progress':'not started'}"></span>${start?`<span class="pri">${i+start}</span>`:""}
+  <div class="txt"><div class="t">${esc(t)}<span class="te">${te}</span></div><div class="meta">${esc(who)}</div></div>${wip?'<span class="tag">In progress</span>':''}</li>`).join("");
+document.getElementById("todo").innerHTML=row(TODO,1);
+document.getElementById("later").innerHTML=row(LATER,10);
+</script>

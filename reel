@@ -1,0 +1,128 @@
+#!/usr/bin/env python3
+"""Chitti Slokalu reel tool. Run from anywhere; paths are relative to this repo.
+
+  ./reel list                     every reel in reels.json
+  ./reel fetch  <id|all>          download the voice clips from Drive (sources.json) into <id>/audio, checksum-checked
+  ./reel build  <id> [workdir]    assemble the reel's index.html (no network, no voice credits)
+  ./reel render <id> [workdir]    build + hyperframes render + re-encode -> out/<name>.mp4
+  ./reel cover  <id>              Instagram cover from out/<name>.mp4 -> out/<id>-cover.png (row must exist in covers/covers.json)
+  ./reel upload <file>            upload to Drive through the Inbox (INBOX_URL, INBOX_TOKEN, DRIVE_REELS_FOLDER)
+"""
+import json, os, shutil, subprocess, sys, tempfile, urllib.request
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+OUT = os.environ.get('REEL_OUT', os.path.join(ROOT, 'out'))
+HYPERFRAMES = 'hyperframes@0.9.81'  # pinned: a newer version may lay out text differently
+ENV = dict(os.environ, REEL_ROOT=ROOT, REEL_OUT=OUT, HYPERFRAMES_TELEMETRY_DISABLED='1')
+
+
+def reels():
+    return {r['id']: r for r in json.load(open(os.path.join(ROOT, 'reels.json')))['reels']}
+
+
+def run(cmd, **kw):
+    print('+', ' '.join(cmd), flush=True)
+    subprocess.run(cmd, check=True, env=ENV, **kw)
+
+
+def inbox(body):
+    req = urllib.request.Request(os.environ['INBOX_URL'], json.dumps(dict(body, token=os.environ['INBOX_TOKEN'])).encode(),
+                                 {'Content-Type': 'application/json'})
+    res = json.load(urllib.request.urlopen(req, timeout=180))
+    if not res.get('ok'):
+        sys.exit(f"Inbox error: {res.get('error')}")
+    return res
+
+
+def fetch(rid):
+    """Voice clips live in Drive (chittiSlokalu/Sources), not git. Each reel's Inbox item sloka-<dir> names its files,
+    which lets the Inbox download action hand them out. Files already present with the right checksum are skipped."""
+    import base64, hashlib
+    src = json.load(open(os.path.join(ROOT, 'sources.json')))
+    dirs = None if rid == 'all' else {rid}  # a reel's clips live in its own folder, named like its id
+    got = 0
+    for rel, f in sorted(src.items()):
+        top = rel.split('/')[0]
+        if dirs and top not in dirs:
+            continue
+        dst = os.path.join(ROOT, rel)
+        if os.path.exists(dst) and hashlib.sha256(open(dst, 'rb').read()).hexdigest() == f['sha256']:
+            continue
+        b = base64.b64decode(inbox({'action': 'download', 'id': f'sloka-{top}', 'driveId': f['id']})['base64'])
+        if hashlib.sha256(b).hexdigest() != f['sha256']:
+            sys.exit(f'{rel}: checksum mismatch (the Drive copy changed); not overwriting')
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        open(dst, 'wb').write(b); got += 1
+        print('fetched', rel, flush=True)
+    print(f'{got} clip(s) downloaded')
+
+
+def build(rid, work=None):
+    r = reels()[rid]
+    fetch(rid)
+    work = os.path.abspath(work or os.path.join(tempfile.gettempdir(), f'reel-{rid}'))
+    os.makedirs(os.path.dirname(work), exist_ok=True)
+    hook = [r['hook']] if r['hook'] else []
+    if r['build'] == 'template':
+        run(['bash', os.path.join(ROOT, 'template/build_reel.sh'), rid, work] + hook)
+    else:
+        run(['bash', os.path.join(ROOT, r['build']), work] + hook)
+    return work
+
+
+def render(rid, work=None):
+    work = build(rid, work)
+    os.makedirs(OUT, exist_ok=True)
+    raw = os.path.join(work, 'raw.mp4')
+    run(['npx', '-y', HYPERFRAMES, 'render', '.', '-q', 'standard', '-o', raw], cwd=work)
+    dst = os.path.join(OUT, reels()[rid]['out'])
+    run(['ffmpeg', '-v', 'error', '-y', '-i', raw, '-c:v', 'libx264', '-crf', '22', '-preset', 'medium',
+         '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', dst])
+    print(dst)
+
+
+def cover(rid):
+    cov = tempfile.mkdtemp(prefix='cover-')
+    shutil.copy(os.path.join(ROOT, 'covers/covers.json'), cov)
+    shutil.copytree(os.path.join(ROOT, 'template/assets/fonts'), os.path.join(cov, 'fonts'))
+    os.makedirs(os.path.join(cov, 'out'))
+    run(['python3', os.path.join(ROOT, 'covers/build.py'), cov, rid])
+    run(['node', os.path.join(ROOT, 'covers/shot.js'), cov, rid])
+    os.makedirs(OUT, exist_ok=True)
+    for f in os.listdir(os.path.join(cov, 'out')):
+        shutil.move(os.path.join(cov, 'out', f), os.path.join(OUT, f)); print(os.path.join(OUT, f))
+
+
+def upload(path):
+    """Resumable upload through the Inbox web app, straight into the reels folder. Re-uploading a name replaces it."""
+    url, token, folder = os.environ['INBOX_URL'], os.environ['INBOX_TOKEN'], os.environ['DRIVE_REELS_FOLDER']
+    body = json.dumps({'action': 'uploadUrl', 'token': token, 'name': os.path.basename(path), 'size': os.path.getsize(path),
+                       'parentId': folder, 'replaceExisting': True}).encode()
+    res = json.load(urllib.request.urlopen(urllib.request.Request(url, body, {'Content-Type': 'application/json'})))
+    if not res.get('ok'):
+        sys.exit(f"Inbox refused the upload: {res.get('error')}")
+    link = res['uploadUrl']
+    mime = 'video/mp4' if path.endswith('.mp4') else 'image/png' if path.endswith('.png') else 'application/octet-stream'
+    with open(path, 'rb') as f:
+        put = urllib.request.Request(link, f.read(), {'Content-Type': mime}, method='PUT')
+    out = json.load(urllib.request.urlopen(put))
+    print('Drive file id:', out.get('id'))
+
+
+if __name__ == '__main__':
+    a = sys.argv[1:]
+    if not a or a[0] in ('-h', '--help', 'help'):
+        print(__doc__); sys.exit(0)
+    cmd, rest = a[0], a[1:]
+    if cmd == 'list':
+        for r in reels().values():
+            print(f"{r['id']:16} {r['build']:30} {r['out']}")
+    elif cmd == 'fetch':
+        fetch(rest[0] if rest else 'all')
+    elif cmd in ('build', 'render', 'cover', 'upload'):
+        if not rest:
+            sys.exit(f'usage: ./reel {cmd} <{"file" if cmd == "upload" else "id"}>')
+        {'build': lambda: print(build(*rest[:2])), 'render': lambda: render(*rest[:2]),
+         'cover': lambda: cover(rest[0]), 'upload': lambda: upload(rest[0])}[cmd]()
+    else:
+        sys.exit(__doc__)
