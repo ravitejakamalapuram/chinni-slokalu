@@ -7,7 +7,7 @@
     {"id": "gayatri", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "gayatri-hook-reel.mp4"},
     {"id": "guru", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "guru-hook-reel.mp4"},
     {"id": "deepam", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "deepam-hook-reel.mp4"},
-    {"id": "asatoma", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "asatoma-hook-reel.mp4"},
+    {"id": "asatoma", "build": "asatoma/build_asa.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "asatoma-hook-reel.mp4"},
     {"id": "karpura", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "karpura-hook-reel.mp4"},
     {"id": "sarva", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "sarva-mangala-hook-reel.mp4"},
     {"id": "mahamrityunjaya", "build": "mahamrityunjaya/build_mmj.sh", "hook": "10_sung.mp3:0.3:6.7:0", "out": "mahamrityunjaya-hook-reel.mp4"},

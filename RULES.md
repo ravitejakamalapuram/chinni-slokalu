@@ -4,6 +4,10 @@ These are the owner's decisions. Follow them on every reel; ask before breaking 
 
 ## Content
 - Plan first: understand the sloka's meaning, then animate scenes that show it, so a child who can't read still gets it. The Hanuman Chalisa v2 reel is the quality bar.
+- Every line gets its own picture-story scene (the `#vis` window; copy `asatoma/`, which shows scenes in all three places), shown while the line is taught, in the listen-first chant and in the sung finale. A plain template reel (one character bobbing on a gradient) is not acceptable for a new reel.
+- Each scene must show the line's meaning as an action with a visible before and after, and the change happens on screen at the meaning moment: darkness to light means the room is dark and a lamp is lit; "protect us" means someone is protected from something. Pick the action before drawing anything: write one sentence per line, "we see X, then Y happens", in the reel's scenes.js header.
+- Every character and object must come from the sloka. No mascots or decorations with no link to the meaning (Asatoma once had an owl that never did anything). The hero shown in the intro and outro is the sloka's deity, or an object from the sloka when there is none.
+- Before rendering, snapshot every scene before and after its meaning moment and check that a child could tell what changed with the sound off.
 - Every reel opens with a ~7 s sung hook: the first sung line from the reel's own `audio/10_sung.mp3`, with its scene, karaoke words and "SING ALONG! / పాడుకుందాం!". Then the normal reel; the full song plays once, at the end. The hook reuses existing audio and costs no credits. (The Chalisa has no sung finale, so no hook.)
 - Every finished reel gets an Instagram cover (`./reel cover <id>`, row in `covers/covers.json`). Never put a cover frame inside the video.
 - No 720p copies. Keep only the latest version of each reel.
@@ -18,3 +22,8 @@ These are the owner's decisions. Follow them on every reel; ask before breaking 
 - Voice clips live in Drive `chittiSlokalu/Sources`, listed in `sources.json`, never in git. Each reel's Inbox item `sloka-<id>` names its clips so the Inbox can hand them out.
 - Finished reels and covers go only to Drive `chittiSlokalu/Reels`, through the Inbox upload (`./reel upload`). Never the How To Hero folder.
 - Nothing is copied to the owner's Mac (no disk space). On the Mac, touch only this project's files.
+
+## Redos of existing reels
+- A rejected `video` item of app Chitti Slokalu named `sloka-<reel id>` (an existing reel in `reels.json`) is a redo, exactly like a rejected `sloka-video-*` item: the daily video job picks it first, one per run, and fixes what `data.rejections` says.
+- A visual redo keeps the reel's voice clips as they are (`./reel fetch <id>`): no new voice, no ElevenLabs or Gemini voice credits. Rebuild it as a picture-story reel modelled on `asatoma/`: copy `asa.html`, `lib.js` and `build_asa.sh` into the reel's folder, rename the build script and fix its hardcoded `SRC` folder and html file name, write a new `scenes.js`, then point its `reels.json` "build" at the new script and keep its "out" name.
+- Upload with `./reel upload` (`DRIVE_REELS_FOLDER` = chittiSlokalu/Reels) so the new file replaces the old one, make a new cover, then update the same Inbox item: new `driveId`, `link`, `data.thumb` and `data.links`, a summary of what changed, status `pending`. Keep `data.rejections` and `data.posted`.
