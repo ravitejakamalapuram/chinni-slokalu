@@ -1,0 +1,6 @@
+out/
+*.mp4
+node_modules/
+.env
+__pycache__/
+*.mp3
