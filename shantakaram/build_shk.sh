@@ -3,7 +3,7 @@
 set -e
 : "${REEL_ROOT:=$(cd "$(dirname "$0")/.." && pwd)}"; export REEL_ROOT
 R=$REEL_ROOT; SRC=$R/shantakaram; W=$1
-rm -rf $W; cp -r $R/template $W
+rm -rf "$W"; cp -r $R/template $W
 cp $R/mahamrityunjaya/mmj.html $W/template.html; cp $SRC/sloka.json $W/; cp -r $SRC/audio $W/audio
 [ -n "$2" ] && python3 $R/template/add_hook.py $W/sloka.json ${2//:/ }
 cd $W && sed -i "s/^    segs.append(s)/    s.update(seg.get(\"fix\", {})); segs.append(s)/" build.py && python3 build.py . > build.log && python3 - "$R" <<'PY'

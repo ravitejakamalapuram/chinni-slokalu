@@ -19,7 +19,7 @@ Read [RULES.md](RULES.md) before making or changing a reel.
 
 ## Set up a new machine
 
-1. Install Python 3.10+, Node 18+, ffmpeg (with ffprobe), and Chromium for Playwright (`npx playwright install chromium`). `pip install pillow`.
+1. Install Python 3.10+, Node 18+, ffmpeg (with ffprobe), then in the repo run `npm install` (Playwright, for covers) and `npx playwright install chromium`. `pip install pillow`.
 2. `cp .env.example .env`, fill in `INBOX_URL`, `INBOX_TOKEN` and `DRIVE_REELS_FOLDER`, then `set -a; . ./.env; set +a`.
 3. `./reel fetch all` downloads the voice clips (about 46 MB) from Drive through the Inbox and checks each checksum.
 4. `./reel render gayatri` builds and renders one reel to `out/gayatri-hook-reel.mp4` (about 5 minutes).

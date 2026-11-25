@@ -3,7 +3,7 @@
 set -e
 : "${REEL_ROOT:=$(cd "$(dirname "$0")/.." && pwd)}"; export REEL_ROOT
 SRC=$REEL_ROOT/lakshmi; W=$1
-rm -rf $W; cp -r $REEL_ROOT/template $W
+rm -rf "$W"; cp -r $REEL_ROOT/template $W
 cp $SRC/character/lakshmi.* $W/characters/
 cp $SRC/lak.html $W/template.html; cp $SRC/sloka.json $W/; cp -r $SRC/audio $W/audio
 [ -n "$2" ] && python3 $REEL_ROOT/template/add_hook.py $W/sloka.json ${2//:/ }

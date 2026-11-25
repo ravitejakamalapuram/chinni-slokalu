@@ -5,8 +5,8 @@ set -e
 ID=$1; OUT=$2; TJ=$3
 SRC=$REEL_ROOT/$ID
 W=${2:-/tmp/sung_$ID}
-rm -rf $W; cp -r $REEL_ROOT/template $W
-cp $SRC/sloka.json $W/sloka.json; rm -rf $W/audio; cp -r $SRC/audio $W/audio
+rm -rf "$W"; cp -r $REEL_ROOT/template $W
+cp $SRC/sloka.json $W/sloka.json; rm -rf "$W"/audio; cp -r $SRC/audio $W/audio
 python3 - "$W/sloka.json" "$TJ" <<'PY'
 import json,sys
 p=sys.argv[1]; d=json.load(open(p))

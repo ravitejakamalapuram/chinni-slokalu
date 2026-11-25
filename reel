@@ -57,10 +57,19 @@ def fetch(rid):
     print(f'{got} clip(s) downloaded')
 
 
+def safe_workdir(work, rid):
+    # The build scripts wipe the workdir, so it must not be the repo, the home folder, or anything holding them.
+    root, home = os.path.realpath(ROOT), os.path.realpath(os.path.expanduser('~'))
+    w = work.rstrip(os.sep) + os.sep
+    if work == os.sep or (root + os.sep).startswith(w) or (home + os.sep).startswith(w) or w.startswith(root + os.sep):
+        sys.exit(f'workdir {work} is unsafe (it is wiped); use a folder like /tmp/reel-{rid}')
+
+
 def build(rid, work=None):
     r = reels()[rid]
     fetch(rid)
-    work = os.path.abspath(work or os.path.join(tempfile.gettempdir(), f'reel-{rid}'))
+    work = os.path.realpath(work or os.path.join(tempfile.gettempdir(), f'reel-{rid}'))
+    safe_workdir(work, rid)
     os.makedirs(os.path.dirname(work), exist_ok=True)
     hook = [r['hook']] if r['hook'] else []
     if r['build'] == 'template':
@@ -82,6 +91,11 @@ def render(rid, work=None):
 
 
 def cover(rid):
+    out = reels()[rid]['out']
+    rows = [c[0] for c in json.load(open(os.path.join(ROOT, 'covers/covers.json'))) if c[1] == out]
+    if not rows:
+        sys.exit(f'no cover row in covers/covers.json for {out}; add one first')
+    rid = rows[0]
     cov = tempfile.mkdtemp(prefix='cover-')
     shutil.copy(os.path.join(ROOT, 'covers/covers.json'), cov)
     shutil.copytree(os.path.join(ROOT, 'template/assets/fonts'), os.path.join(cov, 'fonts'))

@@ -3,7 +3,7 @@
 set -e
 : "${REEL_ROOT:=$(cd "$(dirname "$0")/.." && pwd)}"; export REEL_ROOT
 SRC=$REEL_ROOT/chalisa; W=$1
-rm -rf $W; mkdir -p $W
+rm -rf "$W"; mkdir -p $W
 cp -r $SRC/audio $SRC/art $SRC/verses.tsv $SRC/chunks.json $W/
 cp -r $SRC/v2/* $W/; cp -r $REEL_ROOT/template/assets $W/
 cd $W && python3 build_v2.py .
