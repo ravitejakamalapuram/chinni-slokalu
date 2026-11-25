@@ -85,7 +85,7 @@ const SC = (() => {
     const r = when(a, m, b);
     tl.set('#sc1', { opacity: 1 }, a);
     tl.set(['#a1dark', '#a1kid2', '#a1g0', '#a1g1', '#a1g2'], { opacity: 1, x: 0, y: 0, scale: 1 }, a);
-    tl.set(['#a1glow', '#a1rays', '#a1sky', '#a1sp'], { opacity: 0 }, a);
+    tl.set(['#a1glow', '#a1rays', '#a1sky', '#a1sp'], { opacity: 0, rotation: 0 }, a);
     tl.set('#a1fl', { scale: 0, transformOrigin: '50% 100%' }, a);
     for (let i = 0; i < 6; i++) tl.set('#a1d' + i, { opacity: 0 }, a);
     face(tl, 'a1k', 'sd', a);
