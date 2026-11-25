@@ -22,3 +22,8 @@ These are the owner's decisions. Follow them on every reel; ask before breaking 
 - Voice clips live in Drive `chittiSlokalu/Sources`, listed in `sources.json`, never in git. Each reel's Inbox item `sloka-<id>` names its clips so the Inbox can hand them out.
 - Finished reels and covers go only to Drive `chittiSlokalu/Reels`, through the Inbox upload (`./reel upload`). Never the How To Hero folder.
 - Nothing is copied to the owner's Mac (no disk space). On the Mac, touch only this project's files.
+
+## Redos of existing reels
+- A rejected `video` item of app Chitti Slokalu named `sloka-<reel id>` (an existing reel in `reels.json`) is a redo, exactly like a rejected `sloka-video-*` item: the daily video job picks it first, one per run, and fixes what `data.rejections` says.
+- A visual redo keeps the reel's voice clips as they are (`./reel fetch <id>`): no new voice, no ElevenLabs or Gemini voice credits. Rebuild it as a picture-story reel modelled on `asatoma/` (`asa.html`, `lib.js`, `scenes.js`, `build_asa.sh`), point its `reels.json` "build" at the new script and keep its "out" name.
+- Upload with `./reel upload` (`DRIVE_REELS_FOLDER` = chittiSlokalu/Reels) so the new file replaces the old one, make a new cover, then update the same Inbox item: new `driveId`, `link`, `data.thumb` and `data.links`, a summary of what changed, status `pending`. Keep `data.rejections` and `data.posted`.
