@@ -38,7 +38,7 @@ Read [RULES.md](RULES.md) before making or changing a reel.
 
 ## Making a new reel
 
-1. Template reel: copy `template/sloka.json` to `<new-id>/sloka.json` and fill in lines, meanings and character. Picture-story reel: start from the closest custom reel (`mahamrityunjaya/` for a scene window).
+1. Start from the closest picture-story reel (`asatoma/` or `mahamrityunjaya/`: template + one scene per line) and write one scene per line that acts out its meaning (see RULES.md). Plain template reels (character only) are no longer used for new reels.
 2. Make the clips `01_intro … 09_jai, 10_sung` in `<new-id>/audio/` (see RULES.md for voices; `03_learn` and `08_together` can be copied from another reel).
 3. Add word timings for `02_full` and `10_sung` to `sloka.json`, add the reel to `reels.json`, then `./reel build`, check it, `./reel render`.
 4. Upload the clips: they go to Drive `chittiSlokalu/Sources` and into `sources.json`, and the reel's Inbox item `sloka-<id>` lists them under `data.sources`.

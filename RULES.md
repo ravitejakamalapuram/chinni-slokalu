@@ -4,6 +4,10 @@ These are the owner's decisions. Follow them on every reel; ask before breaking 
 
 ## Content
 - Plan first: understand the sloka's meaning, then animate scenes that show it, so a child who can't read still gets it. The Hanuman Chalisa v2 reel is the quality bar.
+- Every line gets its own picture-story scene (the `#vis` window, see `asatoma/` or `mahamrityunjaya/`), shown while the line is taught, in the listen-first chant and in the sung finale. A plain template reel (one character bobbing on a gradient) is not acceptable for a new reel.
+- Each scene must show the line's meaning as an action with a visible before and after, and the change happens on screen at the meaning moment: darkness to light means the room is dark and a lamp is lit; "protect us" means someone is protected from something. Pick the action before drawing anything: write one sentence per line, "we see X, then Y happens", in the reel's scenes.js header.
+- Every character and object must come from the sloka. No mascots or decorations with no link to the meaning (Asatoma once had an owl that never did anything). The hero shown in the intro and outro is the sloka's deity, or an object from the sloka when there is none.
+- Before rendering, snapshot every scene before and after its meaning moment and check that a child could tell what changed with the sound off.
 - Every reel opens with a ~7 s sung hook: the first sung line from the reel's own `audio/10_sung.mp3`, with its scene, karaoke words and "SING ALONG! / పాడుకుందాం!". Then the normal reel; the full song plays once, at the end. The hook reuses existing audio and costs no credits. (The Chalisa has no sung finale, so no hook.)
 - Every finished reel gets an Instagram cover (`./reel cover <id>`, row in `covers/covers.json`). Never put a cover frame inside the video.
 - No 720p copies. Keep only the latest version of each reel.
