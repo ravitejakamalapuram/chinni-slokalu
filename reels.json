@@ -3,7 +3,7 @@
   "reels": [
     {"id": "vakratunda", "build": "vakratunda/build_vak.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "vakratunda-leda-hook-reel.mp4"},
     {"id": "saraswati", "build": "saraswati/build_sar.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "saraswati-hook-reel.mp4"},
-    {"id": "hanuman", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "hanuman-hook-reel.mp4"},
+    {"id": "hanuman", "build": "hanuman/build_han.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "hanuman-hook-reel.mp4"},
     {"id": "gayatri", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "gayatri-hook-reel.mp4"},
     {"id": "guru", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "guru-hook-reel.mp4"},
     {"id": "deepam", "build": "template", "hook": "10_sung.mp3:auto:auto:0", "out": "deepam-hook-reel.mp4"},
