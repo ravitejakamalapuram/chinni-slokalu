@@ -1,4 +1,4 @@
-# Standing rules for Chitti Slokalu reels
+# Standing rules for Chinni Slokalu reels
 
 These are the owner's decisions. Follow them on every reel; ask before breaking one.
 
@@ -24,7 +24,7 @@ These are the owner's decisions. Follow them on every reel; ask before breaking 
 - Nothing is copied to the owner's Mac (no disk space). On the Mac, touch only this project's files.
 
 ## Redos of existing reels
-- A rejected `video` item of app Chitti Slokalu named `sloka-<reel id>` (an existing reel in `reels.json`) is a redo, exactly like a rejected `sloka-video-*` item: the daily video job picks it first, one per run, and fixes what `data.rejections` says.
+- A rejected `video` item of app Chinni Slokalu named `sloka-<reel id>` (an existing reel in `reels.json`) is a redo, exactly like a rejected `sloka-video-*` item: the daily video job picks it first, one per run, and fixes what `data.rejections` says.
 - A visual redo keeps the reel's voice clips as they are (`./reel fetch <id>`): no new voice, no ElevenLabs or Gemini voice credits. Rebuild it as a picture-story reel modelled on `asatoma/`: copy `asa.html`, `lib.js` and `build_asa.sh` into the reel's folder, rename the build script and fix its hardcoded `SRC` folder and html file name, write a new `scenes.js`, then point its `reels.json` "build" at the new script and keep its "out" name.
 - Upload with `./reel upload` (`DRIVE_REELS_FOLDER` = chittiSlokalu/Reels) so the new file replaces the old one, make a new cover, then update the same Inbox item: new `driveId`, `link`, `data.thumb` and `data.links`, a summary of what changed, status `pending`. Keep `data.rejections` and `data.posted`.
 - Owner rule (2026-11-25): after a redo, don't ask for approval in chat or wait for it. Replace the old video and cover in Drive (`./reel upload` replaces by name; keep only the latest version) and update the same Inbox item to the new files with status `pending`; the owner reviews from the Inbox only. Posts already on YouTube or Instagram are left untouched.

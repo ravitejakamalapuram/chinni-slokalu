@@ -1,6 +1,6 @@
 {
   "name": "chitti-slokalu",
   "private": true,
-  "description": "Tools for building the Chitti Slokalu reels (covers use Playwright).",
+  "description": "Tools for building the Chinni Slokalu reels (covers use Playwright).",
   "devDependencies": { "playwright": "1.63.0" }
 }
