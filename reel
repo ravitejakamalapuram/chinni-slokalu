@@ -7,6 +7,7 @@
   ./reel render <id> [workdir]    build + hyperframes render + re-encode -> out/<name>.mp4
   ./reel cover  <id>              Instagram cover from out/<name>.mp4 -> out/<id>-cover.png (row must exist in covers/covers.json)
   ./reel upload <file>            upload to Drive through the Inbox (INBOX_URL, INBOX_TOKEN, DRIVE_REELS_FOLDER)
+  ./reel meta   <id> [--push]     post text (data.meta) from sloka.json + the reel's "post" in reels.json; --push saves it on its Inbox item
 """
 import json, os, shutil, subprocess, sys, tempfile, urllib.request
 
@@ -123,6 +124,49 @@ def upload(path):
     print('Drive file id:', out.get('id'))
 
 
+def meta(rid):
+    """What the publisher posts for a reel: YouTube title and description, Instagram and Facebook captions.
+    Built from the sloka's lines and meanings (sloka.json) and the reel's "post" entry in reels.json:
+    {"name": "Guru Brahma", "name_te": "గురు శ్లోకం", "when": "...", "tags": ["guru"]}."""
+    r = reels()[rid]
+    post = r.get('post')
+    if not post:
+        sys.exit(f'{rid}: add "post" (name, name_te, when, tags) to its reels.json entry first')
+    s = json.load(open(os.path.join(ROOT, rid, 'sloka.json')))
+    name, name_te = post['name'], post['name_te']
+    sloka = '\n'.join(l['te'] for l in s['lines'])
+    meaning = ' '.join(l['mean_en'].rstrip('.!') + '.' for l in s['lines'])
+    meaning_te = ' '.join(l['mean_te'].rstrip('.!') + '.' for l in s['lines'])
+    tags = ' '.join('#' + t for t in ['chinnislokalu', 'slokasforkids', 'telugu'] + list(post.get('tags') or []))
+    head = f"{name_te}: పిల్లల కోసం, అర్థంతో సహా | Learn the {name} sloka with its meaning, line by line."
+    body = '\n\n'.join([head, sloka, f'అర్థం: {meaning_te}', f'Meaning: {meaning}', post['when'], tags])
+    title = f"{name} | {name_te} for kids"
+    title = (title if len(title) <= 61 else title[:61].rstrip()) + ' #shorts'
+    return {'youtube': {'title': title, 'text': body},
+            'instagram': {'text': body + '\n\nFollow @chinnislokalu for a new sloka every day 🪔'},
+            'facebook': {'title': f'{name} sloka for kids', 'text': body}}
+
+
+def push_meta(rid, m):
+    """Saves data.meta on the reel's Inbox items: sloka-video-<id> (reels made by the video job) and sloka-<id>."""
+    saved = 0
+    for item_id in (f'sloka-video-{rid}', f'sloka-{rid}'):
+        req = urllib.request.Request(os.environ['INBOX_URL'], json.dumps({'action': 'get', 'id': item_id, 'token': os.environ['INBOX_TOKEN']}).encode(),
+                                     {'Content-Type': 'application/json'})
+        res = json.load(urllib.request.urlopen(req, timeout=180))
+        if not res.get('ok'):
+            if (res.get('error') or {}).get('code') == 'not_found':
+                continue
+            sys.exit(f"Inbox error: {res.get('error')}")
+        item = res['item']
+        data = item['data'] if isinstance(item.get('data'), dict) else {}
+        inbox({'action': 'update', 'id': item_id, 'ifVersion': item['version'], 'set': {'data': dict(data, meta=m)}})
+        print(f'saved data.meta on {item_id}')
+        saved += 1
+    if not saved:
+        sys.exit(f'{rid}: no Inbox item sloka-video-{rid} or sloka-{rid}')
+
+
 if __name__ == '__main__':
     a = sys.argv[1:]
     if not a or a[0] in ('-h', '--help', 'help'):
@@ -138,5 +182,12 @@ if __name__ == '__main__':
             sys.exit(f'usage: ./reel {cmd} <{"file" if cmd == "upload" else "id"}>')
         {'build': lambda: print(build(*rest[:2])), 'render': lambda: render(*rest[:2]),
          'cover': lambda: cover(rest[0]), 'upload': lambda: upload(rest[0])}[cmd]()
+    elif cmd == 'meta':
+        if not rest:
+            sys.exit('usage: ./reel meta <id> [--push]')
+        m = meta(rest[0])
+        print(json.dumps(m, ensure_ascii=False, indent=1))
+        if '--push' in rest:
+            push_meta(rest[0], m)
     else:
         sys.exit(__doc__)

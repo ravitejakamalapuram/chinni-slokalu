@@ -33,10 +33,16 @@ Write the scene plan from the meaning first (`RULES.md`, Content): one "we see X
 - Redo: update the same item (new `driveId`, `link`, `data.thumb`, `data.links`, a summary of what changed, status `pending`), keeping `data.rejections` and `data.posted`. Don't ask for approval in chat; the owner reviews in the Inbox.
 - Release the claim.
 
+### Post text
+
+Every reel item carries `data.meta`: the YouTube title and description and the Instagram and Facebook captions, which the publisher posts as they are. Add the reel's `"post"` entry to `reels.json` (`name`, `name_te`, `when` it is said in English and Telugu, and 1 or 2 `tags` for the deity or occasion), check the text with `./reel meta <id>`, then save it with `./reel meta <id> --push`. A redo keeps its meta, and pushes again only when the sloka or its meaning changed.
+
+Each run, also push meta for one existing Chinni reel item that has none yet (add its `post` entry first), until every reel has it.
+
 ## 6. Save the code
 
 Commit the reel's code (scenes, build script, `reels.json`, `sources.json`, `covers/covers.json`) on a branch, open a pull request, and merge it, so the next run starts from it. Add one line about the run, and any new gotcha, to project memory `video-job-runs.md`.
 
-Publishing stays manual: never post anywhere.
+Never post anywhere yourself. Once the owner approves a reel, the How To Hero publisher posts it at its slot (one a day) to the accounts in the Inbox's "Posts to" for Chinni Slokalu.
 
 Finish with one short line: what was built or redone and its Drive link, or why nothing was.
