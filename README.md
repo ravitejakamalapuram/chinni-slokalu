@@ -2,7 +2,7 @@
 
 Animated Telugu sloka reels for kids (1080x1920, about 1.5 to 3 minutes). Everything needed to rebuild every finished reel lives here, except the voice clips, which live in Google Drive and are fetched on demand.
 
-Read [RULES.md](RULES.md) before making or changing a reel.
+Read [RULES.md](RULES.md) before making or changing a reel. The daily scheduled jobs read their instructions from [jobs/](jobs/README.md).
 
 ## What's where
 
