@@ -29,12 +29,14 @@ Write the scene plan from the meaning first (`RULES.md`, Content): one "we see X
 ## 5. Upload and update the Inbox
 
 - `./reel upload` the video and the cover (`DRIVE_REELS_FOLDER` must point at chittiSlokalu/Reels). Uploading the same name replaces the old file and gives a new id.
-- New reel: upload its voice clips to Drive `chittiSlokalu/Sources` and add them to `sources.json`. Add a `video` item `sloka-video-<slug>`, status `pending`, with `driveId`, `link`, `data.thumb` (cover id), `data.links`, `data.app` "Chitti Slokalu", `data.icon` "🪔". Set the idea to `done`.
+- New reel: upload its voice clips to Drive `chittiSlokalu/Sources` and add them to `sources.json`. Add a `video` item `sloka-video-<slug>`, title `<Sloka name> reel`, status `pending`, summary = one line on what it shows plus the Drive links to the video and cover, with `driveId`, `link`, and `data` `{"app":"Chitti Slokalu","icon":"🪔","group":"Reels","reel":"<slug>","idea":"<idea id>","thumb":"<cover id>","links":{...},"sources":{...}}`. Set the idea to `done`.
 - Redo: update the same item (new `driveId`, `link`, `data.thumb`, `data.links`, a summary of what changed, status `pending`), keeping `data.rejections` and `data.posted`. Don't ask for approval in chat; the owner reviews in the Inbox.
 - Release the claim.
 
 ## 6. Save the code
 
 Commit the reel's code (scenes, build script, `reels.json`, `sources.json`, `covers/covers.json`) on a branch, open a pull request, and merge it, so the next run starts from it. Add one line about the run, and any new gotcha, to project memory `video-job-runs.md`.
+
+Publishing stays manual: never post anywhere.
 
 Finish with one short line: what was built or redone and its Drive link, or why nothing was.
