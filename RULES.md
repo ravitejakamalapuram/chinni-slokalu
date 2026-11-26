@@ -32,6 +32,7 @@ These are the owner's decisions. Follow them on every reel; ask before breaking 
 
 ## Posting
 
-- Approved reels are posted by the shared publisher in `howtohero-studio` (`publisher/channels.json` lists "Chinni Slokalu"): one a day at 19:30 IST by slot, to the accounts in "Posts to" on the Inbox Settings page (`youtube:chitti, instagram:chinni`). Nothing in this repo posts.
+- Approved reels are posted by the shared publisher in `howtohero-studio` (`publisher/channels.json` lists "Chinni Slokalu"): one a day at 18:30 IST by slot (`"time"` in `channels.json`), to the accounts in "Posts to" on the Inbox Settings page (`youtube:chitti, instagram:chinni`). Nothing in this repo posts.
 - What it posts is `data.meta` on the reel's Inbox item (made by `./reel meta <id> --push`; see `jobs/video.md`, "Post text"). A reel without it goes out with only its title and a sign-off, so every reel item must have it before approval.
+- The captions follow the owner's own Instagram style (Guru Brahma reel, 2026-11-26): an emoji hook line, two warm sentences for parents ending in ❤️🪔, "🎶 Learn • Chant • Grow with Devotion!", a blessing line for the deity, then hashtags. YouTube adds the sloka and its meaning in the middle and keeps at most 15 hashtags.
 

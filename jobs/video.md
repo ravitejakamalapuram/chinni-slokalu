@@ -35,9 +35,18 @@ Write the scene plan from the meaning first (`RULES.md`, Content): one "we see X
 
 ### Post text
 
-Every reel item carries `data.meta`: the YouTube title and description and the Instagram and Facebook captions, which the publisher posts as they are. Add the reel's `"post"` entry to `reels.json` (`name`, `name_te`, `when` it is said in English and Telugu, and 1 or 2 `tags` for the deity or occasion), check the text with `./reel meta <id>`, then save it with `./reel meta <id> --push`. A redo keeps its meta, and pushes again only when the sloka or its meaning changed.
+Every reel item carries `data.meta`: the YouTube title and description and the Instagram and Facebook captions, which the publisher posts as they are. Write the reel's `"post"` entry in `reels.json`, in the owner's caption style (see the guru and karpura entries):
 
-Each run, also push meta for one existing Chinni reel item that has none yet (add its `post` entry first), until every reel has it.
+- `name`, `name_te`: the sloka's common name in English and Telugu.
+- `hook`: one line, 1 or 2 emojis that fit the deity, the sloka's best-known words, " – ", what it is "for Kids", one closing emoji. Example: "🙏✨ Guru Brahma Guru Vishnu – A Beautiful Sloka for Kids 🌸".
+- `blurb`: two warm sentences to parents: what it teaches the child, then "Let this … fill their hearts with …", ending in " ❤️🪔".
+- `blessing`: the deity's greeting, like "🙏 Jai Guru Deva!" or "🙏 Har Har Mahadev!".
+- `when`: when it is said, in English then Telugu.
+- `tags`: 2 or 3 CamelCase hashtags for the sloka and deity, like "KarpuraGauram", "LordShiva" (the standard channel tags are added).
+
+Check the text with `./reel meta <id>`, then save it with `./reel meta <id> --push`. The script stops if a field is missing. A redo keeps its meta, and pushes again only when the sloka or its meaning changed.
+
+Each run, also push meta for one existing Chinni reel item that is not posted yet and whose meta is missing or in the old style (its caption has no "🎶 Learn • Chant • Grow with Devotion!"); fill its `post` entry first. Keep going until every unposted reel has it.
 
 ## 6. Save the code
 
