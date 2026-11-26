@@ -148,17 +148,23 @@ def meta(rid):
 
 
 def push_meta(rid, m):
-    """Saves data.meta on the reel's Inbox item (sloka-<id>, or sloka-video-<id> for reels made by the video job)."""
-    for item_id in (f'sloka-{rid}', f'sloka-video-{rid}'):
-        try:
-            item = inbox({'action': 'get', 'id': item_id})['item']
-        except SystemExit:
-            continue
+    """Saves data.meta on the reel's Inbox items: sloka-video-<id> (reels made by the video job) and sloka-<id>."""
+    saved = 0
+    for item_id in (f'sloka-video-{rid}', f'sloka-{rid}'):
+        req = urllib.request.Request(os.environ['INBOX_URL'], json.dumps({'action': 'get', 'id': item_id, 'token': os.environ['INBOX_TOKEN']}).encode(),
+                                     {'Content-Type': 'application/json'})
+        res = json.load(urllib.request.urlopen(req, timeout=180))
+        if not res.get('ok'):
+            if (res.get('error') or {}).get('code') == 'not_found':
+                continue
+            sys.exit(f"Inbox error: {res.get('error')}")
+        item = res['item']
         data = item['data'] if isinstance(item.get('data'), dict) else {}
         inbox({'action': 'update', 'id': item_id, 'ifVersion': item['version'], 'set': {'data': dict(data, meta=m)}})
         print(f'saved data.meta on {item_id}')
-        return
-    sys.exit(f'{rid}: no Inbox item sloka-{rid} or sloka-video-{rid}')
+        saved += 1
+    if not saved:
+        sys.exit(f'{rid}: no Inbox item sloka-video-{rid} or sloka-{rid}')
 
 
 if __name__ == '__main__':
