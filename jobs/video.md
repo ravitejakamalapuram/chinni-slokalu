@@ -6,7 +6,7 @@ Make at most ONE reel per run. Follow `README.md` and `RULES.md` in this repo. R
 
 In this order:
 
-a. A rejected redo: a `video` item of app "Chinni Slokalu" with status `rejected`, either `sloka-video-*` or `sloka-<reel id>` (see `RULES.md`, Redos). A rejected item is closed, so `claim` refuses it: first `update` it to status `building` with `ifVersion`, then `claim` it. Read every reason in `data.rejections` and fix exactly that.
+a. A rejected redo: a `video` item of app "Chinni Slokalu" with status `rejected`, either `sloka-video-*` or `sloka-<reel id>` (see `RULES.md`, Redos). A rejected item is closed, so `claim` refuses it: first `update` it to status `building` with `ifVersion`, then `claim` it. Read `data.rejections`: fix the reasons dated after the item was last redone (normally just the newest one). Older reasons were fixed by earlier runs, so don't redo that work. A reason about pronunciation or the voice is a voice redo (`RULES.md`, Redos); a reason about the pictures is a visual redo.
 
 b. Otherwise an approved idea: `claimNext` with `type` `idea`, `status` `approved`, `set` `{"status":"building"}`. Use its text, meaning, scene plan and any approval note.
 
@@ -16,7 +16,7 @@ If neither exists, finish with one line saying nothing was approved.
 
 Write the scene plan from the meaning first (`RULES.md`, Content): one "we see X, then Y happens" sentence per line in the reel's `scenes.js` header. Copy `asatoma/` for a new reel; a visual redo keeps its voice clips (`./reel fetch <id>`).
 
-## 3. Voice (new reels only)
+## 3. Voice (new reels and voice redos)
 
 - Spoken parts: Gemini TTS voice Leda. Prefer the AI Studio speech playground in the owner's Brave (Claude in Chrome) when the Mac is on, since it has no quota wait; otherwise `GEMINI_API_KEY` (free tier, about 10 clips per model per day).
 - Sung finale: ElevenLabs Music, one take (`generations_count` 1), checked before any retry, keeping about 10k credits in reserve. If credits are short, use the free Leda-over-drone fallback (`voice-tests/bgm.py`).
