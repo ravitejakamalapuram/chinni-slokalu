@@ -22,7 +22,7 @@ for i, l in enumerate(d['lines']):
 jobs.append(("09_jai", T % ("Joyful and proud of the children.", outro)))
 for name, text in jobs:
     if only and name not in only: continue
-    r = subprocess.run(["python3", "-I", sys.path[0] + "/karpura/tts.py", model, "Leda", f"{out}/{name}"], input=text, text=True, capture_output=True)
+    r = subprocess.run(["python3", "-I", sys.path[0] + "/tts.py", model, "Leda", f"{out}/{name}"], input=text, text=True, capture_output=True)
     print(name, r.stdout.strip()[:200], flush=True)
     subprocess.run(["rm", "-f", f"{out}/{name}.pcm"])
     time.sleep(22)
