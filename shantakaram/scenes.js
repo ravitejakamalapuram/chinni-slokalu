@@ -14,54 +14,67 @@ const SC = (() => {
   const hoods = (id) => `<g id="${id}">${[[-70, 40], [-36, 6], [0, -8], [36, 6], [70, 40]].map(([x, y]) => `<ellipse cx="${x}" cy="${y}" rx="30" ry="40" fill="#4CB963" stroke="${O}" stroke-width="5"/><circle cx="${x - 9}" cy="${y - 6}" r="4" fill="${O}"/><circle cx="${x + 9}" cy="${y - 6}" r="4" fill="${O}"/>`).join('')}</g>`;
   const deva = (id, x, y, s, c) => `<g id="${id}" opacity="0">${DEVI(id + 'f', x, y, s, c, '#FFC93C', { hold: 'lotus', crown: 'crown', female: false })}${P('', x, y + 290 * s, s * 1.6, '<path d="M-90 20 Q-100 -20 -60 -26 Q-50 -70 0 -60 Q40 -90 70 -50 Q110 -50 104 -10 Q130 10 100 30 Z" fill="#fff" stroke="#2B1407" stroke-width="5"/>')}</g>`;
 
+  // sleeping Vishnu (template/characters/vishnu.svg, injected by the build as VRAW) with prefixed ids
+  const VSLEEP = (px, x, y, sc) => `<g transform="translate(${x} ${y}) scale(${sc})"><g stroke="#1B2340" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">` +
+    VRAW.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '').replace(/id="([^"]+)"/g, `id="${px}_$1"`).replace(/url\(#/g, `url(#${px}_`) + `</g></g>`;
+  // ambient life for every scene: falling flowers and flying birds
+  const amb = (id) => `<g id="${id}">${[0, 1, 2, 3, 4, 5].map(i => `<g id="${id}p${i}" opacity="0">${P('', 80 + i * 170, -30, 0.8, i % 2 ? SH.marigold : SH.petal)}</g>`).join('')}${[0, 1].map(i => `<g id="${id}b${i}">${P('', -60, 90 + i * 50, 0.7 - i * 0.15, birdIn())}</g>`).join('')}</g>`;
+  const ambA = (tl, id, a, b) => {
+    for (let i = 0; i < 6; i++) tl.fromTo(`#${id}p${i}`, { opacity: 1, y: 0, x: 0, rotation: 0 }, { y: 600, x: (i % 2 ? 40 : -40), rotation: 270, duration: 4 + (i % 3), ease: 'none', repeat: rep(4 + (i % 3), b - a) }, a + i * 0.7);
+    for (let i = 0; i < 2; i++) tl.fromTo(`#${id}b${i}`, { x: 0, y: 0 }, { x: 1150, y: -30 + i * 20, duration: 7 + i * 2, ease: 'none', repeat: rep(7 + i * 2, b - a) }, a + 0.5 + i * 1.5);
+    tl.set(`#${id}`, { opacity: 1 }, a);
+  };
+  const { birdIn, fishIn } = ST;
+
   // ---------- 0: Shantakaram Bhujagashayanam Padmanabham Suresham ----------
-  // calm Vishnu lying on the serpent Adisesha in the milk ocean, lotus from navel, gods bow
+  // Vishnu sleeps peacefully on the serpent Adisesha in the milk ocean; lotus with Brahma from his navel; gods come and bow
   const s0 = `<g id="sc0" opacity="0">${bg('g0', '#D7EEFF', '#9CCDF2')}${stars([[90, 70], [260, 120], [780, 60], [930, 140]], 10)}
     ${cloud(140, 90, 0.5)}${cloud(860, 110, 0.45)}
-    <g id="z0w">${milk(430)}</g>
-    <g id="z0glow" opacity="0"><ellipse cx="500" cy="330" rx="380" ry="120" fill="#FFF3B0" opacity=".6"/></g>
-    <g transform="translate(500 380)"><g id="z0snake">
-      <ellipse cx="0" cy="20" rx="330" ry="44" fill="#3FA34D" stroke="${O}" stroke-width="7"/><ellipse cx="-20" cy="-4" rx="300" ry="34" fill="#5FCB75" stroke="${O}" stroke-width="6"/>
-      <path d="M-330 20 Q-380 40 -360 70" fill="none" stroke="${O}" stroke-width="22" stroke-linecap="round"/><path d="M-330 20 Q-380 40 -360 70" fill="none" stroke="#3FA34D" stroke-width="12" stroke-linecap="round"/>
-      <path d="M300 0 Q320 -80 270 -160" fill="none" stroke="${O}" stroke-width="40" stroke-linecap="round"/><path d="M300 0 Q320 -80 270 -160" fill="none" stroke="#5FCB75" stroke-width="28" stroke-linecap="round"/>
-    </g></g>
-    <g transform="translate(770 175)"><g id="z0hoods">${hoods('z0h')}</g></g>
-    <g id="z0lot" opacity="0"><path id="z0stem" d="M462 300 Q430 230 462 150" fill="none" stroke="#3FA34D" stroke-width="10" stroke-linecap="round"/>
-      <g transform="translate(462 142)"><g id="z0flower">${[-60, -30, 0, 30, 60].map(a => `<path d="M0 0 Q-24 -46 0 -88 Q24 -46 0 0Z" fill="#FF8FB1" stroke="${O}" stroke-width="5" transform="rotate(${a})"/>`).join('')}<circle r="12" fill="#FFD23F" stroke="${O}" stroke-width="4"/></g></g></g>
-    <g transform="translate(540 300)"><g id="z0ven"><g transform="rotate(90)">${VEN('z0v', 0, 0, 0.66, { eyes: 'closed', hold: 'abhaya', holdL: 'lotus' })}</g></g></g>
-    <g id="z0zz" opacity="0">${tx('z z z', 560, 215, 50, '#3456B0', 0)}</g>
-    ${deva('z0d1', 140, 150, 0.32, '#FF8C1A')}${deva('z0d2', 260, 120, 0.3, '#2EC4B6')}${deva('z0d3', 380, 150, 0.3, '#E74C8B')}
-    <g id="z0crown" opacity="0">${P('', 680, 205, 0.6, `<path d="M-50 0 L50 0 L42 -40 L24 -22 L0 -64 L-24 -22 L-42 -40Z" fill="${GD}" stroke="${O}" stroke-width="6" stroke-linejoin="round"/><circle cx="0" cy="-26" r="8" fill="${RD}"/>`)}</g>
+    <g id="z0glow" opacity="0"><ellipse cx="500" cy="300" rx="420" ry="200" fill="#FFF3B0" opacity=".6"/></g>
+    <g id="z0w">${milk(440)}</g>
+    ${[0, 1, 2].map(i => `<g id="z0f${i}" opacity="0">${P('', [120, 820, 930][i], 500, 0.6, fishIn(['#FF8C42', '#FFD23F', '#FF5C8A'][i]))}</g>`).join('')}
+    <g id="z0v">${VSLEEP('z0', 300, 50, 0.66)}</g>
+    ${deva('z0d1', 110, 150, 0.32, '#FF8C1A')}${deva('z0d2', 830, 120, 0.3, '#2EC4B6')}${deva('z0d3', 920, 170, 0.28, '#E74C8B')}
+    <g id="z0crown" opacity="0">${P('', 660, 150, 0.6, `<path d="M-50 0 L50 0 L42 -40 L24 -22 L0 -64 L-24 -22 L-42 -40Z" fill="${GD}" stroke="${O}" stroke-width="6" stroke-linejoin="round"/><circle cx="0" cy="-26" r="8" fill="${RD}"/>`)}</g>
+    ${amb('z0am')}
     ${tag('z0t0', 'ప్రశాంతం')}${tag('z0t1', 'శేష శయనం')}${tag('z0t2', 'పద్మనాభుడు')}${tag('z0t3', 'దేవతల రాజు')}
   </g>`;
   const a0 = (tl, a, m, b) => {
-    const [b0, b1, b2, b3] = beats(m, b), d = (b - m) / 4;
+    const [b0, b1, b2, b3] = beats(m, b), d = (b - m) / 4, L = b - a;
     tl.set('#sc0', { opacity: 1 }, a);
-    ['#z0lot', '#z0glow', '#z0crown', '#z0zz', '#z0d1', '#z0d2', '#z0d3'].forEach(e => tl.set(e, { opacity: 0 }, a));
-    tl.fromTo('#z0w', { x: 0 }, { x: -60, duration: 2.4, ease: 'sine.inOut', yoyo: true, repeat: rep(2.4, b - a) }, a);
-    tl.fromTo('#z0ven', { y: 0 }, { y: -5, duration: 1.6, ease: 'sine.inOut', yoyo: true, repeat: rep(1.6, b - a) }, a);
-    tl.fromTo('#z0hoods', { transformOrigin: '50% 100%', rotation: -3 }, { rotation: 3, transformOrigin: '50% 100%', duration: 1.4, ease: 'sine.inOut', yoyo: true, repeat: rep(1.4, b - a) }, a);
-    // shanta: calm glow, sleepy waves
+    ['#z0glow', '#z0crown', '#z0d1', '#z0d2', '#z0d3', '#z0_navelLotus'].forEach(e => tl.set(e, { opacity: 0 }, a));
+    ambA(tl, 'z0am', a, b);
+    tl.fromTo('#z0w', { x: 0 }, { x: -60, duration: 2.4, ease: 'sine.inOut', yoyo: true, repeat: rep(2.4, L) }, a);
+    tl.fromTo('#z0_waves', { x: 0 }, { x: -80, duration: 3, ease: 'none', repeat: rep(3, L) }, a);
+    tl.fromTo('#z0_chakra', { rotation: 0 }, { rotation: 360, svgOrigin: '210 320', duration: 3, ease: 'none', repeat: rep(3, L) }, a);
+    tl.fromTo('#z0_chest', { scaleY: 1 }, { scaleY: 1.05, svgOrigin: '330 540', duration: 1.6, ease: 'sine.inOut', yoyo: true, repeat: rep(1.6, L) }, a);
+    tl.fromTo('#z0_lakHand', { y: 0 }, { y: 10, duration: 0.6, ease: 'sine.inOut', yoyo: true, repeat: rep(0.6, L) }, a);
+    tl.fromTo('#z0_hoodHeads', { y: 0 }, { y: -6, duration: 1.4, ease: 'sine.inOut', yoyo: true, repeat: rep(1.4, L) }, a);
+    ['#z0_z1', '#z0_z2', '#z0_z3'].forEach((z, i) => tl.fromTo(z, { opacity: 0, y: 20 }, { opacity: 1, y: -14, duration: 1.1, ease: 'sine.out', repeat: rep(1.6, L), repeatDelay: 0.5 }, a + i * 0.35));
+    for (let i = 0; i < 3; i++) tl.fromTo(`#z0f${i}`, { opacity: 1, y: 40, rotation: -30 }, { y: -90, rotation: 30, duration: 0.7, ease: 'power1.out', yoyo: true, repeat: 1, repeatDelay: 0.1 }, a + 1 + i * 1.7);
+    // shanta: everything glows soft and calm, he sleeps
     showTag(tl, 'z0t0', b0, d);
-    tl.to('#z0glow', { opacity: 1, duration: 0.6 }, b0);
-    tl.fromTo('#z0zz', { opacity: 0, y: 0 }, { opacity: 1, y: -30, duration: 1, repeat: 1, ease: 'sine.out' }, b0 + 0.2);
-    tl.to('#z0zz', { opacity: 0, duration: 0.3 }, b0 + d - 0.2);
-    // bhujaga shayanam: the serpent hoods rise and shelter him
+    tl.fromTo('#z0glow', { opacity: 0 }, { opacity: 1, duration: 0.6 }, b0);
+    tl.fromTo('#z0_zzz', { transformOrigin: '50% 100%', smoothOrigin: false, scale: 1 }, { scale: 1.4, transformOrigin: '50% 100%', smoothOrigin: false, duration: 0.5, yoyo: true, repeat: 3 }, b0 + 0.2);
+    // bhujaga shayanam: Adisesha raises his hoods and shelters him
     showTag(tl, 'z0t1', b1, d);
-    tl.fromTo('#z0hoods', { transformOrigin: '50% 100%', scale: 1 }, { scale: 1.3, transformOrigin: '50% 100%', duration: 0.5, ease: 'back.out(3)', yoyo: true, repeat: 1 }, b1 + 0.1);
-    tl.fromTo('#z0snake', { transformOrigin: '50% 50%', scaleY: 1 }, { scaleY: 1.08, transformOrigin: '50% 50%', duration: 0.35, yoyo: true, repeat: 3 }, b1 + 0.2);
-    // padmanabham: a lotus grows from his navel
+    tl.to('#z0glow', { opacity: 0, duration: 0.4 }, b1);
+    tl.fromTo('#z0_hoods', { transformOrigin: '50% 100%', smoothOrigin: false, scale: 1 }, { scale: 1.18, transformOrigin: '50% 100%', smoothOrigin: false, duration: 0.45, ease: 'back.out(3)', yoyo: true, repeat: 3 }, b1 + 0.1);
+    tl.fromTo('#z0_hoods', { rotation: 0 }, { rotation: -6, svgOrigin: '520 560', duration: 0.4, ease: 'sine.inOut', yoyo: true, repeat: 3 }, b1 + 1.9);
+    // padmanabham: a lotus grows from his navel, Brahma pops up on it
     showTag(tl, 'z0t2', b2, d);
-    tl.set('#z0lot', { opacity: 1 }, b2);
-    tl.fromTo('#z0stem', { strokeDasharray: 300, strokeDashoffset: 300 }, { strokeDashoffset: 0, duration: 0.8, ease: 'power1.out' }, b2);
-    tl.fromTo('#z0flower', { transformOrigin: '50% 100%', scale: 0 }, { scale: 1, transformOrigin: '50% 100%', duration: 0.6, ease: 'back.out(2.5)' }, b2 + 0.7);
-    // suresham: the gods arrive on clouds and bow; a crown shines
+    tl.set('#z0_navelLotus', { opacity: 1 }, b2);
+    tl.fromTo('#z0_stem', { strokeDasharray: 340, strokeDashoffset: 340 }, { strokeDashoffset: 0, duration: 0.8, ease: 'power1.out' }, b2);
+    tl.fromTo('#z0_lotusTop', { scale: 0, transformOrigin: '50% 100%', smoothOrigin: false }, { scale: 1, transformOrigin: '50% 100%', smoothOrigin: false, duration: 0.6, ease: 'back.out(2.5)' }, b2 + 0.7);
+    tl.fromTo('#z0_brahma', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: 'back.out(3)' }, b2 + 1.2);
+    tl.to('#z0_brahma', { y: -12, duration: 0.25, yoyo: true, repeat: 3 }, b2 + 1.8);
+    // suresham: the gods fly in on clouds and bow; a crown shines over him
     showTag(tl, 'z0t3', b3, d);
     ['#z0d1', '#z0d2', '#z0d3'].forEach((e, i) => {
       tl.fromTo(e, { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, b3 + i * 0.2);
-      tl.to(e, { rotation: 10, transformOrigin: '50% 100%', duration: 0.4, yoyo: true, repeat: 3, ease: 'sine.inOut' }, b3 + 0.8 + i * 0.1);
+      tl.fromTo(e, { rotation: 0 }, { rotation: i ? -10 : 10, transformOrigin: '50% 100%', smoothOrigin: false, duration: 0.4, yoyo: true, repeat: 3, ease: 'sine.inOut' }, b3 + 0.8 + i * 0.1);
     });
-    tl.fromTo('#z0crown', { transformOrigin: '50% 50%', opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, transformOrigin: '50% 50%', duration: 0.5, ease: 'back.out(3)' }, b3 + 0.6);
+    tl.fromTo('#z0crown', { transformOrigin: '50% 50%', smoothOrigin: false, opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, transformOrigin: '50% 50%', smoothOrigin: false, duration: 0.5, ease: 'back.out(3)' }, b3 + 0.6);
   };
 
   // ---------- 1: Vishwadharam Gaganasadrisham Meghavarnam Shubhangam ----------
@@ -76,6 +89,8 @@ const SC = (() => {
     <g transform="translate(500 92)"><g id="y1globe" opacity="0"><g transform="scale(.32)">${globe('y1g')}</g></g></g>
     <g id="y1k">${KID('y1kid', 150, 330, 0.42, { mood: 'op' })}</g>
     <g id="y1sp">${[0, 1, 2, 3, 4, 5].map(i => `<g id="y1s${i}" opacity="0">${P('', 330 + (i % 3) * 170, 150 + Math.floor(i / 3) * 180, 1.2, SH.spark)}</g>`).join('')}</g>
+    ${[0, 1, 2, 3].map(i => `<g transform="translate(${620 + i * 90} 470)"><g id="y1fl${i}">${P('', 0, 0, 0.5, '<path d="M0 0 V-60" stroke="#3FA34D" stroke-width="8"/><g transform="translate(0 -70)">' + (i % 2 ? SH.marigold : SH.petal) + '</g>')}</g></g>`).join('')}
+    ${amb('y1am')}
     ${tag('y1t0', 'విశ్వానికి ఆధారం')}${tag('y1t1', 'ఆకాశం లాంటివాడు')}${tag('y1t2', 'మేఘం రంగు')}${tag('y1t3', 'శుభ రూపం')}
   </g>`;
   const a1 = (tl, a, m, b) => {
@@ -83,6 +98,8 @@ const SC = (() => {
     tl.set('#sc1', { opacity: 1 }, a);
     ['#y1night', '#y1cloud', '#y1eq', '#y1globe'].forEach(e => tl.set(e, { opacity: 0 }, a));
     tl.set('#y1ven', { scale: 1, x: 0, y: 0 }, a);
+    ambA(tl, 'y1am', a, b);
+    for (let i = 0; i < 4; i++) tl.set(`#y1fl${i}`, { scale: 0, transformOrigin: '50% 100%', smoothOrigin: false }, a);
     tl.fromTo('#y1k', { y: 0 }, { y: -10, duration: 0.8, ease: 'sine.inOut', yoyo: true, repeat: rep(0.8, b - a) }, a);
     // vishwadharam: the earth floats down and rests on his raised hand
     showTag(tl, 'y1t0', b0, d);
@@ -99,6 +116,8 @@ const SC = (() => {
     tl.to('#y1ven', { scale: 1, x: -120, transformOrigin: '50% 100%', duration: 0.7, ease: 'power2.inOut' }, b2);
     tl.fromTo('#y1cloud', { opacity: 0, x: 200 }, { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' }, b2 + 0.2);
     for (let i = 0; i < 5; i++) tl.fromTo(`#y1r${i}`, { opacity: 0, y: 0 }, { opacity: 1, y: 120, duration: 0.6, ease: 'power1.in', repeat: 2 }, b2 + 0.9 + i * 0.12);
+    for (let i = 0; i < 4; i++) tl.to(`#y1fl${i}`, { scale: 1, transformOrigin: '50% 100%', smoothOrigin: false, duration: 0.5, ease: 'back.out(3)' }, b2 + 1.4 + i * 0.2);
+    tl.fromTo('#y1k', { rotation: 0 }, { rotation: 8, transformOrigin: '50% 100%', smoothOrigin: false, duration: 0.2, yoyo: true, repeat: 5 }, b2 + 1.8);
     tl.fromTo('#y1eq', { transformOrigin: '50% 50%', opacity: 0, scale: 0 }, { opacity: 1, scale: 1, transformOrigin: '50% 50%', duration: 0.4, ease: 'back.out(3)' }, b2 + 1.0);
     // shubhangam: beautiful, auspicious form: sparkles and the child is amazed
     showTag(tl, 'y1t3', b3, d);
@@ -129,19 +148,24 @@ const SC = (() => {
       <g id="x2heart" opacity="0">${P('', 330, 330, 0.5, heartP(1, '#FF5C8A'))}</g>
       <g id="x2bub" opacity="0"><g transform="translate(640 190)"><path d="M-170 -110 h340 v220 h-340Z" fill="none"/>${ST.thought(120, `<g transform="translate(0 14)">${VEN('x2bv', 0, 0, 0.28, { hold: 'abhaya', holdL: 'conch' })}</g>`)}</g></g>
     </g>
+    <g id="x2gar" opacity="0"><path d="M360 210 Q420 330 480 210" fill="none" stroke="#2B1407" stroke-width="16" stroke-linecap="round"/><path d="M360 210 Q420 330 480 210" fill="none" stroke="#FF9F1C" stroke-width="10" stroke-dasharray="4 14" stroke-linecap="round"/>${[0, 1, 2, 3, 4].map(k => `<circle cx="${370 + k * 25}" cy="${220 + [0, 40, 56, 40, 0][k]}" r="9" fill="#FF5C8A" stroke="#2B1407" stroke-width="3"/>`).join('')}</g>
+    ${amb('x2am')}
     ${tag('x2t0', 'లక్ష్మీ కాంతుడు')}${tag('x2t1', 'తామర కళ్ళు')}${tag('x2t2', 'యోగుల ధ్యానం')}${tag('x2t3', 'మనసులో దర్శనం')}
   </g>`;
   const a2 = (tl, a, m, b) => {
     const [b0, b1, b2, b3] = beats(m, b), d = (b - m) / 4;
     tl.set('#sc2', { opacity: 1 }, a);
     ['#x2lak', '#x2eye', '#x2yogi', '#x2heart', '#x2bub', '#x2iris'].forEach(e => tl.set(e, { opacity: 0 }, a));
-    tl.set('#x2pair', { opacity: 1 }, a); tl.set('#x2petal', { opacity: 1 }, a);
+    tl.set('#x2pair', { opacity: 1 }, a); tl.set('#x2gar', { opacity: 0 }, a);
+    ambA(tl, 'x2am', a, b); tl.set('#x2petal', { opacity: 1 }, a);
     tl.fromTo('#x2ven', { x: 80 }, { x: 80, duration: 0.01 }, a);
     // lakshmikantam: Lakshmi comes to his side, hearts float up
     showTag(tl, 'x2t0', b0, d);
     tl.to('#x2ven', { x: 0, duration: 0.6, ease: 'power2.inOut' }, b0);
     tl.fromTo('#x2lak', { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.7, ease: 'power2.out' }, b0 + 0.2);
     for (let i = 0; i < 3; i++) tl.fromTo(`#x2h${i}`, { opacity: 0, y: 40, x: (i - 1) * 30 }, { opacity: 1, y: -60, duration: 1, ease: 'sine.out' }, b0 + 0.8 + i * 0.3).to(`#x2h${i}`, { opacity: 0, duration: 0.3 }, b0 + 1.8 + i * 0.3);
+    tl.fromTo('#x2gar', { opacity: 0, y: -160 }, { opacity: 1, y: 0, duration: 0.6, ease: 'bounce.out' }, b0 + 1.1);
+    tl.to('#x2gar', { opacity: 0, duration: 0.3 }, b1);
     // kamala nayanam: a lotus petal turns into his eye
     showTag(tl, 'x2t1', b1, d);
     tl.to('#x2pair', { opacity: 0, duration: 0.3 }, b1);
@@ -171,6 +195,7 @@ const SC = (() => {
     ${[[120, 200], [380, 170], [170, 400], [420, 380]].map(([x, y], i) => `<g id="w3f${i}" opacity="0">${P('', x, y, 0.65, i % 2 ? ghostIn : demonIn())}</g>`).join('')}
     <g id="w3disc" opacity="0">${P('', 0, 0, 1, `<circle r="30" fill="#FFE066" stroke="${O}" stroke-width="6"/>${[0, 45, 90, 135].map(r => `<line x1="-30" y1="0" x2="30" y2="0" stroke="${O}" stroke-width="4" transform="rotate(${r})"/>`).join('')}<circle r="9" fill="#FF8C1A" stroke="${O}" stroke-width="3"/>`)}</g>
     <g id="w3kids" opacity="0">${KID('w3a', 120, 330, 0.36, { mood: 'sm' })}${KID('w3b', 390, 330, 0.36, { mood: 'sm', flip: true })}</g>
+    ${amb('w3am')}
     ${tag('w3t0', 'విష్ణువుకు నమస్కారం')}${tag('w3t1', 'భయాలు పోగొట్టేవాడు')}${tag('w3t2', 'అన్ని లోకాలకు')}${tag('w3t3', 'ఒక్కడే నాథుడు')}
   </g>`;
   const a3 = (tl, a, m, b) => {
@@ -178,6 +203,7 @@ const SC = (() => {
     tl.set('#sc3', { opacity: 1 }, a);
     ['#w3dark', '#w3rays', '#w3orb', '#w3disc', '#w3kids', '#w3f0', '#w3f1', '#w3f2', '#w3f3'].forEach(e => tl.set(e, { opacity: 0 }, a));
     tl.set('#w3k-sm', { opacity: 1 }, a); tl.set('#w3k-sd', { opacity: 0 }, a);
+    ambA(tl, 'w3am', a, b);
     tl.fromTo('#w3ven', { y: 0 }, { y: -8, duration: 1.4, ease: 'sine.inOut', yoyo: true, repeat: rep(1.4, b - a) }, a);
     // vande vishnum: the child bows to Vishnu
     showTag(tl, 'w3t0', b0, d);
@@ -204,6 +230,9 @@ const SC = (() => {
     tl.fromTo('#w3rs', { svgOrigin: '0 0', rotation: 0 }, { rotation: 60, svgOrigin: '0 0', duration: Math.max(1, b - b3), ease: 'none' }, b3);
     tl.fromTo('#w3kids', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, b3 + 0.3);
     tl.fromTo('#w3kb', { transformOrigin: '50% 100%', rotation: 0 }, { rotation: 22, transformOrigin: '50% 100%', duration: 0.5, ease: 'sine.inOut', yoyo: true, repeat: 3 }, b3 + 0.6);
+    tl.fromTo('#w3kids', { y: 0 }, { y: -24, duration: 0.25, ease: 'sine.out', yoyo: true, repeat: 7 }, b3 + 1.0);
   };
-  return { svg: s0 + s1 + s2 + s3, act: [a0, a1, a2, a3] };
+  // play each scene's four beats twice: once word by word while the line is chanted, then again with the meaning
+  const twice = f => (tl, a, m, b) => { if (m - a > 5) { f(tl, a, a + 0.4, m - 0.1); f(tl, m - 0.1, m, b); } else f(tl, a, m, b); };
+  return { svg: s0 + s1 + s2 + s3, act: [a0, a1, a2, a3].map(twice) };
 })();
