@@ -44,7 +44,7 @@ Every reel item carries `data.meta`: the YouTube title and description and the I
 - `when`: when it is said, in English then Telugu.
 - `tags`: 2 or 3 CamelCase hashtags for the sloka and deity, like "KarpuraGauram", "LordShiva" (the standard channel tags are added).
 
-Check the text with `./reel meta <id>`, then save it with `./reel meta <id> --push`. The script stops if a field is missing. A redo keeps its meta, and pushes again only when the sloka or its meaning changed.
+`./reel meta` adds the rest by itself: the tagline, the channel hashtags, and on YouTube the sloka with its meaning and the Instagram link. Check the text with `./reel meta <id>`, then save it with `./reel meta <id> --push`. The script stops if a field is missing. A redo keeps its meta, and pushes again only when the sloka or its meaning changed.
 
 Each run, also push meta for one existing Chinni reel item that is not posted yet and whose meta is missing or in the old style (its caption has no "🎶 Learn • Chant • Grow with Devotion!"); fill its `post` entry first. Keep going until every unposted reel has it.
 

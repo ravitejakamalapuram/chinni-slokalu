@@ -125,6 +125,7 @@ def upload(path):
 
 
 TAGLINE = '🎶 Learn • Chant • Grow with Devotion!'
+INSTAGRAM = 'https://www.instagram.com/chinnislokalu/'  # YouTube descriptions point viewers here
 BASE_TAGS = ['SlokasForKids', 'ChinniSlokalu', 'TeluguSlokalu', 'KidsDevotional', 'DailySlokas', 'SanatanaDharma',
              'IndianCulture', 'DevotionalReels', 'Bhakti']
 
@@ -150,7 +151,8 @@ def meta(rid):
     caption = '\n\n'.join([post['hook'], post['blurb'], TAGLINE, post['blessing'], ' '.join('#' + t for t in tags + ['TeluguInstagram'])])
     words = [sloka, f'అర్థం: {meaning_te}', f'Meaning: {meaning}'] if lines else []
     youtube = '\n\n'.join([post['hook'], post['blurb']] + words + [post['when'],
-                            TAGLINE, post['blessing'], ' '.join('#' + t for t in (tags + ['Shorts'])[:15])])  # over 15, YouTube drops them all
+                            TAGLINE, post['blessing'], f'📸 Follow on Instagram: {INSTAGRAM}',
+                            ' '.join('#' + t for t in (tags + ['Shorts'])[:15])])  # over 15, YouTube drops them all
     title = f"{name} | {name_te} for kids"
     title = (title if len(title) <= 61 else title[:61].rstrip()) + ' #shorts'
     return {'youtube': {'title': title, 'text': youtube},
