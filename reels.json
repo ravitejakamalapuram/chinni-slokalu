@@ -1,14 +1,14 @@
 {
-  "_doc": "One entry per finished reel. build: script under the repo (template reels use template/build_reel.sh <id>). hook: first sung line that opens the reel (audio:from:to:line, 'auto' = from sloka.json word_timings). out: file name in Drive chittiSlokalu/Reels.",
+  "_doc": "One entry per finished reel. build: script under the repo (template reels use template/build_reel.sh <id>). hook: first sung line that opens the reel (audio:from:to:line, 'auto' = from sloka.json word_timings). out: file name in Drive chittiSlokalu/Reels. post: name, name_te, when, tags for ./reel meta (the text the publisher posts).",
   "reels": [
     {"id": "vakratunda", "build": "vakratunda/build_vak.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "vakratunda-leda-hook-reel.mp4"},
     {"id": "saraswati", "build": "saraswati/build_sar.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "saraswati-hook-reel.mp4"},
     {"id": "hanuman", "build": "hanuman/build_han.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "hanuman-hook-reel.mp4"},
     {"id": "gayatri", "build": "gayatri/build_gay.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "gayatri-hook-reel.mp4"},
-    {"id": "guru", "build": "guru/build_gur.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "guru-hook-reel.mp4"},
+    {"id": "guru", "build": "guru/build_gur.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "guru-hook-reel.mp4", "post": {"name": "Guru Brahma", "name_te": "గురు శ్లోకం", "when": "Say it before study or class, to thank every teacher. చదువు మొదలుపెట్టే ముందు గురువులకు నమస్కారంగా చెప్పుకోండి.", "tags": ["gurubrahma", "guruslokam"]}},
     {"id": "deepam", "build": "deepam/build_dee.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "deepam-hook-reel.mp4"},
     {"id": "asatoma", "build": "asatoma/build_asa.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "asatoma-hook-reel.mp4"},
-    {"id": "karpura", "build": "karpura/build_kar.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "karpura-hook-reel.mp4"},
+    {"id": "karpura", "build": "karpura/build_kar.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "karpura-hook-reel.mp4", "post": {"name": "Karpura Gauram", "name_te": "కర్పూరగౌరం", "when": "Said at the end of aarti, to Lord Shiva and Mother Parvati. హారతి సమయంలో శివపార్వతులకు చెప్పుకునే శ్లోకం.", "tags": ["shiva", "karpuragauram"]}},
     {"id": "sarva", "build": "sarva/build_sav.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "sarva-mangala-hook-reel.mp4"},
     {"id": "mahamrityunjaya", "build": "mahamrityunjaya/build_mmj.sh", "hook": "10_sung.mp3:0.3:6.7:0", "out": "mahamrityunjaya-hook-reel.mp4"},
     {"id": "sahana", "build": "sahana/build_sahana.sh", "hook": "10_sung.mp3:auto:auto:0", "out": "sahana-hook-reel.mp4"},
