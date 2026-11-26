@@ -35,7 +35,7 @@ def inbox(body):
 
 
 def fetch(rid):
-    """Voice clips live in Drive (chittiSlokalu/Sources), not git. Each reel's Inbox item sloka-<dir> names its files,
+    """Voice clips live in Drive (Chinni Slokalu/Sources), not git. Each reel's Inbox item sloka-<dir> names its files,
     which lets the Inbox download action hand them out. Files already present with the right checksum are skipped."""
     import base64, hashlib
     src = json.load(open(os.path.join(ROOT, 'sources.json')))

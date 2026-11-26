@@ -28,8 +28,8 @@ Write the scene plan from the meaning first (`RULES.md`, Content): one "we see X
 
 ## 5. Upload and update the Inbox
 
-- `./reel upload` the video and the cover (`DRIVE_REELS_FOLDER` must point at chittiSlokalu/Reels). Uploading the same name replaces the old file and gives a new id.
-- New reel: upload its voice clips to Drive `chittiSlokalu/Sources` and add them to `sources.json`. Add a `video` item `sloka-video-<slug>`, title `<Sloka name> reel`, status `pending`, summary = one line on what it shows plus the Drive links to the video and cover, with `driveId`, `link`, and `data` `{"app":"Chinni Slokalu","icon":"🪔","group":"Reels","reel":"<slug>","idea":"<idea id>","thumb":"<cover id>","links":{...},"sources":{...}}`. Set the idea to `done`.
+- `./reel upload` the video and the cover (`DRIVE_REELS_FOLDER` must point at Chinni Slokalu/Reels). Uploading the same name replaces the old file and gives a new id.
+- New reel: upload its voice clips to Drive `Chinni Slokalu/Sources` and add them to `sources.json`. Add a `video` item `sloka-video-<slug>`, title `<Sloka name> reel`, status `pending`, summary = one line on what it shows plus the Drive links to the video and cover, with `driveId`, `link`, and `data` `{"app":"Chinni Slokalu","icon":"🪔","group":"Reels","reel":"<slug>","idea":"<idea id>","thumb":"<cover id>","links":{...},"sources":{...}}`. Set the idea to `done`.
 - Redo: update the same item (new `driveId`, `link`, `data.thumb`, `data.links`, a summary of what changed, status `pending`), keeping `data.rejections` and `data.posted`. Don't ask for approval in chat; the owner reviews in the Inbox.
 - Release the claim.
 
