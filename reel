@@ -128,6 +128,10 @@ TAGLINE = '🎶 Learn • Chant • Grow with Devotion!'
 INSTAGRAM = 'https://www.instagram.com/chinnislokalu/'  # YouTube descriptions point viewers here
 BASE_TAGS = ['SlokasForKids', 'ChinniSlokalu', 'TeluguSlokalu', 'KidsDevotional', 'DailySlokas', 'SanatanaDharma',
              'IndianCulture', 'DevotionalReels', 'Bhakti']
+# The platforms' text limits, as Social Media Publisher enforces them ({"action":"platforms"} returns its numbers):
+# Instagram allows 5 hashtags (cut from 30 in Dec 2025); YouTube counts the description in UTF-8 bytes, and a Telugu
+# letter takes 3 of them, so it holds about 1,600 Telugu letters.
+LIMITS = {'ig_hashtags': 5, 'ig_caption': 2200, 'yt_title': 100, 'yt_description_bytes': 5000}
 
 
 def meta(rid):
@@ -148,13 +152,20 @@ def meta(rid):
     meaning_te = ' '.join(l['mean_te'].rstrip('.!') + '.' for l in lines)
     own = [t.lstrip('#') for t in post['tags']]
     tags = list(dict.fromkeys(own + BASE_TAGS))
-    caption = '\n\n'.join([post['hook'], post['blurb'], TAGLINE, post['blessing'], ' '.join('#' + t for t in tags + ['TeluguInstagram'])])
+    ig_tags = list(dict.fromkeys(own + ['ChinniSlokalu', 'SlokasForKids', 'TeluguSlokalu']))[:LIMITS['ig_hashtags']]
+    caption = '\n\n'.join([post['hook'], post['blurb'], TAGLINE, post['blessing'], ' '.join('#' + t for t in ig_tags)])
     words = [sloka, f'అర్థం: {meaning_te}', f'Meaning: {meaning}'] if lines else []
     youtube = '\n\n'.join([post['hook'], post['blurb']] + words + [post['when'],
                             TAGLINE, post['blessing'], f'📸 Follow on Instagram: {INSTAGRAM}',
                             ' '.join('#' + t for t in (tags + ['Shorts'])[:15])])  # over 15, YouTube drops them all
     title = f"{name} | {name_te} for kids"
     title = (title if len(title) <= 61 else title[:61].rstrip()) + ' #shorts'
+    over = [f'{what} is {n} (limit {most})' for what, n, most in (
+        ('YouTube title', len(title), LIMITS['yt_title']),
+        ('YouTube description in bytes', len(youtube.encode()), LIMITS['yt_description_bytes']),
+        ('Instagram caption', len(caption), LIMITS['ig_caption'])) if n > most]
+    if over:
+        sys.exit(f'{rid}: ' + '; '.join(over) + '. Shorten the "post" entry in reels.json.')
     return {'youtube': {'title': title, 'text': youtube},
             'instagram': {'text': caption},
             'facebook': {'title': f'{name} sloka for kids', 'text': caption}}
