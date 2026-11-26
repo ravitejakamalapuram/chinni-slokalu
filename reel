@@ -134,6 +134,11 @@ BASE_TAGS = ['SlokasForKids', 'ChinniSlokalu', 'TeluguSlokalu', 'KidsDevotional'
 LIMITS = {'ig_hashtags': 5, 'ig_caption': 2200, 'yt_title': 100, 'yt_description_bytes': 5000}
 
 
+def js_len(text):
+    """Length as Social Media Publisher counts it (JavaScript: an emoji is 2, ❤️ is 3)."""
+    return len(text.encode('utf-16-le')) // 2
+
+
 def meta(rid):
     """What the publisher posts for a reel: YouTube title and description, Instagram and Facebook captions, in the
     owner's caption style: an emoji hook line, a short note for parents, the tagline, a blessing, then hashtags.
@@ -161,9 +166,10 @@ def meta(rid):
     title = f"{name} | {name_te} for kids"
     title = (title if len(title) <= 61 else title[:61].rstrip()) + ' #shorts'
     over = [f'{what} is {n} (limit {most})' for what, n, most in (
-        ('YouTube title', len(title), LIMITS['yt_title']),
+        ('YouTube title', js_len(title), LIMITS['yt_title']),
         ('YouTube description in bytes', len(youtube.encode()), LIMITS['yt_description_bytes']),
-        ('Instagram caption', len(caption), LIMITS['ig_caption'])) if n > most]
+        ('Instagram caption', js_len(caption), LIMITS['ig_caption']),
+        ('Instagram hashtag count', caption.count('#'), LIMITS['ig_hashtags'])) if n > most]
     if over:
         sys.exit(f'{rid}: ' + '; '.join(over) + '. Shorten the "post" entry in reels.json.')
     return {'youtube': {'title': title, 'text': youtube},
