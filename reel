@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Chitti Slokalu reel tool. Run from anywhere; paths are relative to this repo.
+"""Chinni Slokalu reel tool. Run from anywhere; paths are relative to this repo.
 
   ./reel list                     every reel in reels.json
   ./reel fetch  <id|all>          download the voice clips from Drive (sources.json) into <id>/audio, checksum-checked
