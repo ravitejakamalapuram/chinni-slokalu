@@ -19,7 +19,7 @@ Write the scene plan from the meaning first (`RULES.md`, Content): one "we see X
 ## 3. Voice (new reels and voice redos)
 
 - Spoken parts: Gemini TTS voice Achernar for new reels (owner's choice 2026-11-26; voice redos keep the reel's own voice). The reel's `gen.py` (see `karagre/`) makes all nine clips; one reel uses about 10 TTS requests. Prefer the AI Studio speech playground in the owner's Brave (Claude in Chrome) when the Mac is on, since it has no quota wait; otherwise `GEMINI_API_KEY` (free tier, about 10 clips per model per day).
-- Sung finale: ElevenLabs Music, one take (`generations_count` 1), checked before any retry, keeping about 10k credits in reserve. If credits are short, use the free Leda-over-drone fallback (`voice-tests/bgm.py`).
+- Sung finale: ElevenLabs Music, one take (`generations_count` 1), checked before any retry, keeping about 10k credits in reserve. If credits are short, use the free fallback, a chant in the reel's own voice over a drone (`voice-tests/bgm.py`).
 - If the voice can't be made today, put the item back to `approved`, release the claim, and finish with one line saying why.
 
 ## 4. Build, check, render
