@@ -953,5 +953,55 @@
   "id": "19S4FpmS5GXwNQhLFsQPPz8wG5ljTzOcn",
   "sha256": "511db1e3930ecc6d4585984cb56d61d26e1b5864c0a67f508bb7fddd31eeef55",
   "size": 738322
+ },
+ "karagre/audio/01_intro.mp3": {
+  "id": "1sBzcIRhQVJrk-P30HGZOlGezHAMgjvNz",
+  "sha256": "4f4d78d72854def0a61db096712a6f0e2a7ea48f74ff69662375774dacdf21c0",
+  "size": 237357
+ },
+ "karagre/audio/02_full.mp3": {
+  "id": "16p8mX9KpzcXoZHToaPu_FL3hl7KMJ0vY",
+  "sha256": "7cc293e23e7931463bce7f4ac8db37f3832dfaf584833cacc5178c77d2b1e41a",
+  "size": 266925
+ },
+ "karagre/audio/03_learn.mp3": {
+  "id": "1mbJxd6zYS_Kqixy7cJ6I6HzKB-dFfCjl",
+  "sha256": "6199586ddd53837d87fe8031a7bdd8535ddf85284920245c6b162bb272a5b64c",
+  "size": 42669
+ },
+ "karagre/audio/04_line1.mp3": {
+  "id": "1s59VLA_7yyObyiSYjtqw99g89jhUFqY2",
+  "sha256": "b627adc9926a65967eebf4adeeb2004e84a3dc2adfccc559eeea7ecc7a0216e5",
+  "size": 159789
+ },
+ "karagre/audio/05_line2.mp3": {
+  "id": "1CNW-NYL1Mljn97rjn6voKJgkHcBjJlE0",
+  "sha256": "3b1ef6449332a823aa1a9089a15b495a987e4fa89d6f8d71294e39903b21d1a4",
+  "size": 123693
+ },
+ "karagre/audio/06_line3.mp3": {
+  "id": "1YrgvcSxKHtDHQvYhR5PWyrjdlOtyA7ho",
+  "sha256": "357bf9f7819a089223cbdb68e83fc811168ca7381ee8d0c9564316d9b5d83382",
+  "size": 158637
+ },
+ "karagre/audio/07_line4.mp3": {
+  "id": "1j1SehXW4TAUtEvJOLh8024_wklYiQDd_",
+  "sha256": "930f9e563a9552eb0b42cd344b3a371c7be87f5fc37c3eb42c87438143a5f14f",
+  "size": 157869
+ },
+ "karagre/audio/08_together.mp3": {
+  "id": "12DlGLCKbbIqDdU_-NQaoPTb6L8LYnbzY",
+  "sha256": "040ba39e94c3eba441c7fd0dc697a4c05cbdc9ef47435bd959d9161fde9c01b9",
+  "size": 41901
+ },
+ "karagre/audio/09_jai.mp3": {
+  "id": "1vleLYrPnu21_HTCGVfbfb299UEf1Z36s",
+  "sha256": "a132099b562068df4b1259fc7d33bba7367e43636163c0b089afd8d376a9d4d7",
+  "size": 173997
+ },
+ "karagre/audio/10_sung.mp3": {
+  "id": "1keaHgTm0-vZsVGou6evNgtdquXdARSrx",
+  "sha256": "7717af5c2f2041e28b6f735b02915d14aa8b856f98c526820ae849d8872fe6b4",
+  "size": 858706
  }
 }

@@ -13,7 +13,7 @@ These are the owner's decisions. Follow them on every reel; ask before breaking 
 - No 720p copies. Keep only the latest version of each reel.
 
 ## Voices
-- Spoken parts: Gemini TTS, voice Leda (Achernar is a candidate). Free quota is about 10 clips per model per day, resetting 1:30 PM IST, shared by every run: never make several reels in parallel.
+- Spoken parts: Gemini TTS. New reels use voice Achernar (owner, 2026-11-26); reels already voiced in Leda keep Leda, including their redos. Free quota is about 10 clips per model per day, resetting 1:30 PM IST, shared by every run: never make several reels in parallel.
 - Sung finale: ElevenLabs Music, one take (`generations_count` 1), checked before any retry; keep about 10k credits in reserve. When credits run out, use the free fallback: Leda chant over a synthesized drone (`voice-tests/bgm.py`).
 - One voice per reel, never mixed. Reels already made with ElevenLabs Janaki stay as they are.
 - Never pay ElevenLabs for word timings; derive them from silence or Gemini.

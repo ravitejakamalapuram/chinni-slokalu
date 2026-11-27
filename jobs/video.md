@@ -8,7 +8,7 @@ In this order:
 
 a. A rejected redo: a `video` item of app "Chinni Slokalu" with status `rejected`, either `sloka-video-*` or `sloka-<reel id>` (see `RULES.md`, Redos). A rejected item is closed, so `claim` refuses it: first `update` it to status `building` with `ifVersion`, then `claim` it. Read `data.rejections`: fix the reasons dated after the item was last redone (normally just the newest one). Older reasons were fixed by earlier runs, so don't redo that work. A reason about pronunciation or the voice is a voice redo (`RULES.md`, Redos); a reason about the pictures is a visual redo.
 
-b. Otherwise an approved idea: `claimNext` with `type` `idea`, `status` `approved`, `set` `{"status":"building"}`. Use its text, meaning, scene plan and any approval note.
+b. Otherwise an approved idea: `list` `type` `idea`, `status` `approved`, keep only `data.app` "Chinni Slokalu", take the oldest, `claim` it by `id`, then `update` it to status `building` with `ifVersion`. Don't use `claimNext`: it has no app filter and takes other apps' ideas. Use the idea's text, meaning, scene plan and any approval note.
 
 If neither exists, finish with one line saying nothing was approved.
 
@@ -18,7 +18,7 @@ Write the scene plan from the meaning first (`RULES.md`, Content): one "we see X
 
 ## 3. Voice (new reels and voice redos)
 
-- Spoken parts: Gemini TTS voice Leda. Prefer the AI Studio speech playground in the owner's Brave (Claude in Chrome) when the Mac is on, since it has no quota wait; otherwise `GEMINI_API_KEY` (free tier, about 10 clips per model per day).
+- Spoken parts: Gemini TTS voice Achernar for new reels (owner's choice 2026-11-26; voice redos keep the reel's own voice). The reel's `gen.py` (see `karagre/`) makes all nine clips; one reel uses about 10 TTS requests. Prefer the AI Studio speech playground in the owner's Brave (Claude in Chrome) when the Mac is on, since it has no quota wait; otherwise `GEMINI_API_KEY` (free tier, about 10 clips per model per day).
 - Sung finale: ElevenLabs Music, one take (`generations_count` 1), checked before any retry, keeping about 10k credits in reserve. If credits are short, use the free Leda-over-drone fallback (`voice-tests/bgm.py`).
 - If the voice can't be made today, put the item back to `approved`, release the claim, and finish with one line saying why.
 
@@ -29,7 +29,7 @@ Write the scene plan from the meaning first (`RULES.md`, Content): one "we see X
 ## 5. Upload and update the Inbox
 
 - `./reel upload` the video and the cover (`DRIVE_REELS_FOLDER` must point at Chinni Slokalu/Reels). Uploading the same name replaces the old file and gives a new id.
-- New reel: upload its voice clips to Drive `Chinni Slokalu/Sources` and add them to `sources.json`. Add a `video` item `sloka-video-<slug>`, title `<Sloka name> reel`, status `pending`, summary = one line on what it shows plus the Drive links to the video and cover, with `driveId`, `link`, and `data` `{"app":"Chinni Slokalu","icon":"🪔","group":"Reels","reel":"<slug>","idea":"<idea id>","thumb":"<cover id>","links":{...},"sources":{...}}`. Set the idea to `done`.
+- New reel: upload its voice clips to Drive `Chinni Slokalu/Sources` and add them to `sources.json`. Add a `video` item `sloka-<reel id>` (the id `./reel fetch` asks the Inbox for), title `<Sloka name> reel`, status `pending`, summary = one line on what it shows plus the Drive links to the video and cover, with `driveId`, `link`, and `data` `{"app":"Chinni Slokalu","icon":"🪔","group":"Reels","reel":"<slug>","idea":"<idea id>","thumb":"<cover id>","links":{...},"sources":{...}}`. Set the idea to `done`.
 - Redo: update the same item (new `driveId`, `link`, `data.thumb`, `data.links`, a summary of what changed, status `pending`), keeping `data.rejections` and `data.posted`. Don't ask for approval in chat; the owner reviews in the Inbox.
 - Release the claim.
 

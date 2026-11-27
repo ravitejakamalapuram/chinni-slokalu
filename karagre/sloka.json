@@ -1,0 +1,230 @@
+{
+ "id": "karagre",
+ "character": "lakshmi",
+ "bg": "radial-gradient(circle at 50% 38%, #FFF3C4 0%, #FFC971 30%, #F28C6B 62%, #6B3F8F 100%)",
+ "petal_color": "#FFE08A",
+ "title_top": "LET'S LEARN",
+ "title_main": "KARAGRE VASATE!",
+ "title_te": "కరాగ్రే వసతే లక్ష్మీః",
+ "hero_label": "MY HANDS",
+ "lines": [
+  {
+   "te": "కరాగ్రే వసతే లక్ష్మీః",
+   "tr": "Karagre Vasate Lakshmih",
+   "mean_te": "వేళ్ల చివర్లలో లక్ష్మీదేవి ఉంటుంది",
+   "mean_en": "Lakshmi lives at the fingertips"
+  },
+  {
+   "te": "కరమధ్యే సరస్వతీ",
+   "tr": "Karamadhye Saraswati",
+   "mean_te": "అరచేతి మధ్యలో సరస్వతీదేవి ఉంటుంది",
+   "mean_en": "Saraswati lives in the middle of the palm"
+  },
+  {
+   "te": "కరమూలే తు గోవిందః",
+   "tr": "Karamule Tu Govindah",
+   "mean_te": "అరచేతి మొదట్లో గోవిందుడు ఉంటాడు",
+   "mean_en": "Govinda lives at the base of the palm"
+  },
+  {
+   "te": "ప్రభాతే కరదర్శనమ్",
+   "tr": "Prabhate Karadarshanam",
+   "mean_te": "అందుకే పొద్దున్నే లేవగానే మన చేతులు చూసుకుందాం",
+   "mean_en": "So at dawn, first look at your hands"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3"
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3"
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3"
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3"
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "శుభోదయం!",
+   "caption_en": "GOOD MORNING!"
+  }
+ ],
+ "word_timings": {
+  "10_sung.mp3": [
+   [
+    1.15,
+    2.21
+   ],
+   [
+    2.21,
+    2.94
+   ],
+   [
+    2.94,
+    4.43
+   ],
+   [
+    4.43,
+    5.75
+   ],
+   [
+    5.75,
+    7.6
+   ],
+   [
+    8.42,
+    9.48
+   ],
+   [
+    9.48,
+    9.93
+   ],
+   [
+    9.93,
+    11.23
+   ],
+   [
+    11.23,
+    12.33
+   ],
+   [
+    12.33,
+    14.34
+   ],
+   [
+    15.0,
+    15.93
+   ],
+   [
+    15.93,
+    16.63
+   ],
+   [
+    16.63,
+    18.06
+   ],
+   [
+    18.06,
+    19.34
+   ],
+   [
+    19.34,
+    21.31
+   ],
+   [
+    21.6,
+    22.64
+   ],
+   [
+    22.64,
+    23.08
+   ],
+   [
+    23.08,
+    24.38
+   ],
+   [
+    24.38,
+    25.44
+   ],
+   [
+    25.44,
+    27.81
+   ],
+   [
+    28.52,
+    29.56
+   ],
+   [
+    29.56,
+    30.29
+   ],
+   [
+    30.29,
+    32.3
+   ]
+  ],
+  "02_full.mp3": [
+   [
+    0.25,
+    1.36
+   ],
+   [
+    1.41,
+    2.52
+   ],
+   [
+    2.57,
+    3.68
+   ],
+   [
+    4.79,
+    6.33
+   ],
+   [
+    6.38,
+    7.92
+   ],
+   [
+    8.92,
+    9.9
+   ],
+   [
+    9.95,
+    10.27
+   ],
+   [
+    10.46,
+    11.69
+   ],
+   [
+    12.57,
+    13.9
+   ],
+   [
+    14.02,
+    15.96
+   ]
+  ]
+ }
+}
