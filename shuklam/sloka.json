@@ -1,0 +1,182 @@
+{
+ "id": "shuklam",
+ "character": "ganesha",
+ "bg": "radial-gradient(circle at 50% 38%, #FFFFFF 0%, #E8F1FF 30%, #9EC5FF 62%, #2B3F8F 100%)",
+ "petal_color": "#FFFFFF",
+ "title_top": "LET'S LEARN",
+ "title_main": "SHUKLAMBARADHARAM!",
+ "title_te": "శుక్లాంబరధరం",
+ "hero_label": "VINAYAKA",
+ "lines": [
+  {
+   "te": "శుక్లాంబరధరం విష్ణుం",
+   "tr": "Shuklambaradharam Vishnum",
+   "mean_te": "తెల్లని వస్త్రాలు ధరించి, అంతటా నిండి ఉన్న దేవుడు",
+   "mean_en": "Dressed in white, he is everywhere"
+  },
+  {
+   "te": "శశివర్ణం చతుర్భుజమ్",
+   "tr": "Shashivarnam Chaturbhujam",
+   "mean_te": "చంద్రుడిలా వెలిగే, నాలుగు చేతుల దేవుడు",
+   "mean_en": "Bright as the moon, with four arms"
+  },
+  {
+   "te": "ప్రసన్నవదనం ధ్యాయేత్",
+   "tr": "Prasannavadanam Dhyayet",
+   "mean_te": "నవ్వుతున్న ఆయన ముఖాన్ని ధ్యానిద్దాం",
+   "mean_en": "Think of his smiling face"
+  },
+  {
+   "te": "సర్వవిఘ్నోపశాంతయే",
+   "tr": "Sarvavighnopashantaye",
+   "mean_te": "అన్ని అడ్డంకులు తొలగిపోవడానికి",
+   "mean_en": "So that every obstacle goes away"
+  }
+ ],
+ "segments": [
+  {
+   "type": "intro",
+   "audio": "01_intro.mp3"
+  },
+  {
+   "type": "full",
+   "audio": "02_full.mp3",
+   "caption": "ముందు వినండి",
+   "caption_en": "LISTEN FIRST"
+  },
+  {
+   "type": "learn",
+   "audio": "03_learn.mp3",
+   "caption": "ఒక్కో వరుస నేర్చుకుందాం",
+   "caption_en": "LINE BY LINE"
+  },
+  {
+   "type": "line",
+   "line": 0,
+   "audio": "04_line1.mp3"
+  },
+  {
+   "type": "line",
+   "line": 1,
+   "audio": "05_line2.mp3"
+  },
+  {
+   "type": "line",
+   "line": 2,
+   "audio": "06_line3.mp3"
+  },
+  {
+   "type": "line",
+   "line": 3,
+   "audio": "07_line4.mp3"
+  },
+  {
+   "type": "learn",
+   "audio": "08_together.mp3",
+   "caption": "నాతో కలిసి చెప్పండి!",
+   "caption_en": "SAY IT WITH ME!"
+  },
+  {
+   "type": "full",
+   "audio": "10_sung.mp3",
+   "caption": "పాడుకుందాం!",
+   "caption_en": "SING ALONG!"
+  },
+  {
+   "type": "outro",
+   "audio": "09_jai.mp3",
+   "caption": "జై గణేశ!",
+   "caption_en": "JAI GANESHA!"
+  }
+ ],
+ "word_timings": {
+  "02_full.mp3": [
+   [
+    0.1,
+    1.61
+   ],
+   [
+    2.2,
+    2.99
+   ],
+   [
+    3.69,
+    4.72
+   ],
+   [
+    5.33,
+    6.39
+   ],
+   [
+    7.23,
+    8.62
+   ],
+   [
+    9.09,
+    10.09
+   ],
+   [
+    10.84,
+    13.3
+   ]
+  ],
+  "10_sung.mp3": [
+   [
+    3.3,
+    6.5
+   ],
+   [
+    6.65,
+    7.95
+   ],
+   [
+    8.2,
+    9.9
+   ],
+   [
+    10.15,
+    11.85
+   ],
+   [
+    12.1,
+    14.2
+   ],
+   [
+    14.3,
+    15.55
+   ],
+   [
+    15.65,
+    18.15
+   ],
+   [
+    18.5,
+    21.55
+   ],
+   [
+    21.75,
+    23.0
+   ],
+   [
+    23.25,
+    25.0
+   ],
+   [
+    25.25,
+    27.05
+   ],
+   [
+    27.2,
+    29.25
+   ],
+   [
+    29.35,
+    30.65
+   ],
+   [
+    30.75,
+    33.3
+   ]
+  ]
+ }
+}
