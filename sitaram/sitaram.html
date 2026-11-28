@@ -1,0 +1,111 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<script src="assets/gsap.min.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B1030;font-family:'Baloo Tammudu 2',sans-serif}
+.abs{position:absolute}
+#cam{left:0;top:0;width:1080px;height:1920px}
+#cam svg{width:1080px;height:1920px;overflow:visible}
+#shade{left:0;top:0;width:1080px;height:1920px;background:linear-gradient(#060A26 0%,rgba(6,10,38,.75) 22%,rgba(6,10,38,0) 34%,rgba(6,10,38,0) 78%,rgba(6,10,38,.85) 92%)}
+#top{left:0;top:70px;width:1080px;text-align:center}
+.ttl{font-weight:800;font-size:130px;line-height:1;color:#FFE08A;text-shadow:0 0 30px rgba(255,200,80,.8),0 6px 0 #3A2205}
+.sub{margin-top:6px;font-weight:700;font-size:46px;color:#FFF4D6;text-shadow:0 3px 8px #000}
+#cnt{left:0;top:300px;width:1080px;text-align:center}
+#num{display:inline-block;font-family:'Luckiest Guy',sans-serif;font-size:190px;line-height:1;color:#FFE9A8;-webkit-text-stroke:12px #2B1407;paint-order:stroke fill;text-shadow:0 0 40px rgba(255,210,90,.9)}
+#of{font-family:'Luckiest Guy',sans-serif;font-size:56px;color:#FFE9A8;opacity:.9;text-shadow:0 3px 6px #000}
+#cap{left:90px;top:1555px;width:900px;text-align:center}
+#cap .abs>div{display:inline-block;background:rgba(255,244,214,.95);border:6px solid #2B1407;border-radius:40px;padding:6px 36px 0;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap .te{display:block;font-weight:800;font-size:52px;line-height:1.25;color:#7A2E0B}
+#cap .en{display:block;font-family:'Luckiest Guy',sans-serif;font-size:30px;line-height:1.2;color:#C2410C;padding-bottom:10px}
+#mala{left:0;top:0;width:1080px;height:1920px}
+#brand{left:0;top:1868px;width:1080px;text-align:center;font-weight:800;font-size:30px;color:#FFE08A;opacity:.75}
+#end{left:0;top:0;width:1080px;height:1920px;opacity:0}
+#end .big{position:absolute;left:0;top:250px;width:1080px;text-align:center;font-family:'Luckiest Guy',sans-serif;font-size:150px;color:#FFD23F;-webkit-text-stroke:14px #2B1407;paint-order:stroke fill;text-shadow:0 0 50px rgba(255,210,90,.9)}
+#end .big span{font-family:'Baloo Tammudu 2';font-weight:800}
+#end .jai{position:absolute;left:0;top:440px;width:1080px;text-align:center;font-weight:800;font-size:72px;color:#FFF4D6;text-shadow:0 4px 10px #000}
+#end .cmt{position:absolute;left:140px;top:1540px;width:800px;text-align:center;background:#E63946;border:6px solid #2B1407;border-radius:40px;padding:8px 0 2px;font-weight:800;font-size:46px;color:#fff;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#flash{left:0;top:0;width:1080px;height:1920px;background:#FFF6D8;opacity:0}
+</style></head><body>
+<div id="stage" data-composition-id="sitaram" data-width="1080" data-height="1920" data-duration="__DURATION__">
+<div id="cam" class="abs"><svg viewBox="0 0 1080 1920" id="scn"><defs><radialGradient id="glw"><stop offset="0" stop-color="#FFF3C4" stop-opacity=".95"/><stop offset=".55" stop-color="#FFE08A" stop-opacity=".45"/><stop offset="1" stop-color="#FFE08A" stop-opacity="0"/></radialGradient></defs>__SCENES_SVG__<g id="fx"></g></svg></div>
+<div id="shade" class="abs"></div>
+<svg id="mala" class="abs" viewBox="0 0 1080 1920"></svg>
+<div id="top" class="abs"><div class="ttl">సీతారామ</div><div class="sub">రండి, కలిసి 108 సార్లు జపిద్దాం</div></div>
+<div id="cnt" class="abs"><span id="num">0</span><div id="of">/ 108</div></div>
+<div id="cap" class="abs"></div>
+<div id="brand" class="abs">చిన్ని శ్లోకాలు · Chinni Slokalu</div>
+<div id="end" class="abs"><div class="big">108 <span>పూర్ణం!</span></div><div class="jai">జై సీతారామ్</div><div class="cmt">కామెంట్‌లో “జై శ్రీరామ్” రాయండి</div></div>
+<div id="flash" class="abs"></div>
+__AUDIO__
+</div>
+<script>
+__LIB__
+__SCENES__
+document.getElementById('scn').insertAdjacentHTML('afterbegin', SC.svg);
+const D = __DATA__;
+const T = D.duration, C = D.counts;
+const tl = gsap.timeline({ paused: true, defaults: { immediateRender: false } });
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const NS = 'http://www.w3.org/2000/svg';
+// ---------- ambient loops (deterministic) ----------
+$$('.sway').forEach((e, i) => tl.fromTo(e, { rotation: -2 }, { rotation: 2, transformOrigin: '50% 100%', duration: 1.6 + (i % 3) * 0.3, yoyo: true, repeat: Math.ceil(T / 1.6), ease: 'sine.inOut' }, 0));
+$$('.twk').forEach((e, i) => tl.fromTo(e, { opacity: 1 }, { opacity: 0.3, duration: 0.8 + (i % 4) * 0.25, yoyo: true, repeat: Math.ceil(T / 0.8), ease: 'sine.inOut' }, (i % 5) * 0.2));
+$$('.drift').forEach((e, i) => tl.fromTo(e, { x: -20 }, { x: 20, duration: 4 + i % 3, yoyo: true, repeat: Math.ceil(T / 4), ease: 'sine.inOut' }, 0));
+$$('.flick').forEach((e, i) => tl.fromTo(e, { scaleY: 0.9 }, { scaleY: 1.1, transformOrigin: '50% 100%', duration: 0.25, yoyo: true, repeat: Math.ceil(T / 0.25), ease: 'sine.inOut' }, (i % 4) * 0.06));
+$$('.wave').forEach((e, i) => tl.fromTo(e, { x: 0 }, { x: -180, duration: 3 + i, repeat: Math.ceil(T / 3), ease: 'none' }, 0));
+// ---------- counter + mala ----------
+const mala = $('#mala'), beads = [];
+const bx = i => 70 + i * (940 / 107), by = i => 1705 + 90 * Math.pow((bx(i) - 540) / 470, 2) * -1 + 90;
+let cord = `<path d="M${bx(0)} ${by(0)} ${[...Array(108)].map((_, i) => `L${bx(i).toFixed(1)} ${by(i).toFixed(1)}`).join(' ')}" stroke="#8A5A2B" stroke-width="3" fill="none"/>`;
+mala.innerHTML = cord + [...Array(108)].map((_, i) => `<circle id="b${i}" cx="${bx(i).toFixed(1)}" cy="${by(i).toFixed(1)}" r="6.5" fill="#6B4423" stroke="#2B1407" stroke-width="2"/>`).join('') +
+  `<g transform="translate(540 1885)"><path d="M0 -12 L12 0 L0 12 L-12 0Z" fill="#E63946" stroke="#2B1407" stroke-width="3"/></g>`;
+C.forEach((t, i) => {
+  tl.set('#num', { innerHTML: i + 1 }, t);
+  tl.fromTo('#num', { scale: 1.35 }, { scale: 1, duration: 0.35, ease: 'back.out(3)' }, t);
+  tl.to(`#b${i}`, { attr: { r: 9, fill: '#FFD23F' }, duration: 0.15 }, t);
+  tl.to(`#b${i}`, { attr: { r: 7 }, duration: 0.3 }, t + 0.15);
+  if ((i + 1) % 27 === 0 && i < 107) { tl.fromTo('#flash', { opacity: 0.45 }, { opacity: 0, duration: 0.6 }, t); burst(t, 540, 900, 18); }
+});
+// floating Rama words and fireflies
+function addFx(svg) { const g = document.createElementNS(NS, 'g'); g.innerHTML = svg; $('#fx').appendChild(g); return g; }
+for (let k = 0; k < 40; k++) { const t = 0.5 + k * (T - 3) / 40, x = 120 + rnd() * 840, y = 1350 + rnd() * 200;
+  const g = addFx(`<text x="0" y="0" font-family="Baloo Tammudu 2" font-weight="800" font-size="${44 + rnd() * 24}" fill="#FFE08A" text-anchor="middle">రామ</text>`);
+  tl.fromTo(g, { x, y, opacity: 0 }, { y: y - 650, opacity: 0.0, duration: 6, ease: 'none' }, t);
+  tl.to(g, { opacity: 0.35, duration: 1.5, yoyo: true, repeat: 1 }, t + 0.5); }
+for (let k = 0; k < 26; k++) { const x = rnd() * 1080, y = 700 + rnd() * 900, g = addFx(`<circle r="5" fill="#FFF3A0"/>`);
+  tl.fromTo(g, { x, y, opacity: 0 }, { x: x + 60 - rnd() * 120, y: y - 80, opacity: 0.9, duration: 2.5 + rnd() * 2, yoyo: true, repeat: Math.ceil(T / 3), ease: 'sine.inOut' }, rnd() * 3); }
+function burst(t, x, y, n, kind = 'marigold') { for (let i = 0; i < n; i++) { const a = (i / n) * Math.PI * 2, r = 220 + rnd() * 200;
+  const g = addFx(`<g>${ST.SH[i % 2 ? 'marigold' : 'spark']}</g>`);
+  tl.fromTo(g, { x, y, scale: 0.3, opacity: 1 }, { x: x + Math.cos(a) * r, y: y + Math.sin(a) * r + 160, scale: 0.8, opacity: 0, rotation: 200, duration: 1.6, ease: 'power2.out' }, t); } }
+function rain(t, dur, n = 24) { for (let i = 0; i < n; i++) { const x = rnd() * 1080, g = addFx(`<g>${ST.SH.marigold}</g>`), t1 = t + rnd() * dur * 0.6;
+  tl.fromTo(g, { x, y: 560, opacity: 1, rotation: 0, scale: 0.7 }, { x: x + 80 - rnd() * 160, y: 1600, rotation: 360, opacity: 0, duration: 2.6 + rnd(), ease: 'none' }, t1); } }
+// ---------- scenes with camera moves and parallax ----------
+const N = SC.cap.length, per = 9;
+SC.cap.forEach(([te, en], i) => {
+  const a = i === 0 ? 0 : C[i * per] - 0.35, b = i === N - 1 ? T : C[(i + 1) * per] - 0.35, m = a + (b - a) * 0.5;
+  tl.set(`#sc${i}`, { opacity: 1 }, a); if (i) tl.fromTo(`#sc${i}`, { opacity: 0 }, { opacity: 1, duration: 0.35 }, a);
+  if (i < N - 1) tl.set(`#sc${i}`, { opacity: 0 }, b + 0.36);
+  const z = i % 2 ? [1.2, 1.12] : [1.12, 1.2];
+  tl.fromTo('#scn', { scale: z[0], x: i % 3 === 0 ? -15 : 15 }, { scale: z[1], x: i % 3 === 0 ? 15 : -15, transformOrigin: '50% 72%', duration: b - a, ease: 'sine.inOut' }, a);
+  tl.fromTo(`#sc${i} .far`, { x: 25 }, { x: -25, duration: b - a, ease: 'none' }, a);
+  tl.fromTo(`#sc${i} .near`, { x: 60 }, { x: -60, duration: b - a, ease: 'none' }, a);
+  const cap = document.createElement('div'); cap.className = 'abs'; cap.style.cssText = 'left:0;top:0;width:900px;opacity:0';
+  cap.innerHTML = `<div><span class="te">${te}</span><span class="en">${en}</span></div>`; $('#cap').appendChild(cap);
+  tl.fromTo(cap, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: 'back.out(2)' }, a + 0.3);
+  tl.to(cap, { opacity: 0, duration: 0.3 }, i === N - 1 ? C[107] + 0.2 : b - 0.2);
+  SC.act[i](tl, a, m, b);
+});
+// ---------- 108 complete ----------
+const tE = C[107] + 0.6;
+tl.fromTo('#flash', { opacity: 0.8 }, { opacity: 0, duration: 1 }, C[107]);
+tl.to(['#top', '#cnt'], { opacity: 0, duration: 0.4 }, C[107] + 0.3);
+tl.fromTo('#end', { opacity: 0 }, { opacity: 1, duration: 0.5 }, tE);
+tl.fromTo('#end .big', { scale: 0.3 }, { scale: 1, duration: 0.7, ease: 'back.out(2.5)' }, tE);
+tl.fromTo('#end .cmt', { y: 200 }, { y: 0, duration: 0.6, ease: 'back.out(2)' }, tE + 0.8);
+burst(C[107], 540, 800, 28); rain(C[107] + 0.2, T - C[107] - 1, 40);
+tl.to({}, { duration: 0 }, T);
+window.__timelines = window.__timelines || {}; window.__timelines['sitaram'] = tl;
+</script></body></html>
