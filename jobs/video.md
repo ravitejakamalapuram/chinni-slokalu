@@ -8,7 +8,7 @@ In this order:
 
 a. A rejected redo: a `video` item of app "Chinni Slokalu" with status `rejected`, either `sloka-video-*` or `sloka-<reel id>` (see `RULES.md`, Redos). A rejected item is closed, so `claim` refuses it: first `update` it to status `building` with `ifVersion`, then `claim` it. Read `data.rejections`: fix the reasons dated after the item was last redone (normally just the newest one). Older reasons were fixed by earlier runs, so don't redo that work. A reason about pronunciation or the voice is a voice redo (`RULES.md`, Redos); a reason about the pictures is a visual redo.
 
-b. Otherwise an approved idea: `list` `type` `idea`, `status` `approved`, keep only `data.app` "Chinni Slokalu", take the oldest, `claim` it by `id`, then `update` it to status `building` with `ifVersion`. Don't use `claimNext`: it has no app filter and takes other apps' ideas. Use the idea's text, meaning, scene plan and any approval note.
+b. Otherwise an approved idea: `list` `type` `idea`, `status` `approved`, `"limit":1000`, keep only `data.app` "Chinni Slokalu", take the oldest, `claim` it by `id`, then `update` it to status `building` with `ifVersion`. Don't use `claimNext`: it has no app filter and takes other apps' ideas. Use the idea's text, meaning, scene plan and any approval note.
 
 If neither exists, finish with one line saying nothing was approved.
 
