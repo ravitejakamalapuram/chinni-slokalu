@@ -1058,5 +1058,55 @@
   "id": "1AA51t0fnJWF8UkVSPZOx-V47jcOlC--t",
   "sha256": "90dbf1abd037ad28ee98e26ff24a413ca96f45b638bbc9d664d654175a428d71",
   "size": 2706514
+ },
+ "annapurne/audio/01_intro.mp3": {
+  "id": "1rf_ezIXK1YTWtTOjVZFBSVFKoHcuz5DW",
+  "sha256": "db2f17a11470c422898d8682348085fad5700817bd33909918c60a6e98e543b2",
+  "size": 207789
+ },
+ "annapurne/audio/02_full.mp3": {
+  "id": "15eoLhHrRIGg36idFJnW-rgg-P7odCxR9",
+  "sha256": "269a7312622ae377bdb263ed5fa2ef52a61ff0f444d37ef3fe9e04d258ca3383",
+  "size": 269613
+ },
+ "annapurne/audio/03_learn.mp3": {
+  "id": "1Nb_9kHhszPOZWda0cWiIYEsnJ--jbIi-",
+  "sha256": "432f2e9f5fa5472de22ee6e60e410bc3995a664514de9f194d57c696c38914db",
+  "size": 49965
+ },
+ "annapurne/audio/04_line1.mp3": {
+  "id": "1w88vnTPHYCHXSDM1Wya4Jcb3U0N9u1BN",
+  "sha256": "a16a0574da61c5e328a16541a4e326fcb70b90aefc590e48e8946378d6f0688c",
+  "size": 162477
+ },
+ "annapurne/audio/05_line2.mp3": {
+  "id": "19tvKIXERL7C0W9KQ0G3sk4Yd_UAbhQtF",
+  "sha256": "3f39ded2865f907da810e8baf60392a04f50ebb325416a8cd4e5c3c86b17ea87",
+  "size": 154797
+ },
+ "annapurne/audio/06_line3.mp3": {
+  "id": "1YjbwPCeozo2l7az1hZzFIhTX4Wpo4XRG",
+  "sha256": "77518584bb70208936a7537733a3f64fd83ca6fd80a4bb2c33cc9bbce7510ea1",
+  "size": 170925
+ },
+ "annapurne/audio/07_line4.mp3": {
+  "id": "1Gu-az_c92YRO4oD8pecO4MmM18I6swsv",
+  "sha256": "caebd41a3ef0e995040685b84f496cd17e8430e9df881fb6ebaa7ddb40f5a559",
+  "size": 165165
+ },
+ "annapurne/audio/08_together.mp3": {
+  "id": "1BYE_uAn3aE7kaeZQUohPVv2qPzLJjBZE",
+  "sha256": "734e4567dee4bc49275424de0be5e5f7e4e34c35cae30f6b757095628fc89e22",
+  "size": 38061
+ },
+ "annapurne/audio/09_jai.mp3": {
+  "id": "12Kc-F1efix5W0TgqQPoP1JtYe_YKbV7I",
+  "sha256": "b6d564557ccd72671a096dace82e33007e873b616f1edd46ce1a70e9bc3ba578",
+  "size": 173613
+ },
+ "annapurne/audio/10_sung.mp3": {
+  "id": "1Ag6c8fNT6ahHz_ele5H6ydZkVuUXpe6A",
+  "sha256": "e15fd3bdd63c00cdb6bac5a960178e584b2c3394e006fcc79d4bd2c12f27e17e",
+  "size": 859282
  }
 }
