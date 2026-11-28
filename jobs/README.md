@@ -11,4 +11,4 @@ What's merged to `main` is what the next run does, so review changes here like c
 
 Both jobs use the Inbox API at `$INBOX_URL` with `$INBOX_TOKEN` (environment variables; never print them). The API is documented in `docs/FAQ.md` of github.com/ravitejakamalapuram/inbox. Every Chinni Slokalu item has `data.app` "Chinni Slokalu"; the Inbox sends it to the "Chinni Slokalu approvals" Telegram group by itself.
 
-Every `list` call needs `"limit":1000`. Without it the Inbox returns only the first 100 items of all apps, which can leave out every Chinni Slokalu item, so a job would think nothing is pending and add duplicates.
+Every `list` call needs `"limit":1000`. Without it the Inbox returns only the oldest 100 items of all apps, which can leave out every recent Chinni Slokalu item, so a job would think nothing is pending and add duplicates.
