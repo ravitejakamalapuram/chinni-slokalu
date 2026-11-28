@@ -64,6 +64,7 @@ mala.innerHTML = cord + [...Array(108)].map((_, i) => `<circle id="b${i}" cx="${
   `<g transform="translate(540 1885)"><path d="M0 -12 L12 0 L0 12 L-12 0Z" fill="#E63946" stroke="#2B1407" stroke-width="3"/></g>`;
 C.forEach((t, i) => {
   tl.set('#num', { innerHTML: i + 1 }, t);
+  tl.fromTo('#cam', { scale: 1.03 }, { scale: 1, transformOrigin: '50% 60%', duration: 0.35, ease: 'power2.out' }, t);
   tl.fromTo('#num', { scale: 1.35 }, { scale: 1, duration: 0.35, ease: 'back.out(3)' }, t);
   tl.to(`#b${i}`, { attr: { r: 9, fill: '#FFD23F' }, duration: 0.15 }, t);
   tl.to(`#b${i}`, { attr: { r: 7 }, duration: 0.3 }, t + 0.15);
@@ -83,19 +84,19 @@ function burst(t, x, y, n, kind = 'marigold') { for (let i = 0; i < n; i++) { co
 function rain(t, dur, n = 24) { for (let i = 0; i < n; i++) { const x = rnd() * 1080, g = addFx(`<g>${ST.SH.marigold}</g>`), t1 = t + rnd() * dur * 0.6;
   tl.fromTo(g, { x, y: 560, opacity: 1, rotation: 0, scale: 0.7 }, { x: x + 80 - rnd() * 160, y: 1600, rotation: 360, opacity: 0, duration: 2.6 + rnd(), ease: 'none' }, t1); } }
 // ---------- scenes with camera moves and parallax ----------
-const N = SC.cap.length, per = 9;
+const N = SC.cap.length, S0 = SC.len.reduce((o, n) => (o.push(o[o.length - 1] + n), o), [0]);
 SC.cap.forEach(([te, en], i) => {
-  const a = i === 0 ? 0 : C[i * per] - 0.35, b = i === N - 1 ? T : C[(i + 1) * per] - 0.35, m = a + (b - a) * 0.5;
-  tl.set(`#sc${i}`, { opacity: 1 }, a); if (i) tl.fromTo(`#sc${i}`, { opacity: 0 }, { opacity: 1, duration: 0.35 }, a);
-  if (i < N - 1) tl.set(`#sc${i}`, { opacity: 0 }, b + 0.36);
-  const z = i % 2 ? [1.2, 1.12] : [1.12, 1.2];
-  tl.fromTo('#scn', { scale: z[0], x: i % 3 === 0 ? -15 : 15 }, { scale: z[1], x: i % 3 === 0 ? 15 : -15, transformOrigin: '50% 72%', duration: b - a, ease: 'sine.inOut' }, a);
-  tl.fromTo(`#sc${i} .far`, { x: 25 }, { x: -25, duration: b - a, ease: 'none' }, a);
-  tl.fromTo(`#sc${i} .near`, { x: 60 }, { x: -60, duration: b - a, ease: 'none' }, a);
+  const k = SC.ids[i], a = i === 0 ? 0 : C[S0[i]] - 0.3, b = i === N - 1 ? T : C[S0[i + 1]] - 0.3, m = a + (b - a) * 0.5;
+  tl.set(`#sc${k}`, { opacity: 1 }, a); if (i) tl.fromTo(`#sc${k}`, { opacity: 0 }, { opacity: 1, duration: 0.25 }, a);
+  if (i < N - 1) tl.set(`#sc${k}`, { opacity: 0 }, b + 0.26); else tl.set('#scn', { scale: 1.1, x: 0, transformOrigin: '50% 72%' }, a);
+  const z = i % 2 ? [1.22, 1.1] : [1.1, 1.22];
+  if (i < N - 1) tl.fromTo('#scn', { scale: z[0], x: i % 3 === 0 ? -25 : 25 }, { scale: z[1], x: i % 3 === 0 ? 25 : -25, transformOrigin: '50% 72%', duration: b - a, ease: 'sine.inOut' }, a);
+  tl.fromTo(`#sc${k} .far`, { x: 30 }, { x: -30, duration: b - a, ease: 'none' }, a);
+  tl.fromTo(`#sc${k} .near`, { x: 80 }, { x: -80, duration: b - a, ease: 'none' }, a);
   const cap = document.createElement('div'); cap.className = 'abs'; cap.style.cssText = 'left:0;top:0;width:900px;opacity:0';
   cap.innerHTML = `<div><span class="te">${te}</span><span class="en">${en}</span></div>`; $('#cap').appendChild(cap);
-  tl.fromTo(cap, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: 'back.out(2)' }, a + 0.3);
-  tl.to(cap, { opacity: 0, duration: 0.3 }, i === N - 1 ? C[107] + 0.2 : b - 0.2);
+  tl.fromTo(cap, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: 'back.out(2)' }, a + 0.15);
+  tl.to(cap, { opacity: 0, duration: 0.2 }, i === N - 1 ? C[107] + 0.2 : b - 0.15);
   SC.act[i](tl, a, m, b);
 });
 // ---------- 108 complete ----------

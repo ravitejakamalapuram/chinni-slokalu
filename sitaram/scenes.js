@@ -1,18 +1,10 @@
-// Sitaram 108: the whole Ramayana told in 12 scenes, one scene per 9 counts. Drawn full screen (1080x1920);
-// the action sits between y 620 and 1540 (title and counter above, caption and mala below).
-// SC.act[i](tl, a, m, b): a = scene start, m = the meaning moment (middle), b = scene end.
-// 0 Birth: a dark palace room, the cradle rocks, then a golden glow and flowers as baby Rama smiles.
-// 1 Shiva's bow: Rama lifts the huge bow, it snaps in two with a flash; Sita smiles.
-// 2 Wedding: Sita walks to Rama and puts the garland on him; hearts and petals.
-// 3 Forest: Rama, Sita and Lakshmana walk away from Ayodhya into the forest; the palace slides away.
-// 4 Golden deer: a golden deer prances; Sita points; Rama runs after it with his bow.
-// 5 Ravana: Ravana's flying chariot swoops in, takes Sita and flies off; her jewels fall.
-// 6 Hanuman: Hanuman bows at Rama's feet; Rama blesses him and hearts rise.
-// 7 Ocean leap: Hanuman leaps across the sea in a big arc to Lanka.
-// 8 Ring: sad Sita under the Ashoka tree; Hanuman shows Rama's ring; Sita smiles.
-// 9 Bridge: stones marked "రామ" float on the sea and line up into a bridge; Rama watches.
-// 10 Victory: Rama shoots a glowing arrow; Ravana is blown away in smoke; light bursts.
-// 11 Crowning: Rama and Sita on the throne, Lakshmana and Hanuman bow, lamps light one by one.
+// Sitaram 108: the whole Ramayana in 20 quick scenes (5 counts each) and a finale (8 counts), one chorus kirtan.
+// Drawn full screen (1080x1920); action sits between y 620 and 1540. Scenes are keyed by number; ORDER at the end sets
+// the story order. SC.act[i](tl, a, m, b): a = scene start, m = the meaning moment (middle), b = scene end.
+// Story: birth, Rama guards the sages' fire, Shiva's bow breaks, wedding, off to the forest, Bharata takes the sandals,
+// golden deer, Lakshmana's line, Ravana takes Sita, Jatayu fights, Shabari's berries, Hanuman meets Rama, Rama's ring,
+// ocean leap, ring for Sita, Lanka on fire, Rama bridge, Sanjeevani mountain, victory, crowning; finale: Hanuman opens
+// his chest, Sita and Rama shine in his heart and the camera flies into it.
 const SC = (() => {
   const { P, sky, stars, cloud, ground, hills, tree, lotus, palace, flame, diya, rock, ringIn, tx, heartP, wavesP, SH, fig, RAMA, SITA, LAKS, MONKEY, O, GD, RD } = ST;
   const HAN = (id, x, y, s, o = {}) => MONKEY(id, x, y, s, '#D9662B', Object.assign({ crown: 'crown', cloth: '#E63946', hold: 'mace' }, o));
@@ -43,7 +35,8 @@ const SC = (() => {
   const rot = (tl, sel, from, to, t, d = 0.5, ease = 'back.out(2)') => tl.fromTo(sel, { rotation: from }, { rotation: to, transformOrigin: '50% 8%', duration: d, ease }, t);
   const pop = (tl, sel, t, d = 0.5) => tl.fromTo(sel, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, transformOrigin: '50% 50%', duration: d, ease: 'back.out(2.5)' }, t);
   const rise = (tl, ids, t) => ids.forEach((s, i) => tl.fromTo(s, { opacity: 0, y: 0, scale: 0.4 }, { opacity: 1, y: -260, scale: 1, transformOrigin: '50% 50%', duration: 1.6, ease: 'power1.out' }, t + i * 0.25));
-  const sc = (i, body) => `<g id="sc${i}" opacity="0">${body}</g>`;
+  const keys = [];
+  const sc = (i, body) => (keys.push(i), `<g id="sc${i}" opacity="0">${body}</g>`);
   const hearts = (pre, x, y, n = 4) => [...Array(n)].map((_, k) => `<g id="${pre}${k}" opacity="0">${P('', x + (k - n / 2) * 70, y - (k % 2) * 40, 0.4, heartP(1, '#FF5C8A'))}</g>`).join('');
 
   const svg = [], act = [], cap = [];
@@ -201,7 +194,7 @@ const SC = (() => {
     breathe(tl, ['ra10'], a, b);
   });
   // ---------- 11 crowning ----------
-  cap.push(['శ్రీరామ పట్టాభిషేకం', 'Rama is crowned']);
+  cap.push(['అయోధ్యలో పట్టాభిషేకం', 'Home to Ayodhya, Rama is crowned']);
   svg.push(sc(11, `${sky('g11', '#3A1B3A', '#8A4A3A', '#F0B86B')}<rect x="-40" y="1420" width="1160" height="560" fill="#8A4A2A"/><circle cx="540" cy="1100" r="520" fill="url(#glw)" opacity=".7" id="hl11"/>
     <g class="far">${palace(120, 1300, 1.3, '#E8B04A')}${palace(960, 1300, 1.3, '#E8B04A')}</g>${P('', 540, 1200, 1, throne)}
     ${RAMA('ra11', 450, 1090, 0.78, { hold: '' })}${SITA('si11', 640, 1100, 0.72, { hold: '', holdL: 'lotus' })}
@@ -214,5 +207,135 @@ const SC = (() => {
     rot(tl, arm('ra11'), 0, -120, m, 0.6); rain(a + 0.5, b - a - 1, 20);
     breathe(tl, ['ra11', 'si11'], a, b); blink(tl, 'ra11', a + 2); blink(tl, 'si11', a + 3);
   });
-  return { svg: svg.join(''), act, cap };
+
+  // ---------- 12 yagna: a demon swoops at the sages' fire, Rama's arrow drives it away ----------
+  cap.push(['యాగ రక్షణ', "Rama guards the sages' fire"]);
+  svg.push(sc(12, `${sky('g12', '#1A2A4A', '#4A5A7A', '#C08A5A')}<g class="far">${hills(1340, '#3E6A3A')}</g><rect x="-40" y="1420" width="1160" height="560" fill="#5A7A2A"/><g class="near">${forest(1430, '#2E6B3A')}</g>
+    ${fig({ id: 'vsm', x: 200, y: 1170, s: 0.7, skin: '#E5AD7C', cloth: '#FF9F43', crown: 'jataW', beard: '#F0F0F0', sit: true })}${flame(400, 1420, 1.1)}
+    ${RAMA('ra12', 640, 1120, 0.8)}<g id="dm12w">${fig({ id: 'dm12', x: 0, y: 0, s: 0.6, skin: '#6B3FA0', cloth: '#2F2F4F', crown: 'horns', mood: 'sd', flip: true })}</g>
+    <g id="ar12" opacity="0"><line x1="0" y1="0" x2="150" y2="0" stroke="${O}" stroke-width="14" stroke-linecap="round"/><line x1="0" y1="0" x2="150" y2="0" stroke="#FFE08A" stroke-width="7"/><path d="M160 0 L132 -18 L132 18Z" fill="#FFE08A" stroke="${O}" stroke-width="4"/></g>`));
+  act.push((tl, a, m, b) => {
+    tl.fromTo('#dm12w', { x: 1100, y: 600 }, { x: 860, y: 860, duration: m - a - 0.3, ease: 'power2.out' }, a);
+    rot(tl, arm('ra12'), 0, -80, a + 0.5, 0.4);
+    tl.set('#ar12', { opacity: 1 }, m - 0.4); tl.fromTo('#ar12', { x: 700, y: 1060, rotation: -25 }, { x: 860, y: 900, rotation: -25, duration: 0.35, ease: 'power2.in' }, m - 0.4); tl.set('#ar12', { opacity: 0 }, m);
+    tl.to('#dm12w', { x: 1400, y: 300, rotation: 90, duration: 0.9, ease: 'power2.in' }, m); burst(m, 860, 860, 10);
+    smile(tl, 'vsm', m + 0.3); rot(tl, arm('vsm'), 0, -120, m + 0.3, 0.4);
+  });
+  // ---------- 13 sandals: Bharata kneels, takes Rama's sandals and raises them over his head ----------
+  cap.push(['భరతుని భక్తి', "Bharata carries Rama's sandals"]);
+  const sandals = `<g><ellipse cx="-34" cy="0" rx="26" ry="60" fill="#C2410C" stroke="${O}" stroke-width="5"/><ellipse cx="34" cy="0" rx="26" ry="60" fill="#C2410C" stroke="${O}" stroke-width="5"/><circle cx="-34" cy="-30" r="8" fill="${GD}"/><circle cx="34" cy="-30" r="8" fill="${GD}"/></g>`;
+  svg.push(sc(13, `${sky('g13', '#2A3A6B', '#6A8AB0', '#F0C08A')}<g class="far">${hills(1340, '#3E7A4A')}</g><rect x="-40" y="1420" width="1160" height="560" fill="#4A7A2A"/><g class="near">${forest(1430, '#2E6B3A')}</g>
+    ${RAMA('ra13', 330, 1120, 0.82, { cloth: '#C49A6C', crown: 'jata', hold: '' })}<g id="bh13w">${fig({ id: 'bh13', x: 760, y: 1170, s: 0.72, skin: '#5B86D6', cloth: '#E8A23A', crown: 'crown', flip: true })}</g>
+    <g id="sd13">${P('', 0, 0, 0.9, sandals)}</g>`));
+  act.push((tl, a, m, b) => {
+    tl.to('#bh13w', { y: 90, duration: 0.4 }, a + 0.4); tl.to('#bh13', { scaleY: 0.8, transformOrigin: '50% 100%', duration: 0.4 }, a + 0.4);
+    tl.fromTo('#sd13', { x: 420, y: 1290 }, { x: 640, y: 1230, duration: m - a - 0.4, ease: 'sine.inOut' }, a + 0.3);
+    rot(tl, arm('ra13'), 0, -60, a + 0.3, 0.5);
+    tl.to('#sd13', { x: 760, y: 980, duration: 0.7, ease: 'back.out(2)' }, m); rot(tl, arm('bh13'), 0, -160, m, 0.6); rot(tl, armL('bh13'), 0, 160, m, 0.6);
+    tl.fromTo('#sd13', { scale: 1 }, { scale: 1.15, transformOrigin: '50% 50%', duration: 0.4, yoyo: true, repeat: 3 }, m + 0.7); burst(m + 0.6, 760, 980, 8);
+  });
+  // ---------- 14 Lakshmana rekha: Lakshmana draws a glowing line around the hut where Sita stays ----------
+  cap.push(['లక్ష్మణ రేఖ', 'Lakshmana draws a line to keep Sita safe']);
+  const hut = `<g><path d="M-170 0 L-170 -170 L170 -170 L170 0Z" fill="#C49A6C" stroke="${O}" stroke-width="6"/><path d="M-220 -160 L0 -330 L220 -160Z" fill="#E8B04A" stroke="${O}" stroke-width="6"/><rect x="-50" y="-120" width="100" height="120" fill="#5A3A1E" stroke="${O}" stroke-width="5"/></g>`;
+  svg.push(sc(14, `${night('g14')}${moon(880, 700)}<g class="far">${hills(1340, '#22472E')}</g><rect x="-40" y="1420" width="1160" height="560" fill="#2E4A22"/>${P('', 540, 1400, 1.2, hut)}
+    ${SITA('si14', 540, 1160, 0.6, { cloth: '#E8A23A', hold: '', holdL: '' })}<path id="lr14" d="M200 1480 Q540 1620 880 1480" fill="none" stroke="#FFD23F" stroke-width="14" stroke-linecap="round" stroke-dasharray="900" stroke-dashoffset="900"/>
+    <g id="lk14w">${LAKS('lk14', 0, 0, 0.75, { cloth: '#C49A6C', crown: 'jata' })}</g>`));
+  act.push((tl, a, m, b) => {
+    const d = m - a + 0.6;
+    tl.fromTo('#lk14w', { x: 180, y: 1180 }, { x: 880, y: 1180, duration: d, ease: 'none' }, a + 0.2); walk(tl, 'lk14', a + 0.2, d, 4); rot(tl, arm('lk14'), 0, 40, a + 0.2, 0.3);
+    tl.to('#lr14', { strokeDashoffset: 0, duration: d, ease: 'none' }, a + 0.2);
+    tl.fromTo('#lr14', { opacity: 1 }, { opacity: 0.55, duration: 0.3, yoyo: true, repeat: 5 }, m + 0.8);
+    blink(tl, 'si14', m);
+  });
+  // ---------- 15 Jatayu: the brave eagle flies at Ravana's chariot; feathers fly ----------
+  cap.push(['జటాయువు పోరాటం', 'Brave Jatayu fights for Sita']);
+  const eagle = `<g><path d="M0 0 Q-160 -120 -300 -40 Q-170 -30 -60 40Z M0 0 Q160 -120 300 -40 Q170 -30 60 40Z" fill="#8A5A2B" stroke="${O}" stroke-width="6" id="jw"/><ellipse cx="0" cy="20" rx="60" ry="80" fill="#A0622D" stroke="${O}" stroke-width="6"/><circle cx="0" cy="-60" r="40" fill="#F4F4F4" stroke="${O}" stroke-width="6"/><path d="M-10 -50 L-50 -40 L-10 -30Z" fill="${GD}" stroke="${O}" stroke-width="4"/><circle cx="-12" cy="-68" r="6" fill="${O}"/></g>`;
+  svg.push(sc(15, `${sky('g15', '#1A0A1A', '#5A2A3A', '#C06A4A')}<g class="far">${cloud(250, 760, 1, '#E0B0B0')}${cloud(820, 900, 0.8, '#E0B0B0')}${hills(1360, '#3A2A3A')}</g>
+    <g id="ch15">${RAV('rv15', 0, -150, 0.55)}${SITA('si15', 120, -130, 0.45, { mood: 'sd', hold: '', holdL: '' })}${chariot}</g>
+    <g id="jt15">${P('', 0, 0, 0.9, `<g id="jtb">${eagle}</g>`)}</g>
+    ${[0, 1, 2, 3, 4].map(k => `<g id="fe15${k}" opacity="0"><path d="M0 -20 Q14 0 0 20 Q-14 0 0 -20Z" fill="#A0622D" stroke="${O}" stroke-width="3"/></g>`).join('')}`));
+  act.push((tl, a, m, b) => {
+    tl.fromTo('#ch15', { x: 300, y: 1050 }, { x: 760, y: 950, duration: b - a, ease: 'none' }, a);
+    tl.fromTo('#jt15', { x: -200, y: 650 }, { x: 420, y: 880, duration: m - a, ease: 'power2.out' }, a);
+    tl.fromTo('#jtb', { scaleY: 1 }, { scaleY: 0.6, transformOrigin: '50% 50%', duration: 0.18, yoyo: true, repeat: Math.floor((b - a) / 0.18), ease: 'sine.inOut' }, a);
+    tl.to('#jt15', { x: 560, y: 820, duration: 0.25, yoyo: true, repeat: 3, ease: 'power2.inOut' }, m);
+    tl.fromTo('#ch15', { rotation: 0 }, { rotation: -8, transformOrigin: '50% 50%', duration: 0.25, yoyo: true, repeat: 3 }, m);
+    [0, 1, 2, 3, 4].forEach(k => tl.fromTo(`#fe15${k}`, { x: 560 + k * 30, y: 900, opacity: 1, rotation: 0 }, { x: 500 + k * 60, y: 1500, opacity: 0, rotation: 300, duration: 1.6 }, m + 0.2 + k * 0.15));
+  });
+  // ---------- 16 Shabari: an old devotee offers berries; Rama eats one and smiles ----------
+  cap.push(['శబరి ప్రేమ', "Shabari's berries for Rama"]);
+  const basket = `<g><path d="M-70 0 Q0 60 70 0Z" fill="#A0622D" stroke="${O}" stroke-width="5"/>${[[-40, -6], [-14, -14], [14, -8], [40, -14], [0, -24]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="13" fill="#C2185B" stroke="${O}" stroke-width="3"/>`).join('')}</g>`;
+  svg.push(sc(16, `${sky('g16', '#2A3A6B', '#7A9AC0', '#F0D08A')}<g class="far">${hills(1340, '#4E8A4A')}${palace(900, 1340, 0.8, '#C49A6C')}</g><rect x="-40" y="1420" width="1160" height="560" fill="#5A8A2A"/><g class="near">${forest(1430, '#2E6B3A')}</g>
+    ${RAMA('ra16', 360, 1120, 0.82, { cloth: '#C49A6C', crown: 'jata', hold: '' })}${fig({ id: 'sb16', x: 760, y: 1190, s: 0.68, skin: '#D9A070', cloth: '#F4F4F4', female: true, crown: 'veil', drape: '#E0E0E0', hair: '#DDDDDD', flip: true })}
+    <g id="bk16">${P('', 640, 1260, 1, basket)}</g><g id="br16" opacity="0"><circle r="14" fill="#C2185B" stroke="${O}" stroke-width="3"/></g>${hearts('h16', 540, 1000, 4)}`));
+  act.push((tl, a, m, b) => {
+    rot(tl, armL('sb16'), 0, 70, a + 0.3, 0.4); tl.fromTo('#bk16', { x: 0, y: 0 }, { x: -60, y: -30, duration: 0.6 }, a + 0.3);
+    rot(tl, arm('ra16'), 0, -70, m - 0.8, 0.4);
+    tl.set('#br16', { opacity: 1 }, m - 0.4); tl.fromTo('#br16', { x: 580, y: 1220 }, { x: 420, y: 970, duration: 0.5, ease: 'power2.out' }, m - 0.4); tl.set('#br16', { opacity: 0 }, m + 0.15);
+    tl.fromTo('#ra16-head', { y: 0 }, { y: 6, duration: 0.15, yoyo: true, repeat: 3 }, m + 0.15);
+    rise(tl, [0, 1, 2, 3].map(k => `#h16${k}`), m + 0.4); blink(tl, 'sb16', a + 1); breathe(tl, ['sb16'], a, b);
+  });
+  // ---------- 17 ring: Rama gives Hanuman his ring for Sita ----------
+  cap.push(['రాముని ఉంగరం', 'Rama gives Hanuman his ring']);
+  svg.push(sc(17, `${sky('g17', '#1A2A5A', '#5A7AB0', '#F0B080')}<g class="far">${hills(1340, '#3E7A4A')}</g><rect x="-40" y="1420" width="1160" height="560" fill="#4A7A2A"/><g class="near">${forest(1430, '#2E6B3A')}</g>
+    ${RAMA('ra17', 360, 1120, 0.85, { cloth: '#C49A6C', crown: 'jata', hold: '' })}${HAN('hn17', 760, 1170, 0.72, { flip: true, hold: '' })}
+    <g id="rg17" opacity="0">${P('', 0, 0, 1, ringIn)}</g><circle id="rg17g" cx="0" cy="0" r="120" fill="url(#glw)" opacity="0"/>`));
+  act.push((tl, a, m, b) => {
+    rot(tl, arm('ra17'), 0, -70, a + 0.3, 0.4); pop(tl, '#rg17', a + 0.5); tl.set('#rg17', { x: 480, y: 1050 }, a + 0.5);
+    tl.to('#rg17', { x: 640, y: 1060, duration: m - a - 0.8, ease: 'sine.inOut' }, a + 0.9);
+    rot(tl, arm('hn17'), 0, -70, m - 0.6, 0.4);
+    tl.set('#rg17g', { x: 640, y: 1060 }, m); tl.fromTo('#rg17g', { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1.4, transformOrigin: '50% 50%', duration: 0.5, yoyo: true, repeat: 3 }, m);
+    tl.to('#hn17', { scaleY: 0.85, transformOrigin: '50% 100%', duration: 0.4 }, m + 0.6); smile(tl, 'hn17', m);
+  });
+  // ---------- 18 Lanka on fire: Hanuman leaps across the roofs with his burning tail; fires catch ----------
+  cap.push(['లంకా దహనం', "Hanuman's burning tail lights up Lanka"]);
+  svg.push(sc(18, `${sky('g18', '#1A0A0A', '#5A1A1A', '#C04A1A')}<g class="far">${lanka(540, 1260, 1.1)}</g><rect x="-40" y="1400" width="1160" height="560" fill="#3A1A12"/>
+    <g id="hn18w">${HAN('hn18', 0, 0, 0.55, { hold: 'mace' })}<g id="tf18">${flame(80, 120, 0.7)}</g></g>
+    ${[0, 1, 2, 3, 4, 5].map(k => `<g id="fl18${k}" opacity="0">${flame(150 + k * 150, 1120 - (k % 2) * 120, 1.3)}</g>`).join('')}`));
+  act.push((tl, a, m, b) => {
+    const pts = [[120, 1000], [330, 880], [540, 960], [740, 860], [940, 980]], d = (b - a - 0.5) / 4;
+    tl.set('#hn18w', { x: pts[0][0], y: pts[0][1] }, a);
+    pts.slice(1).forEach(([x, y], k) => { tl.to('#hn18w', { x, duration: d, ease: 'none' }, a + 0.3 + k * d); tl.to('#hn18w', { y: y - 200, duration: d / 2, ease: 'power1.out' }, a + 0.3 + k * d); tl.to('#hn18w', { y, duration: d / 2, ease: 'power1.in' }, a + 0.3 + k * d + d / 2); });
+    [0, 1, 2, 3, 4, 5].forEach(k => pop(tl, `#fl18${k}`, a + 0.6 + k * (b - a - 1) / 6, 0.4));
+    rot(tl, arm('hn18'), 0, -150, a + 0.3, 0.4);
+  });
+  // ---------- 19 Sanjeevani: Lakshmana lies hurt, Hanuman flies in with the mountain, Lakshmana sits up ----------
+  cap.push(['సంజీవని', 'Hanuman brings the healing mountain']);
+  svg.push(sc(19, `${night('g19')}${moon(880, 680)}<rect x="-40" y="1420" width="1160" height="560" fill="#2A3A22"/>
+    ${RAMA('ra19', 230, 1120, 0.8, { mood: 'sd', hold: '' })}<g transform="translate(560 1420)"><g id="lk19r">${LAKS('lk19', 0, -260, 0.7, { eyes: 'closed' })}</g></g>
+    <g id="hn19w">${HAN('hn19', 0, 0, 0.5, { hold: '' })}${P('', 0, -200, 0.9, ST.mountain)}</g><circle id="hg19" cx="560" cy="1250" r="260" fill="url(#glw)" opacity="0"/>`));
+  act.push((tl, a, m, b) => {
+    tl.set('#lk19r', { rotation: -90, transformOrigin: '50% 100%' }, a);
+    tl.fromTo('#hn19w', { x: 1200, y: 700 }, { x: 800, y: 1000, duration: m - a - 0.2, ease: 'power2.out' }, a);
+    rot(tl, arm('hn19'), -150, -150, a, 0.01); rot(tl, armL('hn19'), 150, 150, a, 0.01);
+    tl.fromTo('#hg19', { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1.2, transformOrigin: '50% 50%', duration: 0.6 }, m);
+    tl.to('#lk19r', { rotation: 0, transformOrigin: '50% 100%', duration: 0.8, ease: 'back.out(1.5)' }, m + 0.3);
+    tl.set('#lk19-eo', { opacity: 1 }, m + 0.6); tl.set('#lk19-ec', { opacity: 0 }, m + 0.6);
+    smile(tl, 'ra19', m + 0.8); rot(tl, arm('ra19'), 0, -120, m + 0.8, 0.5);
+  });
+  // ---------- 20 finale: Hanuman opens his heart and Sita Rama are inside; the camera flies into it ----------
+  cap.push(['హనుమ హృదయంలో సీతారామ', "Sita and Rama live in Hanuman's heart"]);
+  const flap = (side) => `<path d="M0 0 L${side * 70} 0 L${side * 66} 130 L0 140Z" fill="#D9662B" stroke="${O}" stroke-width="6"/><path d="M${side * 20} 30 Q${side * 40} 60 ${side * 20} 100" stroke="${O}" stroke-width="4" fill="none" opacity=".4"/>`;
+  svg.push(sc(20, `${sky('g20', '#1A0F3A', '#5A2A6B', '#F0A06B')}${ST.rays(540, 1230, 18, '#FFE08A', 0.18, 1400, 60, 'ry20')}<rect x="-40" y="1440" width="1160" height="560" fill="#7A3A2A"/>
+    ${HAN('hn20', 540, 1090, 1.2, { hold: '', eyes: 'closed' })}
+    <g transform="translate(540 1215)"><circle r="120" fill="url(#glw)" id="hg20" opacity="0"/>
+      <g id="ht20" opacity="0"><g transform="translate(0 -10)">${heartP(1.25, '#E63946')}</g>
+      ${RAMA('ra20', -24, -30, 0.13, { hold: '' })}${SITA('si20', 24, -26, 0.12, { hold: '', holdL: '' })}</g>
+      <g id="fpL" transform="translate(0 -70)">${flap(-1)}</g><g id="fpR" transform="translate(0 -70)">${flap(1)}</g></g>`));
+  act.push((tl, a, m, b) => {
+    const tOpen = a + 1.2, tZoom = tOpen + 1.6, tEnd = C[107];
+    tl.fromTo('#ry20', { rotation: 0 }, { rotation: 40, transformOrigin: '50% 50%', duration: b - a, ease: 'none' }, a);
+    rot(tl, arm('hn20'), 0, -30, a + 0.2, 0.5); rot(tl, armL('hn20'), 0, 30, a + 0.2, 0.5);
+    tl.set('#ht20', { opacity: 1 }, tOpen); tl.to('#hg20', { opacity: 1, scale: 2.5, transformOrigin: '50% 50%', duration: 1 }, tOpen);
+    tl.to('#fpL', { scaleX: 0, transformOrigin: '0% 50%', x: -70, duration: 0.7, ease: 'power2.out' }, tOpen);
+    tl.to('#fpR', { scaleX: 0, transformOrigin: '100% 50%', x: 70, duration: 0.7, ease: 'power2.out' }, tOpen);
+    rot(tl, arm('hn20'), -30, -70, tOpen, 0.6); rot(tl, armL('hn20'), 30, 70, tOpen, 0.6);
+    tl.fromTo('#ht20', { scale: 1 }, { scale: 1.08, transformOrigin: '50% 50%', duration: 0.5, yoyo: true, repeat: Math.floor((b - tOpen) / 0.5), ease: 'sine.inOut' }, tOpen + 0.7);
+    tl.fromTo('#scn', { scale: 1.1, x: 0 }, { scale: 4.6, x: 0, y: 0, transformOrigin: `50% ${(1205 / 1920 * 100).toFixed(2)}%`, duration: tEnd - tZoom, ease: 'power2.inOut' }, tZoom);
+    rot(tl, arm('ra20'), 0, -120, tEnd - 1.2, 0.6); smile(tl, 'si20', tEnd - 1);
+    tl.fromTo('#hg20', { opacity: 1 }, { opacity: 0.6, duration: 0.6, yoyo: true, repeat: 8 }, tZoom);
+    rain(tOpen, b - tOpen, 24);
+  });
+  const ORDER = [0, 12, 1, 2, 3, 13, 4, 14, 5, 15, 16, 6, 17, 7, 8, 18, 9, 19, 10, 11, 20], ix = k => keys.indexOf(k);
+  return { svg: svg.join(''), act: ORDER.map(k => act[ix(k)]), cap: ORDER.map(k => cap[ix(k)]), ids: ORDER, len: ORDER.map(k => (k === 20 ? 8 : 5)) };
 })();
